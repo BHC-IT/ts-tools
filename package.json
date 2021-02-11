@@ -1,0 +1,42 @@
+{
+	"name": "wasm-template",
+	"version": "1.0.1",
+	"description": "",
+	"main": "src/index.ts",
+	"scripts": {
+		"start": "npm run build && node dist/src/index.js",
+		"dev": "npm run build && nodemon",
+		"test": "mocha -r ts-node/register test/**/*.ts",
+		"build": "npm run clean && tsc && ./scripts/build.sh",
+		"clean": "rimraf ./build && rimraf ./dist",
+		"docker": "./scripts/createDocker.sh $npm_package_name:$npm_package_version",
+		"docker:build": "./scripts/createDocker.sh $npm_package_name:$npm_package_version",
+		"docker:start": "./scripts/runDocker.sh $npm_package_name:$npm_package_version",
+		"docker:test": "./scripts/testDocker.sh $npm_package_name-test:$npm_package_version && ./scripts/runTestDocker.sh $npm_package_name-test:$npm_package_version",
+		"doc": "jsdoc * -d doc"
+	},
+	"keywords": [
+		"template"
+	],
+	"author": "BHC-IT",
+	"license": "MIT",
+	"dependencies": {
+		"bindings": "^1.5.0",
+		"dotenv": "^8.2.0",
+		"node-addon-api": "^2.0.0"
+	},
+	"devDependencies": {
+		"@types/chai": "^4.2.9",
+		"@types/mocha": "^7.0.1",
+		"@types/node": "^13.7.6",
+		"chai": "^4.2.0",
+		"concurrently": "^5.1.0",
+		"jsdoc": "^3.6.4",
+		"mocha": "^7.1.2",
+		"nodemon": "^2.0.2",
+		"rimraf": "^3.0.2",
+		"ts-node": "^8.6.2",
+		"typescript": "^3.8.2",
+		"typings": "^2.1.1"
+	}
+}

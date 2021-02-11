@@ -1,0 +1,17 @@
+test:
+  - test/**/*
+
+ts scope:
+  - src/**/*
+
+cpp scope:
+  - addon/**/*
+
+bindings:
+  - bindings/**/*
+
+actions:
+  - .github/*
+
+archi:
+  - ./*
