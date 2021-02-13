@@ -7,7 +7,7 @@ on:
     branches: [ master, dev ]
 
 jobs:
-  linting:
+  tslinting:
     runs-on: ubuntu-latest
     timeout-minutes: 3
     steps:
