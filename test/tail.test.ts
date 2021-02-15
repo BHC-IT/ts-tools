@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import tail from '../src/tools/tail';
+import { tail } from '../src/tools/tail';
 
 describe('test tail', function() {
 	it('tail([1, 2, 3]) should return [2, 3]', function() {
