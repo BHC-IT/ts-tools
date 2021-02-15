@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import pipe from '../src/tools/pipe';
+import { pipe } from '../src/tools/pipe';
 
 const result = pipe((x : number) => x + 1, (x : number) => x * 2, (x : number) => x - 1);
 

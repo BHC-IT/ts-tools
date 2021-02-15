@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import init from '../src/tools/init';
+import { init } from '../src/tools/init';
 
 describe('test init', function() {
 	it('init([1, 2, 3]) should return [1, 2]', function() {
