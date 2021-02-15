@@ -1,0 +1,1103 @@
+Results of cspell linter (version 4.1.3)
+See documentation on https://nvuillam.github.io/mega-linter/descriptors/spell_cspell/
+-----------------------------------------------
+
+❌ [ERROR] for workspace /tmp/lint
+Linter raw log:
+/tmp/lint/.github/labeler.yml:16:1 - Unknown word (archi)
+/tmp/lint/.github/workflows/tslint.yml:10:3 - Unknown word (tslinting)
+/tmp/lint/.github/workflows/tslint.yml:18:15 - Unknown word (mooyoul)
+/tmp/lint/.nyc_output/51c4845a-64af-4158-9eec-82b46f0c3322.json:1:9 - Unknown word (lanath)
+/tmp/lint/.nyc_output/51c4845a-64af-4158-9eec-82b46f0c3322.json:1:67 - Unknown word (lanath)
+/tmp/lint/.nyc_output/51c4845a-64af-4158-9eec-82b46f0c3322.json:1:949 - Unknown word (lanath)
+/tmp/lint/.nyc_output/51c4845a-64af-4158-9eec-82b46f0c3322.json:1:1005 - Unknown word (lanath)
+/tmp/lint/.nyc_output/51c4845a-64af-4158-9eec-82b46f0c3322.json:1:6037 - Unknown word (cond)
+/tmp/lint/.nyc_output/51c4845a-64af-4158-9eec-82b46f0c3322.json:1:6284 - Unknown word (cond)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:9 - Unknown word (lanath)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:67 - Unknown word (lanath)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:1116 - Unknown word (lanath)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:1177 - Unknown word (lanath)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:1262 - Unknown word (GAAG)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:1288 - Unknown word (GAAG)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:1298 - Unknown word (MAAM)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:1348 - Unknown word (GAAG)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:1353 - Unknown word (IAAY)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:1393 - Unknown word (GAAG)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:1398 - Unknown word (IAAI)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:2671 - Unknown word (IAAY)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:2721 - Unknown word (IAAI)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:2736 - Unknown word (IAAI)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:2751 - Unknown word (KAAK)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:3743 - Unknown word (EAAW)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:3753 - Unknown word (GAAW)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:3783 - Unknown word (KAAK)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:3813 - Unknown word (MAAM)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:5022 - Unknown word (CAAI)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:5049 - Unknown word (OAAO)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:5064 - Unknown word (IAAW)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:5069 - Unknown word (EAAK)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:5099 - Unknown word (IAAI)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:5109 - Unknown word (OAAO)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:5114 - Unknown word (EAAS)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:6180 - Unknown word (CAAK)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:6185 - Unknown word (EAAY)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:7260 - Unknown word (EAAQ)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:7285 - Unknown word (KAAK)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:7300 - Unknown word (MAAM)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:7320 - Unknown word (KAAK)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:7330 - Unknown word (MAAM)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:8315 - Unknown word (GAAO)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:8320 - Unknown word (EAAQ)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:11011 - Unknown word (cond)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:11258 - Unknown word (cond)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:11777 - Unknown word (AAGO)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:11797 - Unknown word (CAAI)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:11802 - Unknown word (CAAI)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:11888 - Unknown word (QAAA)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:11898 - Unknown word (QAAs)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:11910 - Unknown word (QAAA)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:11915 - Unknown word (OAAO)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:11940 - Unknown word (SAAS)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:11976 - Unknown word (CAAI)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:11981 - Unknown word (CAAW)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:12038 - Unknown word (QAAA)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:12065 - Unknown word (SAAS)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:12080 - Unknown word (CAAW)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:12121 - Unknown word (SAAS)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:12137 - Unknown word (QAAA)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:12142 - Unknown word (SAAS)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:12179 - Unknown word (CAAY)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:12200 - Unknown word (OAAO)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:12205 - Unknown word (QACN)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:12220 - Unknown word (YACL)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:12240 - Unknown word (CAAW)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:12366 - Unknown word (CAAW)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:12468 - Unknown word (KACD)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:12493 - Unknown word (AAPY)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:14596 - Unknown word (IAAY)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:15822 - Unknown word (CAAK)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:15827 - Unknown word (EAAY)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:16150 - Unknown word (Vivier)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:16158 - Unknown word (lanathlor)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:16546 - Unknown word (Vivier)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:16554 - Unknown word (lanathlor)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:17518 - Unknown word (EAAW)
+/tmp/lint/.nyc_output/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:17528 - Unknown word (GAAW)
+/tmp/lint/.nyc_output/processinfo/51c4845a-64af-4158-9eec-82b46f0c3322.json:1:59 - Unknown word (lanath)
+/tmp/lint/.nyc_output/processinfo/51c4845a-64af-4158-9eec-82b46f0c3322.json:1:150 - Unknown word (lanath)
+/tmp/lint/.nyc_output/processinfo/51c4845a-64af-4158-9eec-82b46f0c3322.json:1:232 - Unknown word (lanath)
+/tmp/lint/.nyc_output/processinfo/51c4845a-64af-4158-9eec-82b46f0c3322.json:1:386 - Unknown word (lanath)
+/tmp/lint/.nyc_output/processinfo/52f87fd6-6b8b-4dc5-b4a8-9f17cbd54022.json:1:59 - Unknown word (lanath)
+/tmp/lint/.nyc_output/processinfo/52f87fd6-6b8b-4dc5-b4a8-9f17cbd54022.json:1:144 - Unknown word (lanath)
+/tmp/lint/.nyc_output/processinfo/52f87fd6-6b8b-4dc5-b4a8-9f17cbd54022.json:1:226 - Unknown word (lanath)
+/tmp/lint/.nyc_output/processinfo/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:93 - Unknown word (lanath)
+/tmp/lint/.nyc_output/processinfo/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:206 - Unknown word (lanath)
+/tmp/lint/.nyc_output/processinfo/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:288 - Unknown word (lanath)
+/tmp/lint/.nyc_output/processinfo/6dee075a-9f2b-4072-8646-141f3c4b9a66.json:1:442 - Unknown word (lanath)
+/tmp/lint/.nyc_output/processinfo/index.json:1:311 - Unknown word (lanath)
+/tmp/lint/.nyc_output/processinfo/index.json:1:441 - Unknown word (lanath)
+/tmp/lint/.nyc_output/processinfo/index.json:1:569 - Unknown word (lanath)
+/tmp/lint/.nyc_output/processinfo/index.json:1:696 - Unknown word (lanath)
+/tmp/lint/README.md:1:16 - Unknown word (modifie)
+/tmp/lint/README.md:8:2 - Unknown word (WASM)
+/tmp/lint/README.md:12:60 - Unknown word (napi)
+/tmp/lint/README.md:24:45 - Unknown word (funtion)
+/tmp/lint/README.md:25:38 - Unknown word (entrypoint)
+/tmp/lint/README.md:64:3 - Unknown word (Dependecies)
+/tmp/lint/README.md:71:20 - Unknown word (mocka)
+/tmp/lint/README.md:82:1 - Unknown word (mkdir)
+/tmp/lint/doc/assets/css/main.css:314:13 - Unknown word (stylesheet)
+/tmp/lint/doc/assets/css/main.css:390:38 - Unknown word (searchfield)
+/tmp/lint/doc/assets/css/main.css:1562:12 - Unknown word (unshift)
+/tmp/lint/doc/assets/css/main.css:1708:16 - Unknown word (unshift)
+/tmp/lint/doc/assets/js/main.js:18:625 - Unknown word (customised)
+/tmp/lint/doc/assets/js/main.js:18:12596 - Unknown word (serialisation)
+/tmp/lint/doc/assets/js/main.js:18:12790 - Unknown word (serialised)
+/tmp/lint/doc/assets/js/main.js:18:12910 - Unknown word (serialising)
+/tmp/lint/doc/assets/js/main.js:18:14384 - Unknown word (serialised)
+/tmp/lint/doc/assets/js/main.js:18:14401 - Unknown word (serialised)
+/tmp/lint/doc/assets/js/main.js:18:15431 - Unknown word (serialising)
+/tmp/lint/doc/assets/js/main.js:18:15501 - Unknown word (serialised)
+/tmp/lint/doc/assets/js/main.js:18:19783 - Unknown word (serialisation)
+/tmp/lint/doc/assets/js/main.js:18:21178 - Unknown word (upsert)
+/tmp/lint/doc/assets/js/main.js:18:22831 - Unknown word (upsert)
+/tmp/lint/doc/assets/js/main.js:18:23295 - Unknown word (upsert)
+/tmp/lint/doc/assets/js/main.js:18:26118 - Unknown word (ational)
+/tmp/lint/doc/assets/js/main.js:18:26148 - Unknown word (tional)
+/tmp/lint/doc/assets/js/main.js:18:26161 - Unknown word (tion)
+/tmp/lint/doc/assets/js/main.js:18:26178 - Unknown word (enci)
+/tmp/lint/doc/assets/js/main.js:18:26189 - Unknown word (ence)
+/tmp/lint/doc/assets/js/main.js:18:26206 - Unknown word (anci)
+/tmp/lint/doc/assets/js/main.js:18:26217 - Unknown word (ance)
+/tmp/lint/doc/assets/js/main.js:18:26234 - Unknown word (izer)
+/tmp/lint/doc/assets/js/main.js:18:26287 - Unknown word (alli)
+/tmp/lint/doc/assets/js/main.js:18:26313 - Unknown word (entli)
+/tmp/lint/doc/assets/js/main.js:18:26365 - Unknown word (ousli)
+/tmp/lint/doc/assets/js/main.js:18:26393 - Unknown word (ization)
+/tmp/lint/doc/assets/js/main.js:18:26423 - Unknown word (ation)
+/tmp/lint/doc/assets/js/main.js:18:26451 - Unknown word (ator)
+/tmp/lint/doc/assets/js/main.js:18:26478 - Unknown word (alism)
+/tmp/lint/doc/assets/js/main.js:18:26505 - Unknown word (iveness)
+/tmp/lint/doc/assets/js/main.js:18:26565 - Unknown word (ousness)
+/tmp/lint/doc/assets/js/main.js:18:26595 - Unknown word (aliti)
+/tmp/lint/doc/assets/js/main.js:18:26622 - Unknown word (iviti)
+/tmp/lint/doc/assets/js/main.js:18:26650 - Unknown word (biliti)
+/tmp/lint/doc/assets/js/main.js:18:26679 - Unknown word (logi)
+/tmp/lint/doc/assets/js/main.js:18:26734 - Unknown word (icate)
+/tmp/lint/doc/assets/js/main.js:18:26761 - Unknown word (ative)
+/tmp/lint/doc/assets/js/main.js:18:26786 - Unknown word (alize)
+/tmp/lint/doc/assets/js/main.js:18:26813 - Unknown word (iciti)
+/tmp/lint/doc/assets/js/main.js:18:26840 - Unknown word (ical)
+/tmp/lint/doc/assets/js/main.js:18:26926 - Unknown word (aeiou)
+/tmp/lint/doc/assets/js/main.js:18:26970 - Unknown word (aeiouy)
+/tmp/lint/doc/assets/js/main.js:18:27016 - Unknown word (aeiouy)
+/tmp/lint/doc/assets/js/main.js:18:27069 - Unknown word (aeiou)
+/tmp/lint/doc/assets/js/main.js:18:27323 - Unknown word (VCVC)
+/tmp/lint/doc/assets/js/main.js:18:27773 - Unknown word (aeiouylsz)
+/tmp/lint/doc/assets/js/main.js:18:27844 - Unknown word (aeiouwxy)
+/tmp/lint/doc/assets/js/main.js:18:27884 - Unknown word (aeiou)
+/tmp/lint/doc/assets/js/main.js:18:27918 - Unknown word (ational)
+/tmp/lint/doc/assets/js/main.js:18:27926 - Unknown word (tional)
+/tmp/lint/doc/assets/js/main.js:18:27933 - Unknown word (enci)
+/tmp/lint/doc/assets/js/main.js:18:27938 - Unknown word (anci)
+/tmp/lint/doc/assets/js/main.js:18:27943 - Unknown word (izer)
+/tmp/lint/doc/assets/js/main.js:18:27952 - Unknown word (alli)
+/tmp/lint/doc/assets/js/main.js:18:27957 - Unknown word (entli)
+/tmp/lint/doc/assets/js/main.js:18:27967 - Unknown word (ousli)
+/tmp/lint/doc/assets/js/main.js:18:27973 - Unknown word (ization)
+/tmp/lint/doc/assets/js/main.js:18:27981 - Unknown word (ation)
+/tmp/lint/doc/assets/js/main.js:18:27987 - Unknown word (ator)
+/tmp/lint/doc/assets/js/main.js:18:27992 - Unknown word (alism)
+/tmp/lint/doc/assets/js/main.js:18:27998 - Unknown word (iveness)
+/tmp/lint/doc/assets/js/main.js:18:28014 - Unknown word (ousness)
+/tmp/lint/doc/assets/js/main.js:18:28022 - Unknown word (aliti)
+/tmp/lint/doc/assets/js/main.js:18:28028 - Unknown word (iviti)
+/tmp/lint/doc/assets/js/main.js:18:28034 - Unknown word (biliti)
+/tmp/lint/doc/assets/js/main.js:18:28041 - Unknown word (logi)
+/tmp/lint/doc/assets/js/main.js:18:28074 - Unknown word (icate)
+/tmp/lint/doc/assets/js/main.js:18:28080 - Unknown word (ative)
+/tmp/lint/doc/assets/js/main.js:18:28086 - Unknown word (alize)
+/tmp/lint/doc/assets/js/main.js:18:28092 - Unknown word (iciti)
+/tmp/lint/doc/assets/js/main.js:18:28098 - Unknown word (ical)
+/tmp/lint/doc/assets/js/main.js:18:28143 - Unknown word (ance)
+/tmp/lint/doc/assets/js/main.js:18:28148 - Unknown word (ence)
+/tmp/lint/doc/assets/js/main.js:18:28164 - Unknown word (ible)
+/tmp/lint/doc/assets/js/main.js:18:28173 - Unknown word (ement)
+/tmp/lint/doc/assets/js/main.js:18:28179 - Unknown word (ment)
+/tmp/lint/doc/assets/js/main.js:18:28352 - Unknown word (aeiouwxy)
+/tmp/lint/doc/assets/js/main.js:18:28457 - Unknown word (firstch)
+/tmp/lint/doc/assets/js/main.js:18:28559 - Unknown word (firstch)
+/tmp/lint/doc/assets/js/main.js:18:28593 - Unknown word (firstch)
+/tmp/lint/doc/assets/js/main.js:18:28624 - Unknown word (firstch)
+/tmp/lint/doc/assets/js/main.js:18:35994 - Unknown word (minimised)
+/tmp/lint/doc/assets/js/main.js:18:43148 - Unknown word (minimisation)
+/tmp/lint/doc/assets/js/main.js:18:43548 - Unknown word (optimised)
+/tmp/lint/doc/assets/js/main.js:18:44803 - Unknown word (optimised)
+/tmp/lint/doc/assets/js/main.js:18:59450 - Unknown word (upsert)
+/tmp/lint/doc/assets/js/main.js:18:71474 - Unknown word (normalisation)
+/tmp/lint/doc/assets/js/main.js:18:71584 - Unknown word (normalisation)
+/tmp/lint/doc/assets/js/main.js:18:71630 - Unknown word (normalise)
+/tmp/lint/doc/assets/js/main.js:18:78182 - Unknown word (serialisation)
+/tmp/lint/doc/assets/js/main.js:18:79452 - Unknown word (customise)
+/tmp/lint/doc/assets/js/main.js:18:93581 - Unknown word (tokenising)
+/tmp/lint/doc/assets/js/main.js:18:97427 - Unknown word (unrecognised)
+/tmp/lint/doc/assets/js/main.js:18:98507 - Unknown word (unrecognised)
+/tmp/lint/doc/assets/js/main.js:139:409 - Unknown word (trottle)
+/tmp/lint/doc/assets/js/main.js:139:481 - Unknown word (trottle)
+/tmp/lint/doc/assets/js/main.js:139:2184 - Unknown word (trottle)
+/tmp/lint/doc/assets/js/main.js:139:2334 - Unknown word (trottle)
+/tmp/lint/doc/assets/js/main.js:161:1239 - Unknown word (supressed)
+/tmp/lint/doc/assets/js/search.js:1:4196 - Unknown word (isjust)
+/tmp/lint/doc/assets/js/search.js:1:4374 - Unknown word (isnothing)
+/tmp/lint/doc/assets/js/search.js:1:4555 - Unknown word (callmaybe)
+/tmp/lint/doc/assets/js/search.js:1:9241 - Unknown word (isjust)
+/tmp/lint/doc/assets/js/search.js:1:9391 - Unknown word (isnothing)
+/tmp/lint/doc/assets/js/search.js:1:9544 - Unknown word (callmaybe)
+/tmp/lint/doc/assets/js/search.js:1:13329 - Unknown word (callmaybe)
+/tmp/lint/doc/assets/js/search.js:1:14115 - Unknown word (isjust)
+/tmp/lint/doc/assets/js/search.js:1:14177 - Unknown word (isnothing)
+/tmp/lint/doc/index.html:67:82 - Unknown word (WASM)
+/tmp/lint/doc/index.html:71:704 - Unknown word (napi)
+/tmp/lint/doc/index.html:83:617 - Unknown word (funtion)
+/tmp/lint/doc/index.html:84:538 - Unknown word (entrypoint)
+/tmp/lint/doc/index.html:117:10 - Unknown word (Dependecies)
+/tmp/lint/doc/index.html:122:71 - Unknown word (mocka)
+/tmp/lint/doc/index.html:133:30 - Unknown word (mkdir)
+/tmp/lint/doc/modules/index.html:133:15 - Unknown word (callmaybe)
+/tmp/lint/doc/modules/index.html:168:15 - Unknown word (isjust)
+/tmp/lint/doc/modules/index.html:173:15 - Unknown word (isnothing)
+/tmp/lint/doc/modules/tail.html:126:24 - Unknown word (Vivier)
+/tmp/lint/doc/modules/tail.html:126:32 - Unknown word (lanathlor)
+/tmp/lint/doc/modules/tail.html:164:26 - Unknown word (Vivier)
+/tmp/lint/doc/modules/tail.html:164:34 - Unknown word (lanathlor)
+/tmp/lint/doc/modules/tools_maybe.html:107:15 - Unknown word (callmaybe)
+/tmp/lint/doc/modules/tools_maybe.html:191:15 - Unknown word (isjust)
+/tmp/lint/doc/modules/tools_maybe.html:220:15 - Unknown word (isnothing)
+/tmp/lint/package-lock.json:30:6 - Unknown word (typedoc)
+/tmp/lint/package-lock.json:31:6 - Unknown word (typedoc)
+/tmp/lint/package-lock.json:60:6 - Unknown word (gensync)
+/tmp/lint/package-lock.json:70:14 - Unknown word (opencollective)
+/tmp/lint/package-lock.json:113:6 - Unknown word (jsesc)
+/tmp/lint/package-lock.json:132:33 - Unknown word (arity)
+/tmp/lint/package-lock.json:137:44 - Unknown word (arity)
+/tmp/lint/package-lock.json:328:6 - Unknown word (camelcase)
+/tmp/lint/package-lock.json:410:18 - Unknown word (nodelib)
+/tmp/lint/package-lock.json:410:29 - Unknown word (scandir)
+/tmp/lint/package-lock.json:416:7 - Unknown word (nodelib)
+/tmp/lint/package-lock.json:423:18 - Unknown word (nodelib)
+/tmp/lint/package-lock.json:432:18 - Unknown word (nodelib)
+/tmp/lint/package-lock.json:438:18 - Unknown word (scandir)
+/tmp/lint/package-lock.json:439:6 - Unknown word (fastq)
+/tmp/lint/package-lock.json:445:18 - Unknown word (octokit)
+/tmp/lint/package-lock.json:451:7 - Unknown word (octokit)
+/tmp/lint/package-lock.json:454:18 - Unknown word (octokit)
+/tmp/lint/package-lock.json:460:7 - Unknown word (octokit)
+/tmp/lint/package-lock.json:490:26 - Unknown word (openapi)
+/tmp/lint/package-lock.json:575:15 - Unknown word (openapi)
+/tmp/lint/package-lock.json:657:6 - Unknown word (execa)
+/tmp/lint/package-lock.json:705:6 - Unknown word (globby)
+/tmp/lint/package-lock.json:753:6 - Unknown word (execa)
+/tmp/lint/package-lock.json:763:6 - Unknown word (tempy)
+/tmp/lint/package-lock.json:772:52 - Unknown word (execa)
+/tmp/lint/package-lock.json:947:18 - Unknown word (sindresorhus)
+/tmp/lint/package-lock.json:956:18 - Unknown word (szmarczak)
+/tmp/lint/package-lock.json:968:18 - Unknown word (tootallnate)
+/tmp/lint/package-lock.json:1097:44 - Unknown word (fullwidth)
+/tmp/lint/package-lock.json:1113:9 - Unknown word (fullwidth)
+/tmp/lint/package-lock.json:1189:17 - Unknown word (ansicolors)
+/tmp/lint/package-lock.json:1195:17 - Unknown word (anymatch)
+/tmp/lint/package-lock.json:1202:6 - Unknown word (picomatch)
+/tmp/lint/package-lock.json:1220:17 - Unknown word (archy)
+/tmp/lint/package-lock.json:1232:17 - Unknown word (argparse)
+/tmp/lint/package-lock.json:1238:6 - Unknown word (sprintf)
+/tmp/lint/package-lock.json:1262:17 - Unknown word (arrify)
+/tmp/lint/package-lock.json:1329:6 - Unknown word (camelcase)
+/tmp/lint/package-lock.json:1445:17 - Unknown word (cacheable)
+/tmp/lint/package-lock.json:1454:6 - Unknown word (keyv)
+/tmp/lint/package-lock.json:1457:6 - Unknown word (responselike)
+/tmp/lint/package-lock.json:1463:17 - Unknown word (cacheable)
+/tmp/lint/package-lock.json:1478:17 - Unknown word (cacheable)
+/tmp/lint/package-lock.json:1493:6 - Unknown word (hasha)
+/tmp/lint/package-lock.json:1515:17 - Unknown word (callsites)
+/tmp/lint/package-lock.json:1524:17 - Unknown word (camelcase)
+/tmp/lint/package-lock.json:1533:17 - Unknown word (camelcase)
+/tmp/lint/package-lock.json:1556:6 - Unknown word (ansicolors)
+/tmp/lint/package-lock.json:1557:6 - Unknown word (redeyed)
+/tmp/lint/package-lock.json:1585:6 - Unknown word (pathval)
+/tmp/lint/package-lock.json:1633:6 - Unknown word (anymatch)
+/tmp/lint/package-lock.json:1635:6 - Unknown word (fsevents)
+/tmp/lint/package-lock.json:1640:6 - Unknown word (readdirp)
+/tmp/lint/package-lock.json:1646:6 - Unknown word (fsevents)
+/tmp/lint/package-lock.json:1689:17 - Unknown word (cliui)
+/tmp/lint/package-lock.json:1700:17 - Unknown word (cliui)
+/tmp/lint/package-lock.json:1709:17 - Unknown word (cliui)
+/tmp/lint/package-lock.json:1715:17 - Unknown word (cliui)
+/tmp/lint/package-lock.json:1715:39 - Unknown word (fullwidth)
+/tmp/lint/package-lock.json:1731:9 - Unknown word (fullwidth)
+/tmp/lint/package-lock.json:1783:17 - Unknown word (commondir)
+/tmp/lint/package-lock.json:1897:13 - Unknown word (ismatch)
+/tmp/lint/package-lock.json:1940:17 - Unknown word (cosmiconfig)
+/tmp/lint/package-lock.json:1956:17 - Unknown word (cosmiconfig)
+/tmp/lint/package-lock.json:2000:6 - Unknown word (isexe)
+/tmp/lint/package-lock.json:2027:14 - Unknown word (opencollective)
+/tmp/lint/package-lock.json:2050:17 - Unknown word (decamelize)
+/tmp/lint/package-lock.json:2059:17 - Unknown word (decamelize)
+/tmp/lint/package-lock.json:2065:6 - Unknown word (decamelize)
+/tmp/lint/package-lock.json:2072:17 - Unknown word (decamelize)
+/tmp/lint/package-lock.json:2159:6 - Unknown word (globby)
+/tmp/lint/package-lock.json:2271:6 - Unknown word (execa)
+/tmp/lint/package-lock.json:2284:9 - Unknown word (arrayish)
+/tmp/lint/package-lock.json:2305:23 - Unknown word (trimend)
+/tmp/lint/package-lock.json:2306:23 - Unknown word (trimstart)
+/tmp/lint/package-lock.json:2389:6 - Unknown word (esparse)
+/tmp/lint/package-lock.json:2389:21 - Unknown word (esparse)
+/tmp/lint/package-lock.json:2390:6 - Unknown word (esvalidate)
+/tmp/lint/package-lock.json:2390:24 - Unknown word (esvalidate)
+/tmp/lint/package-lock.json:2445:6 - Unknown word (picomatch)
+/tmp/lint/package-lock.json:2451:17 - Unknown word (fastq)
+/tmp/lint/package-lock.json:2457:6 - Unknown word (reusify)
+/tmp/lint/package-lock.json:2493:6 - Unknown word (commondir)
+/tmp/lint/package-lock.json:2566:17 - Unknown word (fromentries)
+/tmp/lint/package-lock.json:2577:15 - Unknown word (patreon)
+/tmp/lint/package-lock.json:2595:6 - Unknown word (universalify)
+/tmp/lint/package-lock.json:2607:17 - Unknown word (fsevents)
+/tmp/lint/package-lock.json:2628:17 - Unknown word (gensync)
+/tmp/lint/package-lock.json:2776:17 - Unknown word (globby)
+/tmp/lint/package-lock.json:2802:7 - Unknown word (sindresorhus)
+/tmp/lint/package-lock.json:2803:7 - Unknown word (szmarczak)
+/tmp/lint/package-lock.json:2804:6 - Unknown word (cacheable)
+/tmp/lint/package-lock.json:2843:6 - Unknown word (wordwrap)
+/tmp/lint/package-lock.json:2906:17 - Unknown word (hasha)
+/tmp/lint/package-lock.json:2964:7 - Unknown word (tootallnate)
+/tmp/lint/package-lock.json:3101:17 - Unknown word (imurmurhash)
+/tmp/lint/package-lock.json:3126:6 - Unknown word (wrappy)
+/tmp/lint/package-lock.json:3163:20 - Unknown word (arrayish)
+/tmp/lint/package-lock.json:3192:15 - Unknown word (patreon)
+/tmp/lint/package-lock.json:3252:20 - Unknown word (extglob)
+/tmp/lint/package-lock.json:3276:9 - Unknown word (extglob)
+/tmp/lint/package-lock.json:3446:17 - Unknown word (isarray)
+/tmp/lint/package-lock.json:3452:17 - Unknown word (isexe)
+/tmp/lint/package-lock.json:3465:13 - Unknown word (escaperegexp)
+/tmp/lint/package-lock.json:3466:13 - Unknown word (isplainobject)
+/tmp/lint/package-lock.json:3467:13 - Unknown word (isstring)
+/tmp/lint/package-lock.json:3468:13 - Unknown word (uniqby)
+/tmp/lint/package-lock.json:3519:30 - Unknown word (processinfo)
+/tmp/lint/package-lock.json:3525:6 - Unknown word (archy)
+/tmp/lint/package-lock.json:3537:30 - Unknown word (processinfo)
+/tmp/lint/package-lock.json:3655:6 - Unknown word (argparse)
+/tmp/lint/package-lock.json:3662:20 - Unknown word (xmlparser)
+/tmp/lint/package-lock.json:3668:6 - Unknown word (xmlcreate)
+/tmp/lint/package-lock.json:3681:9 - Unknown word (xmlparser)
+/tmp/lint/package-lock.json:3682:6 - Unknown word (klaw)
+/tmp/lint/package-lock.json:3687:6 - Unknown word (requizzle)
+/tmp/lint/package-lock.json:3689:6 - Unknown word (taffydb)
+/tmp/lint/package-lock.json:3708:17 - Unknown word (jsesc)
+/tmp/lint/package-lock.json:3714:6 - Unknown word (jsesc)
+/tmp/lint/package-lock.json:3714:19 - Unknown word (jsesc)
+/tmp/lint/package-lock.json:3766:6 - Unknown word (universalify)
+/tmp/lint/package-lock.json:3772:17 - Unknown word (jsonparse)
+/tmp/lint/package-lock.json:3787:6 - Unknown word (jsonparse)
+/tmp/lint/package-lock.json:3797:17 - Unknown word (keyv)
+/tmp/lint/package-lock.json:3815:17 - Unknown word (klaw)
+/tmp/lint/package-lock.json:3842:17 - Unknown word (linkify)
+/tmp/lint/package-lock.json:3859:6 - Unknown word (pify)
+/tmp/lint/package-lock.json:3891:24 - Unknown word (escaperegexp)
+/tmp/lint/package-lock.json:3897:24 - Unknown word (flattendeep)
+/tmp/lint/package-lock.json:3903:24 - Unknown word (ismatch)
+/tmp/lint/package-lock.json:3909:24 - Unknown word (isplainobject)
+/tmp/lint/package-lock.json:3915:24 - Unknown word (isstring)
+/tmp/lint/package-lock.json:3921:24 - Unknown word (toarray)
+/tmp/lint/package-lock.json:3927:24 - Unknown word (uniqby)
+/tmp/lint/package-lock.json:3960:6 - Unknown word (yallist)
+/tmp/lint/package-lock.json:4017:6 - Unknown word (argparse)
+/tmp/lint/package-lock.json:4019:6 - Unknown word (linkify)
+/tmp/lint/package-lock.json:4020:6 - Unknown word (mdurl)
+/tmp/lint/package-lock.json:4135:17 - Unknown word (mdurl)
+/tmp/lint/package-lock.json:4154:6 - Unknown word (redent)
+/tmp/lint/package-lock.json:4251:6 - Unknown word (picomatch)
+/tmp/lint/package-lock.json:4320:6 - Unknown word (arrify)
+/tmp/lint/package-lock.json:4369:12 - Unknown word (unparser)
+/tmp/lint/package-lock.json:4379:14 - Unknown word (opencollective)
+/tmp/lint/package-lock.json:4449:13 - Unknown word (toarray)
+/tmp/lint/package-lock.json:4458:13 - Unknown word (getownpropertydescriptors)
+/tmp/lint/package-lock.json:4494:6 - Unknown word (pstree)
+/tmp/lint/package-lock.json:4494:13 - Unknown word (remy)
+/tmp/lint/package-lock.json:4498:6 - Unknown word (undefsafe)
+/tmp/lint/package-lock.json:4508:14 - Unknown word (opencollective)
+/tmp/lint/package-lock.json:4572:6 - Unknown word (ansicolors)
+/tmp/lint/package-lock.json:4573:6 - Unknown word (ansistyles)
+/tmp/lint/package-lock.json:4574:6 - Unknown word (aproba)
+/tmp/lint/package-lock.json:4575:6 - Unknown word (archy)
+/tmp/lint/package-lock.json:4579:6 - Unknown word (cacache)
+/tmp/lint/package-lock.json:4581:6 - Unknown word (chownr)
+/tmp/lint/package-lock.json:4586:6 - Unknown word (columnify)
+/tmp/lint/package-lock.json:4591:6 - Unknown word (dezalgo)
+/tmp/lint/package-lock.json:4593:6 - Unknown word (figgy)
+/tmp/lint/package-lock.json:4602:6 - Unknown word (iferr)
+/tmp/lint/package-lock.json:4603:6 - Unknown word (imurmurhash)
+/tmp/lint/package-lock.json:4613:6 - Unknown word (libcipm)
+/tmp/lint/package-lock.json:4614:6 - Unknown word (libnpm)
+/tmp/lint/package-lock.json:4615:6 - Unknown word (libnpmaccess)
+/tmp/lint/package-lock.json:4616:6 - Unknown word (libnpmhook)
+/tmp/lint/package-lock.json:4617:6 - Unknown word (libnpmorg)
+/tmp/lint/package-lock.json:4618:6 - Unknown word (libnpmsearch)
+/tmp/lint/package-lock.json:4619:6 - Unknown word (libnpmteam)
+/tmp/lint/package-lock.json:4620:6 - Unknown word (libnpx)
+/tmp/lint/package-lock.json:4623:14 - Unknown word (baseindexof)
+/tmp/lint/package-lock.json:4624:14 - Unknown word (baseuniq)
+/tmp/lint/package-lock.json:4625:14 - Unknown word (bindcallback)
+/tmp/lint/package-lock.json:4626:14 - Unknown word (cacheindexof)
+/tmp/lint/package-lock.json:4627:14 - Unknown word (createcache)
+/tmp/lint/package-lock.json:4628:14 - Unknown word (getnative)
+/tmp/lint/package-lock.json:4629:13 - Unknown word (clonedeep)
+/tmp/lint/package-lock.json:4630:13 - Unknown word (restparam)
+/tmp/lint/package-lock.json:4647:10 - Unknown word (packlist)
+/tmp/lint/package-lock.json:4652:6 - Unknown word (npmlog)
+/tmp/lint/package-lock.json:4655:6 - Unknown word (osenv)
+/tmp/lint/package-lock.json:4656:6 - Unknown word (pacote)
+/tmp/lint/package-lock.json:4659:6 - Unknown word (qrcode)
+/tmp/lint/package-lock.json:4678:6 - Unknown word (ssri)
+/tmp/lint/package-lock.json:4695:6 - Unknown word (agentkeepalive)
+/tmp/lint/package-lock.json:4703:6 - Unknown word (asynckit)
+/tmp/lint/package-lock.json:4711:6 - Unknown word (builtins)
+/tmp/lint/package-lock.json:4715:6 - Unknown word (caseless)
+/tmp/lint/package-lock.json:4736:6 - Unknown word (dashdash)
+/tmp/lint/package-lock.json:4748:6 - Unknown word (duplexify)
+/tmp/lint/package-lock.json:4749:10 - Unknown word (jsbn)
+/tmp/lint/package-lock.json:4763:6 - Unknown word (extsprintf)
+/tmp/lint/package-lock.json:4769:9 - Unknown word (minipass)
+/tmp/lint/package-lock.json:4773:6 - Unknown word (genfun)
+/tmp/lint/package-lock.json:4776:6 - Unknown word (getpass)
+/tmp/lint/package-lock.json:4808:6 - Unknown word (isarray)
+/tmp/lint/package-lock.json:4809:6 - Unknown word (isexe)
+/tmp/lint/package-lock.json:4810:6 - Unknown word (isstream)
+/tmp/lint/package-lock.json:4811:6 - Unknown word (jsbn)
+/tmp/lint/package-lock.json:4814:6 - Unknown word (jsonparse)
+/tmp/lint/package-lock.json:4815:6 - Unknown word (jsprim)
+/tmp/lint/package-lock.json:4817:6 - Unknown word (libnpmconfig)
+/tmp/lint/package-lock.json:4818:6 - Unknown word (libnpmpublish)
+/tmp/lint/package-lock.json:4819:14 - Unknown word (createset)
+/tmp/lint/package-lock.json:4828:6 - Unknown word (minizlib)
+/tmp/lint/package-lock.json:4840:13 - Unknown word (getownpropertydescriptors)
+/tmp/lint/package-lock.json:4851:6 - Unknown word (pify)
+/tmp/lint/package-lock.json:4853:14 - Unknown word (nextick)
+/tmp/lint/package-lock.json:4855:6 - Unknown word (promzard)
+/tmp/lint/package-lock.json:4857:6 - Unknown word (protoduck)
+/tmp/lint/package-lock.json:4859:6 - Unknown word (pseudomap)
+/tmp/lint/package-lock.json:4862:6 - Unknown word (pumpify)
+/tmp/lint/package-lock.json:4881:6 - Unknown word (spdx)
+/tmp/lint/package-lock.json:4882:6 - Unknown word (spdx)
+/tmp/lint/package-lock.json:4883:6 - Unknown word (spdx)
+/tmp/lint/package-lock.json:4884:6 - Unknown word (spdx)
+/tmp/lint/package-lock.json:4886:6 - Unknown word (sshpk)
+/tmp/lint/package-lock.json:4903:6 - Unknown word (tweetnacl)
+/tmp/lint/package-lock.json:4914:6 - Unknown word (wcwidth)
+/tmp/lint/package-lock.json:4919:6 - Unknown word (wrappy)
+/tmp/lint/package-lock.json:4923:6 - Unknown word (yallist)
+/tmp/lint/package-lock.json:4930:6 - Unknown word (ansicolors)
+/tmp/lint/package-lock.json:4931:6 - Unknown word (ansistyles)
+/tmp/lint/package-lock.json:4932:6 - Unknown word (aproba)
+/tmp/lint/package-lock.json:4933:6 - Unknown word (archy)
+/tmp/lint/package-lock.json:4937:6 - Unknown word (cacache)
+/tmp/lint/package-lock.json:4939:6 - Unknown word (chownr)
+/tmp/lint/package-lock.json:4944:6 - Unknown word (columnify)
+/tmp/lint/package-lock.json:4949:6 - Unknown word (dezalgo)
+/tmp/lint/package-lock.json:4951:6 - Unknown word (figgy)
+/tmp/lint/package-lock.json:4960:6 - Unknown word (iferr)
+/tmp/lint/package-lock.json:4961:6 - Unknown word (imurmurhash)
+/tmp/lint/package-lock.json:4971:6 - Unknown word (libcipm)
+/tmp/lint/package-lock.json:4972:6 - Unknown word (libnpm)
+/tmp/lint/package-lock.json:4973:6 - Unknown word (libnpmaccess)
+/tmp/lint/package-lock.json:4974:6 - Unknown word (libnpmhook)
+/tmp/lint/package-lock.json:4975:6 - Unknown word (libnpmorg)
+/tmp/lint/package-lock.json:4976:6 - Unknown word (libnpmsearch)
+/tmp/lint/package-lock.json:4977:6 - Unknown word (libnpmteam)
+/tmp/lint/package-lock.json:4978:6 - Unknown word (libnpx)
+/tmp/lint/package-lock.json:4981:14 - Unknown word (baseindexof)
+/tmp/lint/package-lock.json:4982:14 - Unknown word (baseuniq)
+/tmp/lint/package-lock.json:4983:14 - Unknown word (bindcallback)
+/tmp/lint/package-lock.json:4984:14 - Unknown word (cacheindexof)
+/tmp/lint/package-lock.json:4985:14 - Unknown word (createcache)
+/tmp/lint/package-lock.json:4986:14 - Unknown word (getnative)
+/tmp/lint/package-lock.json:4987:13 - Unknown word (clonedeep)
+/tmp/lint/package-lock.json:4988:13 - Unknown word (restparam)
+/tmp/lint/package-lock.json:5005:10 - Unknown word (packlist)
+/tmp/lint/package-lock.json:5010:6 - Unknown word (npmlog)
+/tmp/lint/package-lock.json:5013:6 - Unknown word (osenv)
+/tmp/lint/package-lock.json:5014:6 - Unknown word (pacote)
+/tmp/lint/package-lock.json:5017:6 - Unknown word (qrcode)
+/tmp/lint/package-lock.json:5036:6 - Unknown word (ssri)
+/tmp/lint/package-lock.json:5095:34 - Unknown word (agentkeepalive)
+/tmp/lint/package-lock.json:5153:34 - Unknown word (ansistyles)
+/tmp/lint/package-lock.json:5161:34 - Unknown word (aproba)
+/tmp/lint/package-lock.json:5199:6 - Unknown word (isarray)
+/tmp/lint/package-lock.json:5200:14 - Unknown word (nextick)
+/tmp/lint/package-lock.json:5247:34 - Unknown word (asynckit)
+/tmp/lint/package-lock.json:5291:6 - Unknown word (tweetnacl)
+/tmp/lint/package-lock.json:5358:34 - Unknown word (builtins)
+/tmp/lint/package-lock.json:5388:34 - Unknown word (cacache)
+/tmp/lint/package-lock.json:5397:6 - Unknown word (chownr)
+/tmp/lint/package-lock.json:5398:6 - Unknown word (figgy)
+/tmp/lint/package-lock.json:5408:6 - Unknown word (ssri)
+/tmp/lint/package-lock.json:5443:34 - Unknown word (caseless)
+/tmp/lint/package-lock.json:5467:34 - Unknown word (chownr)
+/tmp/lint/package-lock.json:5672:34 - Unknown word (columnify)
+/tmp/lint/package-lock.json:5681:6 - Unknown word (wcwidth)
+/tmp/lint/package-lock.json:5733:6 - Unknown word (isarray)
+/tmp/lint/package-lock.json:5734:14 - Unknown word (nextick)
+/tmp/lint/package-lock.json:5797:6 - Unknown word (aproba)
+/tmp/lint/package-lock.json:5799:6 - Unknown word (iferr)
+/tmp/lint/package-lock.json:5813:65 - Unknown word (iferr)
+/tmp/lint/package-lock.json:5864:6 - Unknown word (pseudomap)
+/tmp/lint/package-lock.json:5865:6 - Unknown word (yallist)
+/tmp/lint/package-lock.json:5868:59 - Unknown word (yallist)
+/tmp/lint/package-lock.json:5894:34 - Unknown word (dashdash)
+/tmp/lint/package-lock.json:6037:34 - Unknown word (dezalgo)
+/tmp/lint/package-lock.json:6046:6 - Unknown word (wrappy)
+/tmp/lint/package-lock.json:6082:34 - Unknown word (duplexify)
+/tmp/lint/package-lock.json:6096:34 - Unknown word (duplexify)
+/tmp/lint/package-lock.json:6107:14 - Unknown word (nextick)
+/tmp/lint/package-lock.json:6113:34 - Unknown word (duplexify)
+/tmp/lint/package-lock.json:6124:38 - Unknown word (jsbn)
+/tmp/lint/package-lock.json:6133:6 - Unknown word (jsbn)
+/tmp/lint/package-lock.json:6311:34 - Unknown word (extsprintf)
+/tmp/lint/package-lock.json:6330:34 - Unknown word (figgy)
+/tmp/lint/package-lock.json:6405:6 - Unknown word (asynckit)
+/tmp/lint/package-lock.json:6453:37 - Unknown word (minipass)
+/tmp/lint/package-lock.json:6461:6 - Unknown word (minipass)
+/tmp/lint/package-lock.json:6464:37 - Unknown word (minipass)
+/tmp/lint/package-lock.json:6499:6 - Unknown word (imurmurhash)
+/tmp/lint/package-lock.json:6597:34 - Unknown word (genfun)
+/tmp/lint/package-lock.json:6667:34 - Unknown word (getpass)
+/tmp/lint/package-lock.json:6902:6 - Unknown word (jsprim)
+/tmp/lint/package-lock.json:6903:6 - Unknown word (sshpk)
+/tmp/lint/package-lock.json:7011:6 - Unknown word (wrappy)
+/tmp/lint/package-lock.json:7040:6 - Unknown word (promzard)
+/tmp/lint/package-lock.json:7267:34 - Unknown word (isexe)
+/tmp/lint/package-lock.json:7275:34 - Unknown word (isstream)
+/tmp/lint/package-lock.json:7315:34 - Unknown word (jsonparse)
+/tmp/lint/package-lock.json:7344:34 - Unknown word (jsprim)
+/tmp/lint/package-lock.json:7356:6 - Unknown word (extsprintf)
+/tmp/lint/package-lock.json:7383:34 - Unknown word (libcipm)
+/tmp/lint/package-lock.json:7402:6 - Unknown word (pacote)
+/tmp/lint/package-lock.json:7408:34 - Unknown word (libnpm)
+/tmp/lint/package-lock.json:7419:6 - Unknown word (libnpmaccess)
+/tmp/lint/package-lock.json:7420:6 - Unknown word (libnpmconfig)
+/tmp/lint/package-lock.json:7421:6 - Unknown word (libnpmhook)
+/tmp/lint/package-lock.json:7422:6 - Unknown word (libnpmorg)
+/tmp/lint/package-lock.json:7423:6 - Unknown word (libnpmpublish)
+/tmp/lint/package-lock.json:7424:6 - Unknown word (libnpmsearch)
+/tmp/lint/package-lock.json:7425:6 - Unknown word (libnpmteam)
+/tmp/lint/package-lock.json:7432:6 - Unknown word (npmlog)
+/tmp/lint/package-lock.json:7433:6 - Unknown word (pacote)
+/tmp/lint/package-lock.json:7438:34 - Unknown word (libnpmaccess)
+/tmp/lint/package-lock.json:7452:34 - Unknown word (libnpmconfig)
+/tmp/lint/package-lock.json:7465:34 - Unknown word (libnpmconfig)
+/tmp/lint/package-lock.json:7533:34 - Unknown word (libnpmhook)
+/tmp/lint/package-lock.json:7547:34 - Unknown word (libnpmorg)
+/tmp/lint/package-lock.json:7561:34 - Unknown word (libnpmpublish)
+/tmp/lint/package-lock.json:7572:13 - Unknown word (clonedeep)
+/tmp/lint/package-lock.json:7577:6 - Unknown word (ssri)
+/tmp/lint/package-lock.json:7580:34 - Unknown word (libnpmsearch)
+/tmp/lint/package-lock.json:7593:34 - Unknown word (libnpmteam)
+/tmp/lint/package-lock.json:7607:34 - Unknown word (libnpx)
+/tmp/lint/package-lock.json:7651:42 - Unknown word (baseindexof)
+/tmp/lint/package-lock.json:7659:42 - Unknown word (baseuniq)
+/tmp/lint/package-lock.json:7667:14 - Unknown word (createset)
+/tmp/lint/package-lock.json:7671:42 - Unknown word (bindcallback)
+/tmp/lint/package-lock.json:7679:42 - Unknown word (cacheindexof)
+/tmp/lint/package-lock.json:7687:42 - Unknown word (createcache)
+/tmp/lint/package-lock.json:7695:14 - Unknown word (getnative)
+/tmp/lint/package-lock.json:7698:42 - Unknown word (createset)
+/tmp/lint/package-lock.json:7706:42 - Unknown word (getnative)
+/tmp/lint/package-lock.json:7722:41 - Unknown word (clonedeep)
+/tmp/lint/package-lock.json:7730:41 - Unknown word (restparam)
+/tmp/lint/package-lock.json:7792:6 - Unknown word (pify)
+/tmp/lint/package-lock.json:7806:6 - Unknown word (agentkeepalive)
+/tmp/lint/package-lock.json:7807:6 - Unknown word (cacache)
+/tmp/lint/package-lock.json:7874:34 - Unknown word (minizlib)
+/tmp/lint/package-lock.json:7885:34 - Unknown word (minizlib)
+/tmp/lint/package-lock.json:7912:6 - Unknown word (pumpify)
+/tmp/lint/package-lock.json:8011:6 - Unknown word (npmlog)
+/tmp/lint/package-lock.json:8034:6 - Unknown word (osenv)
+/tmp/lint/package-lock.json:8150:6 - Unknown word (osenv)
+/tmp/lint/package-lock.json:8155:38 - Unknown word (packlist)
+/tmp/lint/package-lock.json:8222:15 - Unknown word (patreon)
+/tmp/lint/package-lock.json:8313:41 - Unknown word (getownpropertydescriptors)
+/tmp/lint/package-lock.json:8345:17 - Unknown word (WTFPL)
+/tmp/lint/package-lock.json:8436:10 - Unknown word (packlist)
+/tmp/lint/package-lock.json:8442:6 - Unknown word (protoduck)
+/tmp/lint/package-lock.json:8533:17 - Unknown word (WTFPL)
+/tmp/lint/package-lock.json:8562:34 - Unknown word (pify)
+/tmp/lint/package-lock.json:8626:34 - Unknown word (promzard)
+/tmp/lint/package-lock.json:8645:34 - Unknown word (protoduck)
+/tmp/lint/package-lock.json:8653:6 - Unknown word (genfun)
+/tmp/lint/package-lock.json:8664:34 - Unknown word (pseudomap)
+/tmp/lint/package-lock.json:8692:34 - Unknown word (pumpify)
+/tmp/lint/package-lock.json:8705:34 - Unknown word (pumpify)
+/tmp/lint/package-lock.json:8725:34 - Unknown word (qrcode)
+/tmp/lint/package-lock.json:8732:6 - Unknown word (qrcode)
+/tmp/lint/package-lock.json:8888:6 - Unknown word (dezalgo)
+/tmp/lint/package-lock.json:8929:6 - Unknown word (caseless)
+/tmp/lint/package-lock.json:8937:6 - Unknown word (isstream)
+/tmp/lint/package-lock.json:9193:17 - Unknown word (WTFPL)
+/tmp/lint/package-lock.json:9300:34 - Unknown word (sshpk)
+/tmp/lint/package-lock.json:9311:6 - Unknown word (dashdash)
+/tmp/lint/package-lock.json:9313:6 - Unknown word (getpass)
+/tmp/lint/package-lock.json:9316:6 - Unknown word (tweetnacl)
+/tmp/lint/package-lock.json:9319:6 - Unknown word (sshpk)
+/tmp/lint/package-lock.json:9319:12 - Unknown word (conv)
+/tmp/lint/package-lock.json:9319:30 - Unknown word (conv)
+/tmp/lint/package-lock.json:9330:6 - Unknown word (tweetnacl)
+/tmp/lint/package-lock.json:9554:6 - Unknown word (minizlib)
+/tmp/lint/package-lock.json:9699:16 - Unknown word (Unlicense)
+/tmp/lint/package-lock.json:9870:13 - Unknown word (getownpropertydescriptors)
+/tmp/lint/package-lock.json:9904:6 - Unknown word (builtins)
+/tmp/lint/package-lock.json:9920:6 - Unknown word (extsprintf)
+/tmp/lint/package-lock.json:9923:34 - Unknown word (wcwidth)
+/tmp/lint/package-lock.json:10321:19 - Unknown word (processinfo)
+/tmp/lint/package-lock.json:10588:17 - Unknown word (onigasm)
+/tmp/lint/package-lock.json:10597:17 - Unknown word (onigasm)
+/tmp/lint/package-lock.json:10606:17 - Unknown word (onigasm)
+/tmp/lint/package-lock.json:10728:6 - Unknown word (hasha)
+/tmp/lint/package-lock.json:10729:13 - Unknown word (flattendeep)
+/tmp/lint/package-lock.json:10730:14 - Unknown word (zalgo)
+/tmp/lint/package-lock.json:10766:6 - Unknown word (callsites)
+/tmp/lint/package-lock.json:10827:17 - Unknown word (pathval)
+/tmp/lint/package-lock.json:10836:17 - Unknown word (picomatch)
+/tmp/lint/package-lock.json:11007:6 - Unknown word (fromentries)
+/tmp/lint/package-lock.json:11022:17 - Unknown word (pstree)
+/tmp/lint/package-lock.json:11022:24 - Unknown word (remy)
+/tmp/lint/package-lock.json:11071:15 - Unknown word (patreon)
+/tmp/lint/package-lock.json:11247:17 - Unknown word (readdirp)
+/tmp/lint/package-lock.json:11259:17 - Unknown word (rechoir)
+/tmp/lint/package-lock.json:11271:17 - Unknown word (redent)
+/tmp/lint/package-lock.json:11284:17 - Unknown word (redeyed)
+/tmp/lint/package-lock.json:11317:25 - Unknown word (zalgo)
+/tmp/lint/package-lock.json:11344:17 - Unknown word (requizzle)
+/tmp/lint/package-lock.json:11375:17 - Unknown word (responselike)
+/tmp/lint/package-lock.json:11393:17 - Unknown word (reusify)
+/tmp/lint/package-lock.json:11399:6 - Unknown word (iojs)
+/tmp/lint/package-lock.json:11471:6 - Unknown word (cosmiconfig)
+/tmp/lint/package-lock.json:11491:6 - Unknown word (signale)
+/tmp/lint/package-lock.json:11781:6 - Unknown word (rechoir)
+/tmp/lint/package-lock.json:11784:6 - Unknown word (shjs)
+/tmp/lint/package-lock.json:11784:18 - Unknown word (shjs)
+/tmp/lint/package-lock.json:11790:17 - Unknown word (shiki)
+/tmp/lint/package-lock.json:11796:6 - Unknown word (onigasm)
+/tmp/lint/package-lock.json:11806:17 - Unknown word (signale)
+/tmp/lint/package-lock.json:11820:17 - Unknown word (signale)
+/tmp/lint/package-lock.json:11967:17 - Unknown word (sprintf)
+/tmp/lint/package-lock.json:12006:34 - Unknown word (trimend)
+/tmp/lint/package-lock.json:12019:34 - Unknown word (trimstart)
+/tmp/lint/package-lock.json:12132:17 - Unknown word (taffydb)
+/tmp/lint/package-lock.json:12147:17 - Unknown word (tempy)
+/tmp/lint/package-lock.json:12166:17 - Unknown word (tempy)
+/tmp/lint/package-lock.json:12301:6 - Unknown word (nodetouch)
+/tmp/lint/package-lock.json:12301:23 - Unknown word (nodetouch)
+/tmp/lint/package-lock.json:12405:17 - Unknown word (typedoc)
+/tmp/lint/package-lock.json:12420:6 - Unknown word (shiki)
+/tmp/lint/package-lock.json:12421:6 - Unknown word (typedoc)
+/tmp/lint/package-lock.json:12492:6 - Unknown word (uglifyjs)
+/tmp/lint/package-lock.json:12492:22 - Unknown word (uglifyjs)
+/tmp/lint/package-lock.json:12498:17 - Unknown word (undefsafe)
+/tmp/lint/package-lock.json:12507:17 - Unknown word (undefsafe)
+/tmp/lint/package-lock.json:12516:17 - Unknown word (undefsafe)
+/tmp/lint/package-lock.json:12546:17 - Unknown word (universalify)
+/tmp/lint/package-lock.json:12780:17 - Unknown word (wordwrap)
+/tmp/lint/package-lock.json:12877:17 - Unknown word (xmlcreate)
+/tmp/lint/package-lock.json:12941:23 - Unknown word (unparser)
+/tmp/lint/package-lock.json:13041:6 - Unknown word (gensync)
+/tmp/lint/package-lock.json:13096:33 - Unknown word (arity)
+/tmp/lint/package-lock.json:13101:31 - Unknown word (arity)
+/tmp/lint/package-lock.json:13338:16 - Unknown word (scandir)
+/tmp/lint/package-lock.json:13360:18 - Unknown word (scandir)
+/tmp/lint/package-lock.json:13361:6 - Unknown word (fastq)
+/tmp/lint/package-lock.json:13409:13 - Unknown word (openapi)
+/tmp/lint/package-lock.json:13486:15 - Unknown word (openapi)
+/tmp/lint/package-lock.json:13586:6 - Unknown word (globby)
+/tmp/lint/package-lock.json:13632:6 - Unknown word (tempy)
+/tmp/lint/package-lock.json:13755:5 - Unknown word (sindresorhus)
+/tmp/lint/package-lock.json:13761:5 - Unknown word (szmarczak)
+/tmp/lint/package-lock.json:13770:5 - Unknown word (tootallnate)
+/tmp/lint/package-lock.json:13953:4 - Unknown word (anymatch)
+/tmp/lint/package-lock.json:13984:4 - Unknown word (argparse)
+/tmp/lint/package-lock.json:13990:6 - Unknown word (sprintf)
+/tmp/lint/package-lock.json:14011:4 - Unknown word (arrify)
+/tmp/lint/package-lock.json:14166:6 - Unknown word (keyv)
+/tmp/lint/package-lock.json:14169:6 - Unknown word (responselike)
+/tmp/lint/package-lock.json:14195:6 - Unknown word (hasha)
+/tmp/lint/package-lock.json:14211:4 - Unknown word (callsites)
+/tmp/lint/package-lock.json:14241:6 - Unknown word (redeyed)
+/tmp/lint/package-lock.json:14263:6 - Unknown word (pathval)
+/tmp/lint/package-lock.json:14301:6 - Unknown word (anymatch)
+/tmp/lint/package-lock.json:14303:6 - Unknown word (fsevents)
+/tmp/lint/package-lock.json:14308:6 - Unknown word (readdirp)
+/tmp/lint/package-lock.json:14420:4 - Unknown word (commondir)
+/tmp/lint/package-lock.json:14515:13 - Unknown word (ismatch)
+/tmp/lint/package-lock.json:14549:4 - Unknown word (cosmiconfig)
+/tmp/lint/package-lock.json:14820:9 - Unknown word (arrayish)
+/tmp/lint/package-lock.json:14841:23 - Unknown word (trimend)
+/tmp/lint/package-lock.json:14842:23 - Unknown word (trimstart)
+/tmp/lint/package-lock.json:14942:4 - Unknown word (fastq)
+/tmp/lint/package-lock.json:14948:6 - Unknown word (reusify)
+/tmp/lint/package-lock.json:14975:6 - Unknown word (commondir)
+/tmp/lint/package-lock.json:15027:4 - Unknown word (fromentries)
+/tmp/lint/package-lock.json:15042:6 - Unknown word (universalify)
+/tmp/lint/package-lock.json:15064:4 - Unknown word (gensync)
+/tmp/lint/package-lock.json:15201:7 - Unknown word (sindresorhus)
+/tmp/lint/package-lock.json:15202:7 - Unknown word (szmarczak)
+/tmp/lint/package-lock.json:15236:6 - Unknown word (wordwrap)
+/tmp/lint/package-lock.json:15318:7 - Unknown word (tootallnate)
+/tmp/lint/package-lock.json:15468:7 - Unknown word (arrayish)
+/tmp/lint/package-lock.json:15519:7 - Unknown word (extglob)
+/tmp/lint/package-lock.json:15537:9 - Unknown word (extglob)
+/tmp/lint/package-lock.json:15669:13 - Unknown word (escaperegexp)
+/tmp/lint/package-lock.json:15670:13 - Unknown word (isplainobject)
+/tmp/lint/package-lock.json:15671:13 - Unknown word (isstring)
+/tmp/lint/package-lock.json:15672:13 - Unknown word (uniqby)
+/tmp/lint/package-lock.json:15710:17 - Unknown word (processinfo)
+/tmp/lint/package-lock.json:15824:7 - Unknown word (xmlparser)
+/tmp/lint/package-lock.json:15830:6 - Unknown word (xmlcreate)
+/tmp/lint/package-lock.json:15843:9 - Unknown word (xmlparser)
+/tmp/lint/package-lock.json:15844:6 - Unknown word (klaw)
+/tmp/lint/package-lock.json:15849:6 - Unknown word (requizzle)
+/tmp/lint/package-lock.json:15851:6 - Unknown word (taffydb)
+/tmp/lint/package-lock.json:15928:4 - Unknown word (keyv)
+/tmp/lint/package-lock.json:15943:4 - Unknown word (klaw)
+/tmp/lint/package-lock.json:15967:4 - Unknown word (linkify)
+/tmp/lint/package-lock.json:16010:11 - Unknown word (escaperegexp)
+/tmp/lint/package-lock.json:16016:11 - Unknown word (flattendeep)
+/tmp/lint/package-lock.json:16022:11 - Unknown word (ismatch)
+/tmp/lint/package-lock.json:16028:11 - Unknown word (isplainobject)
+/tmp/lint/package-lock.json:16034:11 - Unknown word (isstring)
+/tmp/lint/package-lock.json:16040:11 - Unknown word (toarray)
+/tmp/lint/package-lock.json:16046:11 - Unknown word (uniqby)
+/tmp/lint/package-lock.json:16119:6 - Unknown word (linkify)
+/tmp/lint/package-lock.json:16120:6 - Unknown word (mdurl)
+/tmp/lint/package-lock.json:16202:4 - Unknown word (mdurl)
+/tmp/lint/package-lock.json:16221:6 - Unknown word (redent)
+/tmp/lint/package-lock.json:16338:6 - Unknown word (arrify)
+/tmp/lint/package-lock.json:16378:12 - Unknown word (unparser)
+/tmp/lint/package-lock.json:16437:13 - Unknown word (toarray)
+/tmp/lint/package-lock.json:16475:6 - Unknown word (pstree)
+/tmp/lint/package-lock.json:16475:13 - Unknown word (remy)
+/tmp/lint/package-lock.json:16535:6 - Unknown word (ansistyles)
+/tmp/lint/package-lock.json:16548:6 - Unknown word (columnify)
+/tmp/lint/package-lock.json:16575:6 - Unknown word (libcipm)
+/tmp/lint/package-lock.json:16576:6 - Unknown word (libnpm)
+/tmp/lint/package-lock.json:16582:6 - Unknown word (libnpx)
+/tmp/lint/package-lock.json:16585:14 - Unknown word (baseindexof)
+/tmp/lint/package-lock.json:16586:14 - Unknown word (baseuniq)
+/tmp/lint/package-lock.json:16587:14 - Unknown word (bindcallback)
+/tmp/lint/package-lock.json:16588:14 - Unknown word (cacheindexof)
+/tmp/lint/package-lock.json:16589:14 - Unknown word (createcache)
+/tmp/lint/package-lock.json:16592:13 - Unknown word (restparam)
+/tmp/lint/package-lock.json:16675:6 - Unknown word (agentkeepalive)
+/tmp/lint/package-lock.json:16803:6 - Unknown word (asynckit)
+/tmp/lint/package-lock.json:16898:6 - Unknown word (builtins)
+/tmp/lint/package-lock.json:16964:6 - Unknown word (caseless)
+/tmp/lint/package-lock.json:17145:8 - Unknown word (wcwidth)
+/tmp/lint/package-lock.json:17306:10 - Unknown word (pseudomap)
+/tmp/lint/package-lock.json:17333:6 - Unknown word (dashdash)
+/tmp/lint/package-lock.json:17926:6 - Unknown word (genfun)
+/tmp/lint/package-lock.json:17986:6 - Unknown word (getpass)
+/tmp/lint/package-lock.json:18168:8 - Unknown word (jsprim)
+/tmp/lint/package-lock.json:18275:8 - Unknown word (promzard)
+/tmp/lint/package-lock.json:18447:6 - Unknown word (isstream)
+/tmp/lint/package-lock.json:18569:8 - Unknown word (libnpmpublish)
+/tmp/lint/package-lock.json:18780:16 - Unknown word (createset)
+/tmp/lint/package-lock.json:19422:8 - Unknown word (protoduck)
+/tmp/lint/package-lock.json:21262:13 - Unknown word (flattendeep)
+/tmp/lint/package-lock.json:21263:14 - Unknown word (zalgo)
+/tmp/lint/package-lock.json:21292:6 - Unknown word (callsites)
+/tmp/lint/package-lock.json:21335:4 - Unknown word (pathval)
+/tmp/lint/package-lock.json:21471:6 - Unknown word (fromentries)
+/tmp/lint/package-lock.json:21480:4 - Unknown word (pstree)
+/tmp/lint/package-lock.json:21480:11 - Unknown word (remy)
+/tmp/lint/package-lock.json:21648:4 - Unknown word (readdirp)
+/tmp/lint/package-lock.json:21657:4 - Unknown word (rechoir)
+/tmp/lint/package-lock.json:21666:4 - Unknown word (redent)
+/tmp/lint/package-lock.json:21676:4 - Unknown word (redeyed)
+/tmp/lint/package-lock.json:21703:12 - Unknown word (zalgo)
+/tmp/lint/package-lock.json:21724:4 - Unknown word (requizzle)
+/tmp/lint/package-lock.json:21749:4 - Unknown word (responselike)
+/tmp/lint/package-lock.json:21764:4 - Unknown word (reusify)
+/tmp/lint/package-lock.json:21835:6 - Unknown word (signale)
+/tmp/lint/package-lock.json:22040:6 - Unknown word (rechoir)
+/tmp/lint/package-lock.json:22043:4 - Unknown word (shiki)
+/tmp/lint/package-lock.json:22202:4 - Unknown word (sprintf)
+/tmp/lint/package-lock.json:22238:21 - Unknown word (trimend)
+/tmp/lint/package-lock.json:22248:21 - Unknown word (trimstart)
+/tmp/lint/package-lock.json:22330:4 - Unknown word (taffydb)
+/tmp/lint/package-lock.json:22548:6 - Unknown word (shiki)
+/tmp/lint/package-lock.json:22826:4 - Unknown word (wordwrap)
+/tmp/lint/package-lock.json:22907:4 - Unknown word (xmlcreate)
+/tmp/lint/package-lock.json:23005:10 - Unknown word (unparser)
+/tmp/lint/package.json:13:11 - Unknown word (typedoc)
+/tmp/lint/package.json:13:27 - Unknown word (typedoc)
+/tmp/lint/package.json:39:4 - Unknown word (typedoc)
+/tmp/lint/package.json:40:4 - Unknown word (typedoc)
+/tmp/lint/src/tools/tail.ts:14:21 - Unknown word (Vivier)
+/tmp/lint/src/tools/tail.ts:14:29 - Unknown word (lanathlor)
+/tmp/lint/src/tools/tail.ts:26:21 - Unknown word (Vivier)
+/tmp/lint/src/tools/tail.ts:26:29 - Unknown word (lanathlor)
+/tmp/lint/test/curry.test.ts:10:7 - Unknown word (addcm)
+/tmp/lint/test/curry.test.ts:24:10 - Unknown word (addcm)
+/tmp/lint/test/curry.test.ts:27:10 - Unknown word (addcm)
+/tmp/lint/test/curry.test.ts:30:10 - Unknown word (addcm)
+/tmp/lint/test/flip.test.ts:4:7 - Unknown word (addstr)
+/tmp/lint/test/flip.test.ts:6:7 - Unknown word (addflip)
+/tmp/lint/test/flip.test.ts:6:22 - Unknown word (addstr)
+/tmp/lint/test/flip.test.ts:11:10 - Unknown word (addstr)
+/tmp/lint/test/flip.test.ts:12:10 - Unknown word (addflip)
+/tmp/lint/test/init.test.ts:17:9 - Unknown word (inited)
+/tmp/lint/test/init.test.ts:19:10 - Unknown word (inited)
+/tmp/lint/test/init.test.ts:22:3 - Unknown word (inited)
+/tmp/lint/test/init.test.ts:24:10 - Unknown word (inited)
+/tmp/lint/typings/globals/mocha/index.d.ts:31:13 - Unknown word (xdescribe)
+/tmp/lint/typings/globals/mocha/index.d.ts:205:22 - Unknown word (Nyan)
+/tmp/lint/typings/modules/chai/index.d.ts:6:33 - Unknown word (Schoor)
+/tmp/lint/typings/modules/chai/index.d.ts:74:28 - Unknown word (atlst)
+/tmp/lint/typings/modules/chai/index.d.ts:75:27 - Unknown word (atmst)
+/tmp/lint/typings/modules/chai/index.d.ts:218:3 - Unknown word (eqls)
+/tmp/lint/typings/modules/chai/index.d.ts:451:6 - Unknown word (Chainable)
+/tmp/lint/typings/modules/chai/index.d.ts:521:33 - Unknown word (Schoor)
+/tmp/lint/typings/modules/chai/index.d.ts:524:25 - Unknown word (Wistrand)
+CSpell: Files checked: 99, Issues found: 820 in 24 files
+
+
+You can skip this misspellings by defining the following .cspell.json file at the root of your repository
+Of course, please correct real typos before :)
+
+{
+    "version": "0.1",
+    "language": "en",
+    "ignorePaths": [
+        "**/node_modules/**",
+        "**/vscode-extension/**",
+        "**/.git/**",
+        ".vscode",
+        "package-lock.json",
+        "report"
+    ],
+    "words": [
+        "AAGO",
+        "AAPY",
+        "CAAI",
+        "CAAK",
+        "CAAW",
+        "CAAY",
+        "Chainable",
+        "Dependecies",
+        "EAAK",
+        "EAAQ",
+        "EAAS",
+        "EAAW",
+        "EAAY",
+        "GAAG",
+        "GAAO",
+        "GAAW",
+        "IAAI",
+        "IAAW",
+        "IAAY",
+        "KAAK",
+        "KACD",
+        "MAAM",
+        "Nyan",
+        "OAAO",
+        "QAAA",
+        "QAAs",
+        "QACN",
+        "SAAS",
+        "Schoor",
+        "Unlicense",
+        "VCVC",
+        "Vivier",
+        "WASM",
+        "WTFPL",
+        "Wistrand",
+        "YACL",
+        "addcm",
+        "addflip",
+        "addstr",
+        "aeiou",
+        "aeiouwxy",
+        "aeiouy",
+        "aeiouylsz",
+        "agentkeepalive",
+        "alism",
+        "aliti",
+        "alize",
+        "alli",
+        "ance",
+        "anci",
+        "ansicolors",
+        "ansistyles",
+        "anymatch",
+        "aproba",
+        "archi",
+        "archy",
+        "argparse",
+        "arity",
+        "arrayish",
+        "arrify",
+        "asynckit",
+        "ation",
+        "ational",
+        "ative",
+        "atlst",
+        "atmst",
+        "ator",
+        "baseindexof",
+        "baseuniq",
+        "biliti",
+        "bindcallback",
+        "builtins",
+        "cacache",
+        "cacheable",
+        "cacheindexof",
+        "callmaybe",
+        "callsites",
+        "camelcase",
+        "caseless",
+        "chownr",
+        "cliui",
+        "clonedeep",
+        "columnify",
+        "commondir",
+        "cond",
+        "conv",
+        "cosmiconfig",
+        "createcache",
+        "createset",
+        "customise",
+        "customised",
+        "dashdash",
+        "decamelize",
+        "dezalgo",
+        "duplexify",
+        "ement",
+        "ence",
+        "enci",
+        "entli",
+        "entrypoint",
+        "eqls",
+        "escaperegexp",
+        "esparse",
+        "esvalidate",
+        "execa",
+        "extglob",
+        "extsprintf",
+        "fastq",
+        "figgy",
+        "firstch",
+        "flattendeep",
+        "fromentries",
+        "fsevents",
+        "fullwidth",
+        "funtion",
+        "genfun",
+        "gensync",
+        "getnative",
+        "getownpropertydescriptors",
+        "getpass",
+        "globby",
+        "hasha",
+        "ible",
+        "ical",
+        "icate",
+        "iciti",
+        "iferr",
+        "imurmurhash",
+        "inited",
+        "iojs",
+        "isarray",
+        "isexe",
+        "isjust",
+        "ismatch",
+        "isnothing",
+        "isplainobject",
+        "isstream",
+        "isstring",
+        "iveness",
+        "iviti",
+        "ization",
+        "izer",
+        "jsbn",
+        "jsesc",
+        "jsonparse",
+        "jsprim",
+        "keyv",
+        "klaw",
+        "lanath",
+        "lanathlor",
+        "libcipm",
+        "libnpm",
+        "libnpmaccess",
+        "libnpmconfig",
+        "libnpmhook",
+        "libnpmorg",
+        "libnpmpublish",
+        "libnpmsearch",
+        "libnpmteam",
+        "libnpx",
+        "linkify",
+        "logi",
+        "mdurl",
+        "ment",
+        "minimisation",
+        "minimised",
+        "minipass",
+        "minizlib",
+        "mkdir",
+        "mocka",
+        "modifie",
+        "mooyoul",
+        "napi",
+        "nextick",
+        "nodelib",
+        "nodetouch",
+        "normalisation",
+        "normalise",
+        "npmlog",
+        "octokit",
+        "onigasm",
+        "openapi",
+        "opencollective",
+        "optimised",
+        "osenv",
+        "ousli",
+        "ousness",
+        "packlist",
+        "pacote",
+        "pathval",
+        "patreon",
+        "picomatch",
+        "pify",
+        "processinfo",
+        "promzard",
+        "protoduck",
+        "pseudomap",
+        "pstree",
+        "pumpify",
+        "qrcode",
+        "readdirp",
+        "rechoir",
+        "redent",
+        "redeyed",
+        "remy",
+        "requizzle",
+        "responselike",
+        "restparam",
+        "reusify",
+        "scandir",
+        "searchfield",
+        "serialisation",
+        "serialised",
+        "serialising",
+        "shiki",
+        "shjs",
+        "signale",
+        "sindresorhus",
+        "spdx",
+        "sprintf",
+        "sshpk",
+        "ssri",
+        "stylesheet",
+        "supressed",
+        "szmarczak",
+        "taffydb",
+        "tempy",
+        "tion",
+        "tional",
+        "toarray",
+        "tokenising",
+        "tootallnate",
+        "trimend",
+        "trimstart",
+        "trottle",
+        "tslinting",
+        "tweetnacl",
+        "typedoc",
+        "uglifyjs",
+        "undefsafe",
+        "uniqby",
+        "universalify",
+        "unparser",
+        "unrecognised",
+        "unshift",
+        "upsert",
+        "wcwidth",
+        "wordwrap",
+        "wrappy",
+        "xdescribe",
+        "xmlcreate",
+        "xmlparser",
+        "yallist",
+        "zalgo"
+    ]
+}
+
+
+You can also copy-paste report/.cspell.json at the root of your repository

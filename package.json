@@ -7,17 +7,18 @@
 		"start": "npm run build && node dist/src/index.js",
 		"dev": "npm run build && nodemon",
 		"test": "mocha -r ts-node/register test/**/*.ts",
+		"cov": "nyc npm run test",
 		"build": "npm run clean && tsc",
 		"clean": "rimraf ./dist",
-		"doc": "jsdoc * -d doc"
+		"doc": "typedoc -plugin typedoc-plugin-param-names ./src/* --out doc"
 	},
 	"keywords": [
 		"template"
 	],
 	"author": "BHC-IT",
 	"license": "MIT",
-	"dependencies": {},
 	"devDependencies": {
+		"@istanbuljs/nyc-config-typescript": "^1.0.1",
 		"@semantic-release/changelog": "^5.0.1",
 		"@semantic-release/commit-analyzer": "^8.0.1",
 		"@semantic-release/git": "^9.0.0",
@@ -31,9 +32,12 @@
 		"jsdoc": "^3.6.4",
 		"mocha": "^7.1.2",
 		"nodemon": "^2.0.2",
+		"nyc": "^15.1.0",
 		"rimraf": "^3.0.2",
 		"semantic-release": "^17.1.1",
 		"ts-node": "^9.1.1",
+		"typedoc": "^0.20.24",
+		"typedoc-plugin-param-names": "^2.0.0",
 		"typescript": "^4.0.0"
 	}
 }

@@ -1,0 +1,10 @@
+Results of misspell linter (version 0.3.4)
+See documentation on https://nvuillam.github.io/mega-linter/descriptors/spell_misspell/
+-----------------------------------------------
+
+❌ [ERROR] for workspace /tmp/lint
+Linter raw log:
+/tmp/lint/README.md:24:54: "funtion" is a misspelling of "function"
+/tmp/lint/doc/index.html:83:626: "funtion" is a misspelling of "function"
+/tmp/lint/doc/assets/js/main.js:161:1238: "supressed" is a misspelling of "suppressed"
+

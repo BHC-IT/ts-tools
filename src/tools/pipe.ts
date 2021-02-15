@@ -1,1 +1,1 @@
-export default (...fns : any[]) => fns.reduce((f, g) => (...args : any[]) => g(f(...args)))
+export default (...fns : Function[]) => fns.reduce((f, g) => (...args : any[]) => g(f(...args)))

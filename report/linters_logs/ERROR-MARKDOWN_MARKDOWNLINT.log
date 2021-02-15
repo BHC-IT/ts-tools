@@ -1,0 +1,13 @@
+Results of markdownlint linter (version 0.26.0)
+See documentation on https://nvuillam.github.io/mega-linter/descriptors/markdown_markdownlint/
+-----------------------------------------------
+
+❌ [ERROR] for workspace /tmp/lint
+Linter raw log:
+/tmp/lint/README.md:3 MD041/first-line-heading/first-line-h1 First line in file should be a top level heading [Context: "[![Actions Status](https://git..."]
+/tmp/lint/README.md:7 MD040/fenced-code-language Fenced code blocks should have a language specified [Context: "```"]
+/tmp/lint/README.md:71:1 MD010/no-hard-tabs Hard tabs [Column: 1]
+/tmp/lint/README.md:71 MD046/code-block-style Code block style [Expected: fenced; Actual: indented]
+/tmp/lint/README.md:73:1 MD010/no-hard-tabs Hard tabs [Column: 1]
+/tmp/lint/README.md:75:1 MD010/no-hard-tabs Hard tabs [Column: 1]
+

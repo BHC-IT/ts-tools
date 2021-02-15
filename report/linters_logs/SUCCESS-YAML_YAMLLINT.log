@@ -1,0 +1,11 @@
+Results of yamllint linter (version 1.26.0)
+See documentation on https://nvuillam.github.io/mega-linter/descriptors/yaml_yamllint/
+-----------------------------------------------
+
+✅ [SUCCESS] .github/labeler.yml
+✅ [SUCCESS] .github/workflows/coverage.yaml
+✅ [SUCCESS] .github/workflows/labeler.yml
+✅ [SUCCESS] .github/workflows/nodejs.yml
+✅ [SUCCESS] .github/workflows/semVerRelease.yml
+✅ [SUCCESS] .github/workflows/test.yml
+✅ [SUCCESS] .github/workflows/tslint.yml

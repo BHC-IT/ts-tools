@@ -1,0 +1,21 @@
+name: tslint
+
+on:
+  push:
+    branches: [ dev ]
+  pull_request:
+    branches: [ master, dev ]
+
+jobs:
+  tslinting:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v1
+      - name: Prepare
+        run: npm i
+      - name: Lint
+        uses: mooyoul/tslint-actions@v1.1.1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          pattern: '*.ts'

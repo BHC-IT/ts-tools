@@ -6,7 +6,7 @@ import head, { Head } from './tools/head';
 import init from './tools/init';
 import last from './tools/last';
 import { just, nothing, isJust, isNothing, callMaybe } from './tools/maybe';
-import tail, { Tail } from './tools/tail';
+import { tail, Tail } from './tools/tail';
 import take from './tools/take';
 
 import type { Maybe, Just, Nothing } from './types/Maybe';
