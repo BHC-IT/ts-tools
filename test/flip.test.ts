@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import flip from '../src/tools/flip';
+import { flip } from '../src/tools/flip';
 
 const addstr = (str1 : string, str2 : string) => str1 + str2;
 

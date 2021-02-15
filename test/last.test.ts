@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import last from '../src/tools/last';
+import { last } from '../src/tools/last';
 
 describe('test last', function() {
 	it('last([1, 2, 3]) should return 1', function() {

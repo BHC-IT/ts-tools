@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import compose from '../src/tools/compose';
+import { compose } from '../src/tools/compose';
 
 const result = compose((x : number) => x + 1, (x : number) => x * 2, (x : number) => x - 1);
 

@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import drop from '../src/tools/drop';
+import { drop } from '../src/tools/drop';
 
 
 describe('test drop', function() {

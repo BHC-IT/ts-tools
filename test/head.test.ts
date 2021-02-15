@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import head from '../src/tools/head';
+import { head } from '../src/tools/head';
 
 describe('test head', function() {
 	it('head([1, 2, 3]) should return 1', function() {

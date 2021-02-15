@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import take from '../src/tools/take';
+import { take } from '../src/tools/take';
 
 
 describe('test take', function() {

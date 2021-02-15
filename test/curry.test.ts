@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import curry from '../src/tools/curry';
+import { curry } from '../src/tools/curry';
 
 const add = (x1 : number, x2 : number) => x1 + x2;
 
