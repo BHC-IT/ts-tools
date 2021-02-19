@@ -2,15 +2,17 @@
 	"name": "@bhc/ts-tools",
 	"version": "1.2.0",
 	"description": "",
-	"main": "src/index.ts",
+	"main": "dist/index.js",
+	"type": "dist/index.d.ts",
 	"scripts": {
-		"start": "npm run build && node dist/src/index.js",
+		"start": "npm run build && node dist/index.js",
 		"dev": "npm run build && nodemon",
 		"test": "mocha -r ts-node/register test/**/*.ts",
 		"cov": "nyc npm run test",
 		"build": "npm run clean && tsc",
 		"clean": "rimraf ./dist",
-		"doc": "typedoc -plugin typedoc-plugin-param-names ./src/* --out doc"
+		"doc": "typedoc -plugin typedoc-plugin-param-names ./src/* --out doc",
+		"prepublish": "tsc"
 	},
 	"keywords": [
 		"template"
