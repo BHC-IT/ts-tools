@@ -24,9 +24,10 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 12
+      - name: Install
+        run: npm i
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npm i
         run: npx semantic-release
