@@ -4,21 +4,24 @@
 	"description": "",
 	"main": "dist/index.js",
 	"type": "dist/index.d.ts",
-	"scripts": {
-		"start": "npm run build && node dist/index.js",
-		"dev": "npm run build && nodemon",
-		"test": "mocha -r ts-node/register test/**/*.ts",
-		"cov": "nyc npm run test",
-		"build": "npm run clean && tsc",
-		"clean": "rimraf ./dist",
-		"doc": "typedoc -plugin typedoc-plugin-param-names ./src/* --out doc",
-		"prepublish": "tsc"
-	},
 	"keywords": [
 		"template"
 	],
 	"author": "BHC-IT",
 	"license": "MIT",
+	"private": false,
+	"scripts": {
+		"start": "npm run build && node dist/index.js",
+		"dev": "npm run build && nodemon",
+		"test": "mocha -r ts-node/register test/**/*.ts",
+		"cov": "nyc npm run test",
+		"cov:html": "nyc --reporter=lcov --reporter=text-summary npm run test",
+		"build": "npm run clean && tsc",
+		"clean": "rimraf ./dist",
+		"doc": "typedoc -plugin typedoc-plugin-param-names --excludePrivate --excludeInternal ./src/* --out doc",
+		"doc:internal": "typedoc -plugin typedoc-plugin-param-names --excludeInternal false ./src/* --out internal",
+		"prepublish": "tsc"
+	},
 	"devDependencies": {
 		"@istanbuljs/nyc-config-typescript": "^1.0.1",
 		"@semantic-release/changelog": "^5.0.1",

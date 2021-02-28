@@ -6,8 +6,10 @@
 		"**/doc/*",
 		"**/dist/*",
 		"**/typings/*",
-		"**/src/types/*",
-		"**/src/index.ts"
+		"**/src/Types/*",
+		"**/coverage/*",
+		"**/src/index.ts",
+		"**/.git/*"
 	],
 	"check-coverage": true,
 	"per-file": true,

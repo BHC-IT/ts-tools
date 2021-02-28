@@ -6,6 +6,7 @@ import { head, Head } from './tools/head';
 import { init } from './tools/init';
 import { last } from './tools/last';
 import { just, nothing, isJust, isNothing, callMaybe } from './tools/maybe';
+import { Observable } from './tools/observable';
 import { pipe } from './tools/pipe';
 import { tail, Tail } from './tools/tail';
 import { take } from './tools/take';
@@ -31,6 +32,7 @@ export {
 	head,
 	last,
 	just, nothing, isJust, isNothing, callMaybe,
+	Observable,
 	pipe,
 	tail,
 	take,
