@@ -14,5 +14,4 @@
 	*
 	* @author Valentin Vivier <lanathlor>
 */
-
 export const flip = <T>(fn: (...args: any[]) => T) : typeof fn => (...args: any[]): T => fn(...args.reverse() as any);

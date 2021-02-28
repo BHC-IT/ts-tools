@@ -1,0 +1,25 @@
+name: SemVer release
+on:
+  workflow_run:
+    workflows: ["Node.js CI Tests"]
+    branches: [ master ]
+    types:
+      - completed
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2.3.1
+
+      - name: Install and Doc
+        run: |
+          npm i
+          npm run doc
+
+      - name: Deploy Doc
+        uses: JamesIves/github-pages-deploy-action@4.0.0
+        with:
+          branch: doc
+          folder: doc
