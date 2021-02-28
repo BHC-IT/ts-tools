@@ -1,4 +1,4 @@
-name: SemVer release
+name: Doc release
 on:
   workflow_run:
     workflows: ["Node.js CI Tests"]
