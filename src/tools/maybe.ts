@@ -1,5 +1,23 @@
 /**
 	* This is the documentation for maybe.ts
+	* usage exemple :
+	* ```typescript
+	* async function readDB() : Promise<Maybe<object>> {
+	*	try {
+	*		const response = await fetchSomethingInDB();
+	*		return just(response);
+	*	} catch (e : any) {
+	*		return nothing;
+	*	}
+	* }
+	*
+	* async function main() : void {
+	*	const maybeResponse = await readDB();
+	*
+	*	callMaybe((response : object) => ...).when.isJust(maybeResponse); // Callback in calMaybe will be called only if maybeResponse is a Just<object>.
+	* }
+	*
+	* ```
 	* @packageDocumentation
 	* @module maybe
 	*
