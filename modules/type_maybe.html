@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>types/Maybe | @bhc/ts-tools</title>
+	<title>type/Maybe | @bhc/ts-tools</title>
 	<meta name="description" content="Documentation for @bhc/ts-tools">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -55,16 +55,41 @@
 					<a href="../modules.html">@bhc/ts-tools</a>
 				</li>
 				<li>
-					<a href="types_maybe.html">types/Maybe</a>
+					<a href="type_maybe.html">type/Maybe</a>
 				</li>
 			</ul>
-			<h1>Module types/Maybe</h1>
+			<h1>Module type/Maybe</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>This is the documentation for Maybe.ts</p>
+					</div>
+					<p>usage exemple :</p>
+					<pre><code class="language-typescript"><span style="color: #0000FF">async</span><span style="color: #000000"> </span><span style="color: #0000FF">function</span><span style="color: #000000"> </span><span style="color: #795E26">readDB</span><span style="color: #000000">() : </span><span style="color: #267F99">Promise</span><span style="color: #000000">&lt;</span><span style="color: #267F99">Maybe</span><span style="color: #000000">&lt;</span><span style="color: #267F99">object</span><span style="color: #000000">&gt;&gt; {</span>
+<span style="color: #000000">    </span><span style="color: #AF00DB">try</span><span style="color: #000000"> {</span>
+<span style="color: #000000">        </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">response</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #795E26">fetchSomethingInDB</span><span style="color: #000000">();</span>
+<span style="color: #000000">        </span><span style="color: #AF00DB">return</span><span style="color: #000000"> </span><span style="color: #795E26">just</span><span style="color: #000000">(</span><span style="color: #001080">response</span><span style="color: #000000">);</span>
+<span style="color: #000000">    } </span><span style="color: #AF00DB">catch</span><span style="color: #000000"> (</span><span style="color: #001080">e</span><span style="color: #000000"> : </span><span style="color: #267F99">any</span><span style="color: #000000">) {</span>
+<span style="color: #000000">        </span><span style="color: #AF00DB">return</span><span style="color: #000000"> </span><span style="color: #001080">nothing</span><span style="color: #000000">;</span>
+<span style="color: #000000">    }</span>
+<span style="color: #000000">}</span>
+
+<span style="color: #0000FF">async</span><span style="color: #000000"> </span><span style="color: #0000FF">function</span><span style="color: #000000"> </span><span style="color: #795E26">main</span><span style="color: #000000">() : </span><span style="color: #267F99">void</span><span style="color: #000000"> {</span>
+<span style="color: #000000">    </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">maybeResponse</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #795E26">readDB</span><span style="color: #000000">();</span>
+
+<span style="color: #000000">    </span><span style="color: #795E26">callMaybe</span><span style="color: #000000">((</span><span style="color: #001080">response</span><span style="color: #000000"> : </span><span style="color: #267F99">object</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> ...).</span><span style="color: #001080">when</span><span style="color: #000000">.</span><span style="color: #795E26">isJust</span><span style="color: #000000">(</span><span style="color: #001080">maybeResponse</span><span style="color: #000000">); </span><span style="color: #008000">// Callback in calMaybe will be called only if maybeResponse is a Just&lt;object&gt;.</span>
+<span style="color: #000000">}</span>
+
+</code></pre>
+					<p>v    * @packageDocumentation</p>
+				</div>
+			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
@@ -72,14 +97,14 @@
 						<section class="tsd-index-section ">
 							<h3>Interfaces</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter"><a href="../interfaces/types_maybe.just.html" class="tsd-kind-icon">Just</a></li>
-								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/types_maybe.nothing.html" class="tsd-kind-icon">Nothing</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter"><a href="../interfaces/type_maybe.just.html" class="tsd-kind-icon">Just</a></li>
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/type_maybe.nothing.html" class="tsd-kind-icon">Nothing</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Type aliases</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-type-alias tsd-parent-kind-module tsd-has-type-parameter"><a href="types_maybe.html#maybe" class="tsd-kind-icon">Maybe</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-module tsd-has-type-parameter"><a href="type_maybe.html#maybe" class="tsd-kind-icon">Maybe</a></li>
 							</ul>
 						</section>
 					</div>
@@ -90,17 +115,32 @@
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module tsd-has-type-parameter">
 					<a name="maybe" class="tsd-anchor"></a>
 					<h3>Maybe</h3>
-					<div class="tsd-signature tsd-kind-icon">Maybe&lt;T&gt;<span class="tsd-signature-symbol">:</span> <a href="../interfaces/types_maybe.just.html" class="tsd-signature-type" data-tsd-kind="Interface">Just</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/types_maybe.nothing.html" class="tsd-signature-type" data-tsd-kind="Interface">Nothing</a></div>
+					<div class="tsd-signature tsd-kind-icon">Maybe&lt;T&gt;<span class="tsd-signature-symbol">:</span> <a href="../interfaces/type_maybe.just.html" class="tsd-signature-type" data-tsd-kind="Interface">Just</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/type_maybe.nothing.html" class="tsd-signature-type" data-tsd-kind="Interface">Nothing</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/BHC-IT/ts-tools/blob/6dec3ae/src/types/Maybe.ts#L10">types/Maybe.ts:10</a></li>
-							<li>Defined in <a href="https://github.com/BHC-IT/ts-tools/blob/6dec3ae/src/index.ts#L22">index.ts:22</a></li>
+							<li>Defined in <a href="https://github.com/BHC-IT/ts-tools/blob/8657b34/src/types/Maybe.ts#L75">types/Maybe.ts:75</a></li>
+							<li>Defined in <a href="https://github.com/BHC-IT/ts-tools/blob/8657b34/src/index.ts#L22">index.ts:22</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Hold a just value or nothing. used with <a href="maybe.html">maybe</a>.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>author</dt>
+							<dd><p>Valentin Vivier <lanathlor></p>
+							</dd>
+						</dl>
+					</div>
 					<h4 class="tsd-type-parameters-title">Type parameters</h4>
 					<ul class="tsd-type-parameters">
 						<li>
 							<h4>T</h4>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Type of value to hold if just.</p>
+								</div>
+							</div>
 						</li>
 					</ul>
 				</section>
@@ -152,20 +192,20 @@
 						<a href="take.html">take</a>
 					</li>
 					<li class="current tsd-kind-module">
-						<a href="types_maybe.html">types/<wbr>Maybe</a>
+						<a href="type_maybe.html">type/<wbr>Maybe</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="../interfaces/types_maybe.just.html" class="tsd-kind-icon">Just</a>
+						<a href="../interfaces/type_maybe.just.html" class="tsd-kind-icon">Just</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="../interfaces/types_maybe.nothing.html" class="tsd-kind-icon">Nothing</a>
+						<a href="../interfaces/type_maybe.nothing.html" class="tsd-kind-icon">Nothing</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="types_maybe.html#maybe" class="tsd-kind-icon">Maybe</a>
+						<a href="type_maybe.html#maybe" class="tsd-kind-icon">Maybe</a>
 					</li>
 				</ul>
 			</nav>

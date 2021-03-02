@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Nothing | @bhc/ts-tools</title>
+	<title>Just | @bhc/ts-tools</title>
 	<meta name="description" content="Documentation for @bhc/ts-tools">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -55,52 +55,51 @@
 					<a href="../modules.html">@bhc/ts-tools</a>
 				</li>
 				<li>
-					<a href="../modules/types_maybe.html">types/Maybe</a>
+					<a href="../modules/type_maybe.html">type/Maybe</a>
 				</li>
 				<li>
-					<a href="types_maybe.nothing.html">Nothing</a>
+					<a href="type_maybe.just.html">Just</a>
 				</li>
 			</ul>
-			<h1>Interface Nothing</h1>
+			<h1>Interface Just&lt;T&gt;</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>A just value to be hold within a Maybe.</p>
+					</div>
+					<dl class="tsd-comment-tags">
+						<dt>author</dt>
+						<dd><p>Valentin Vivier <lanathlor></p>
+						</dd>
+					</dl>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-type-parameters">
+				<h3>Type parameters</h3>
+				<ul class="tsd-type-parameters">
+					<li>
+						<h4>T</h4>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Type of value to hold.</p>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">Nothing</span>
+						<span class="target">Just</span>
 					</li>
 				</ul>
-			</section>
-			<section class="tsd-panel-group tsd-index-group">
-				<h2>Index</h2>
-				<section class="tsd-panel tsd-index-panel">
-					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
-							<h3>Properties</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="types_maybe.nothing.html#_tag" class="tsd-kind-icon">_tag</a></li>
-							</ul>
-						</section>
-					</div>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="_tag" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> _tag</h3>
-					<div class="tsd-signature tsd-kind-icon">_tag<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">&quot;nothing&quot;</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/BHC-IT/ts-tools/blob/6dec3ae/src/types/Maybe.ts#L2">types/Maybe.ts:2</a></li>
-						</ul>
-					</aside>
-				</section>
 			</section>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -149,29 +148,24 @@
 						<a href="../modules/take.html">take</a>
 					</li>
 					<li class="current tsd-kind-module">
-						<a href="../modules/types_maybe.html">types/<wbr>Maybe</a>
+						<a href="../modules/type_maybe.html">type/<wbr>Maybe</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="types_maybe.just.html" class="tsd-kind-icon">Just</a>
-					</li>
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface tsd-parent-kind-module">
-						<a href="types_maybe.nothing.html" class="tsd-kind-icon">Nothing</a>
-						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="types_maybe.nothing.html#_tag" class="tsd-kind-icon">_tag</a>
-							</li>
-						</ul>
+					<li class="current tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="type_maybe.just.html" class="tsd-kind-icon">Just</a>
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="type_maybe.nothing.html" class="tsd-kind-icon">Nothing</a>
+					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="../modules/types_maybe.html#maybe" class="tsd-kind-icon">Maybe</a>
+						<a href="../modules/type_maybe.html#maybe" class="tsd-kind-icon">Maybe</a>
 					</li>
 				</ul>
 			</nav>
@@ -191,7 +185,6 @@
 			<ul class="tsd-legend">
 				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
 				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
