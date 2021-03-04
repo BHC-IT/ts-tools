@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/BHC-IT/ts-tools/compare/v1.3.3...v1.4.0) (2021-03-04)
+
+
+### Features
+
+* added observe function ([60cc83c](https://github.com/BHC-IT/ts-tools/commit/60cc83c009953c649c47df9a10372c49222ff55c))
+
 ## [1.3.3](https://github.com/BHC-IT/ts-tools/compare/v1.3.2...v1.3.3) (2021-03-04)
 
 
