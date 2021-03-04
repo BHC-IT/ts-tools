@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>observable | @bhc/ts-tools</title>
+	<title>tobe | @bhc/ts-tools</title>
 	<meta name="description" content="Documentation for @bhc/ts-tools">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -55,10 +55,10 @@
 					<a href="../modules.html">@bhc/ts-tools</a>
 				</li>
 				<li>
-					<a href="observable.html">observable</a>
+					<a href="tobe.html">tobe</a>
 				</li>
 			</ul>
-			<h1>Module observable</h1>
+			<h1>Module tobe</h1>
 		</div>
 	</div>
 </header>
@@ -68,24 +68,23 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>This is the documentation for observable.ts</p>
+						<p>This is the documentation for tobe.ts</p>
 					</div>
-					<pre><code class="language-typescript"><span style="color: #000000">    </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">observable</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">Observable</span><span style="color: #000000">(</span><span style="color: #098658">1</span><span style="color: #000000">); </span><span style="color: #008000">// create the observable on a number. Inital value set to 1.</span>
+					<pre><code class="language-typescript"><span style="color: #000000">    </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">observable</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">Observable</span><span style="color: #000000">(</span><span style="color: #098658">0</span><span style="color: #000000">);</span>
 
-<span style="color: #000000">    </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">unsub</span><span style="color: #000000"> = </span><span style="color: #001080">observable</span><span style="color: #000000">.</span><span style="color: #795E26">listen</span><span style="color: #000000">((</span><span style="color: #001080">value</span><span style="color: #000000"> : </span><span style="color: #267F99">number</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> { </span><span style="color: #008000">// add a listener to be called when observed value is changed (observable.set() is called).</span>
+<span style="color: #000000">    (</span><span style="color: #0000FF">async</span><span style="color: #000000"> () </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
 
-<span style="color: #000000">        </span><span style="color: #008000">// value is equel to the new value of the observable. Here value === 2.</span>
-<span style="color: #000000">        </span><span style="color: #008000">// code</span>
+<span style="color: #000000">        </span><span style="color: #008000">// some code goes here</span>
 
-<span style="color: #000000">    });</span>
+<span style="color: #000000">        </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #795E26">tobe</span><span style="color: #000000">(</span><span style="color: #001080">observable</span><span style="color: #000000">, (</span><span style="color: #001080">v</span><span style="color: #000000"> : </span><span style="color: #267F99">number</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> </span><span style="color: #001080">v</span><span style="color: #000000"> === </span><span style="color: #098658">5</span><span style="color: #000000">); </span><span style="color: #008000">// the observable that has to be, and the condition function.</span>
 
-<span style="color: #000000">    </span><span style="color: #008000">// code</span>
+<span style="color: #000000">        </span><span style="color: #008000">// this code will be executed only when observale is set to 5.</span>
 
-<span style="color: #000000">    </span><span style="color: #001080">observable</span><span style="color: #000000">.</span><span style="color: #795E26">set</span><span style="color: #000000">(</span><span style="color: #098658">2</span><span style="color: #000000">); </span><span style="color: #008000">// set the value to 2. All listeners will be called.</span>
+<span style="color: #000000">    })();</span>
 
-<span style="color: #000000">    </span><span style="color: #008000">// code</span>
+<span style="color: #000000">    ...</span>
 
-<span style="color: #000000">    </span><span style="color: #795E26">unsub</span><span style="color: #000000">(); </span><span style="color: #008000">// unsubscribe the function. The listener wont be called anymore</span>
+<span style="color: #000000">    </span><span style="color: #001080">observable</span><span style="color: #000000">.</span><span style="color: #795E26">set</span><span style="color: #000000">(</span><span style="color: #098658">5</span><span style="color: #000000">); </span><span style="color: #008000">// this will release the async lock</span>
 </code></pre>
 				</div>
 			</section>
@@ -94,15 +93,9 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Classes</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter"><a href="../classes/observable.observable-1.html" class="tsd-kind-icon">Observable</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="observable.html#observe" class="tsd-kind-icon">observe</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="tobe.html#tobe-1" class="tsd-kind-icon">tobe</a></li>
 							</ul>
 						</section>
 					</div>
@@ -111,21 +104,21 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
-					<a name="observe" class="tsd-anchor"></a>
-					<h3>observe</h3>
+					<a name="tobe-1" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> tobe</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
-						<li class="tsd-signature tsd-kind-icon">observe&lt;T&gt;<span class="tsd-signature-symbol">(</span>obs<span class="tsd-signature-symbol">: </span><a href="../classes/observable.observable-1.html" class="tsd-signature-type" data-tsd-kind="Class">Observable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, timeout<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span>, enforce<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AsyncIterableIterator</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">tobe&lt;T&gt;<span class="tsd-signature-symbol">(</span>obs<span class="tsd-signature-symbol">: </span><a href="../classes/observable.observable-1.html" class="tsd-signature-type" data-tsd-kind="Class">Observable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">AsyncIterableIterator</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, cond<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>arg1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/BHC-IT/ts-tools/blob/4ce6b2f/src/tools/observable.ts#L206">tools/observable.ts:206</a></li>
+									<li>Defined in <a href="https://github.com/BHC-IT/ts-tools/blob/4ce6b2f/src/tools/tobe.ts#L39">tools/tobe.ts:39</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Generator function to an <a href="../classes/observable.observable-1.html">Observable</a>. Yielding on change made. Multiple change can occurs without the function noticing if happening between register.</p>
+									<p>This function will create a silent lock on an <a href="../classes/observable.observable-1.html">Observable</a>, releasing only when the conditional function return true.</p>
 								</div>
 								<dl class="tsd-comment-tags">
 									<dt>author</dt>
@@ -145,25 +138,38 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>obs: <a href="../classes/observable.observable-1.html" class="tsd-signature-type" data-tsd-kind="Class">Observable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>obs: <a href="../classes/observable.observable-1.html" class="tsd-signature-type" data-tsd-kind="Class">Observable</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">AsyncIterableIterator</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>Observer to await change on.</p>
+										<p>Either an <a href="../classes/observable.observable-1.html">Observable</a> or an AsyncIterableIterator mainly created from with <a href="observable.html#observe">observe</a>.</p>
 									</div>
 								</li>
 								<li>
-									<h5>timeout: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></h5>
+									<h5>cond: <span class="tsd-signature-symbol">(</span>arg1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">boolean</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>Time before timeout is triggered. If 0, the function will not timeout. Default to 0.</p>
+										<p>Conditinal function.</p>
 									</div>
-								</li>
-								<li>
-									<h5>enforce: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>If true, timeout will throw with Error(&quot;Observable: Timeout on change&quot;). If false, timeout will resolve with null. Default to false.</p>
-									</div>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-signature">
+											<ul class="tsd-signatures tsd-kind-type-literal">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>arg1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>arg1: <span class="tsd-signature-type">T</span></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">AsyncIterableIterator</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>A void promise to release the await.</p>
 						</li>
 					</ul>
 				</section>
@@ -202,7 +208,7 @@
 					<li class=" tsd-kind-module">
 						<a href="maybe.html">maybe</a>
 					</li>
-					<li class="current tsd-kind-module">
+					<li class=" tsd-kind-module">
 						<a href="observable.html">observable</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -214,7 +220,7 @@
 					<li class=" tsd-kind-module">
 						<a href="take.html">take</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class="current tsd-kind-module">
 						<a href="tobe.html">tobe</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -224,11 +230,8 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="../classes/observable.observable-1.html" class="tsd-kind-icon">Observable</a>
-					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="observable.html#observe" class="tsd-kind-icon">observe</a>
+						<a href="tobe.html#tobe-1" class="tsd-kind-icon">tobe</a>
 					</li>
 				</ul>
 			</nav>
