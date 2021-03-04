@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/BHC-IT/ts-tools/compare/v1.4.0...v1.5.0) (2021-03-04)
+
+
+### Features
+
+* added tobe with test case ([18bb4ee](https://github.com/BHC-IT/ts-tools/commit/18bb4eedb1ba3a023ba12e97f94b9c57556616e8))
+
 # [1.4.0](https://github.com/BHC-IT/ts-tools/compare/v1.3.3...v1.4.0) (2021-03-04)
 
 
