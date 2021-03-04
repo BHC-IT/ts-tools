@@ -169,7 +169,17 @@ export class Observable<T> {
 	*/
 	protected willUpdate = (value : T, newValue : T) : boolean => true;
 	
-
+	/**
+		* Overloadable by extending {@link Observable}. Called after change is made.
+		*
+		* @param oldValue	Old value the observer holded.
+		* @param newValue	Current value hold by the observer.
+		* @template T		Type holded by the observer.
+		* @return 		If false is returned, listeners will not be called.
+		*
+		* @protected
+	*/
+	protected shouldCallListener = (oldValue : T, newValue : T) : void => {};
 
 	/**
 		* Overloadable by extending {@link Observable}. Called after change is made.
