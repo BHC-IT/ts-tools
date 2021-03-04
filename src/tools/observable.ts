@@ -192,3 +192,17 @@ export class Observable<T> {
 	*/
 	protected didUpdate = (oldValue : T, newValue : T) : void => {};
 }
+
+/**
+	* Generator function to an {@link Observable}. Yielding on change made. Multiple change can occurs without the function noticing if happening between register.
+	*
+	* @param obs		Observer to await change on.
+	* @param timeout	Time before timeout is triggered. If 0, the function will not timeout. Default to 0.
+	* @param enforce	If true, timeout will throw with Error("Observable: Timeout on change"). If false, timeout will resolve with null. Default to false.
+	* @template T		Type holded by the observer.
+	*
+	* @author Valentin Vivier <lanathlor>
+*/
+export async function* observe<T>(obs : Observable<T>, timeout : number = 0, enforce : boolean = false) : AsyncIterableIterator<T> {
+	while (true) yield await obs.change(timeout, enforce);
+}

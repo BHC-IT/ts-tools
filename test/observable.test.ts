@@ -1,7 +1,7 @@
 import chai, { expect } from 'chai';
 import chaiAsPromised from 'chai-as-promised';
 
-import { Observable } from '../src/tools/observable';
+import { Observable, observe } from '../src/tools/observable';
 
 chai.use(chaiAsPromised);
 
@@ -51,10 +51,26 @@ describe('test Observable', function() {
 			const new_value = await observable.change();
 
 			expect(new_value).to.equal(1);
-			done();
+			(async () => {
+				const new_value = await observable.change();
+
+				expect(new_value).to.equal(2);
+				(async () => {
+					const new_value = await observable.change();
+
+					expect(new_value).to.equal(3);
+					done();
+				})();
+
+				observable.set(3);
+			})();
+
+			observable.set(2);
+
 		})();
 
 		observable.set(1);
+
 	});
 
 	it('observable change timeout not enforced after 50ms~', (done) => {
@@ -86,7 +102,32 @@ describe('test Observable', function() {
 
 	});
 
-	it('add to many listener', function() {
+	it('observable async for loop with observe', (done) => {
+		const observable = new Observable(0);
+		let i = 1;
+
+		(async () => {
+			for await (let value of observe(observable, 50, true)) {
+				expect(value).to.equal(i);
+		
+				if (i === 3){
+					done();
+					return;
+				}
+				i++;
+			}
+		})();
+
+		observable.set(1);
+		setTimeout(() => {
+			observable.set(2);
+			setTimeout(() => {
+				observable.set(3);
+			}, 10);
+		}, 10);
+	});
+
+	it('add too many listener', function() {
 		const observable = new Observable(1);
 
 		for (let i = 0; i != 20000; i++) {
