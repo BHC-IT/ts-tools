@@ -146,7 +146,7 @@ export class Observable<T> {
 				setTimeout(() => {
 					unsub();
 
-					enforce ? reject(new Error("Timeout")) : resolve(null);
+					enforce ? reject(new Error("Observable: Timeout on change")) : resolve(null);
 				}, timeout);
 			}
 		});

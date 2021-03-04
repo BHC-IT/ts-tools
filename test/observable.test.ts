@@ -1,5 +1,9 @@
-import { expect } from 'chai';
+import chai, { expect } from 'chai';
+import chaiAsPromised from 'chai-as-promised';
+
 import { Observable } from '../src/tools/observable';
+
+chai.use(chaiAsPromised);
 
 describe('test Observable', function() {
 	it('Observable construct & get', function() {
@@ -38,6 +42,48 @@ describe('test Observable', function() {
 		});
 		unsub();
 		observable.set(2);
+	});
+
+	it('observable change', (done) => {
+		const observable = new Observable(0);
+
+		(async () => {
+			const new_value = await observable.change();
+
+			expect(new_value).to.equal(1);
+			done();
+		})();
+
+		observable.set(1);
+	});
+
+	it('observable change timeout not enforced after 50ms~', (done) => {
+		const observable = new Observable(0);
+		const time = Date.now();
+
+		(async () => {
+			const new_value = await observable.change(50);
+			const ellapse = Date.now() - time;
+
+			expect(ellapse >= 50 && ellapse < 60).to.equal(true);
+			expect(new_value).to.be.null;
+
+			done();
+		})();
+
+	});
+
+	it('observable change timeout enforced after 50ms~', (done) => {
+		const observable = new Observable(0);
+
+		(async () => {
+			const promise = observable.change(50, true);
+
+			await expect(promise).to.be.rejectedWith("Observable: Timeout on change")
+
+			done();
+		})();
+
 	});
 
 	it('add to many listener', function() {
