@@ -179,7 +179,7 @@ export class Observable<T> {
 		*
 		* @protected
 	*/
-	protected shouldCallListener = (oldValue : T, newValue : T) : void => {};
+	protected shouldCallListener = (oldValue : T, newValue : T) : boolean => {};
 
 	/**
 		* Overloadable by extending {@link Observable}. Called after change is made.
