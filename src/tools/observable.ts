@@ -117,7 +117,7 @@ export class Observable<T> {
 		* @author Valentin Vivier <lanathlor>
 	*/
 	public listen = (callback : Function) : Function => {
-		let i = Math.random() * 10000 | 0;
+		let i = Math.random() * 100 | 0;
 		let mask = 1;
 		let tryied = 0;
 
@@ -126,12 +126,32 @@ export class Observable<T> {
 				tryied = 0;
 				mask++;
 			}
-			i = Math.random() * Math.pow(10000, mask) | 0;
+			i = Math.random() * Math.pow(100, mask) | 0;
 			tryied++;
 		}
 
 		this._listener[i] = callback;
 		return () : void => this._listener[i] = null;
+	}
+
+	public change = (timeout : number = 0, enforce : boolean = false) : Promise<T | null> => {
+		const promise = new Promise<T>((resolve : Function, reject : Function) => {
+			const unsub = this.listen((value : T) => {
+				unsub();
+
+				resolve(value);
+			});
+
+			if (timeout) {
+				setTimeout(() => {
+					unsub();
+
+					enforce ? reject(new Error("Timeout")) : resolve(null);
+				}, timeout);
+			}
+		});
+
+		return promise;
 	}
 
 	/**
