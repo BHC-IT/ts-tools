@@ -33,7 +33,7 @@ v	* @packageDocumentation
 */
 export interface Nothing {
 	/**
-		*
+		* _tag is hard typed to 'nothing' to indicate a nothing. Direct usage is not advised. Refer to {@link maybe}. 
 		*
 		* @internal
 	*/
@@ -50,14 +50,14 @@ export interface Nothing {
 */
 export interface Just<T> {
 	/**
-		*
+		* _tag is hard typed to 'just' to indicate a just. Direct usage is not advised. Refer to {@link maybe}.
 		*
 		* @internal
 	*/
 	readonly _tag: 'just',
 
 	/**
-		*
+		* value is holding the just(value). Direct usage is not advised. Refer to {@link maybe}.
 		*
 		* @internal
 	*/

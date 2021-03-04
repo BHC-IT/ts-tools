@@ -62,8 +62,6 @@ export class Observable<T> {
 		* @template T		Type holded by the observer.
 		*
 		* @public
-		*
-		* @author Valentin Vivier <lanathlor>
 	*/
 	constructor(value : T) {
 		this._value = value;
@@ -76,8 +74,6 @@ export class Observable<T> {
 		* @return 	Currently hold value.
 		*
 		* @public
-		*
-		* @author Valentin Vivier <lanathlor>
 	*/
 	public get = () : T => this._value;
 
@@ -88,8 +84,6 @@ export class Observable<T> {
 		* @template T			Type holded by the observer.
 		*
 		* @public
-		*
-		* @author Valentin Vivier <lanathlor>
 	*/
 	public set = (newValue : T) : this => {
 		const oldValue = this._value;
@@ -99,6 +93,8 @@ export class Observable<T> {
 
 		this._value = newValue;
 
+		if (this.shouldCallListener(oldValue, newValue) === false)
+			return this;
 		this._listener.forEach((f : Function) => f?.(newValue));
 		
 		this.didUpdate(oldValue, newValue);
@@ -107,17 +103,15 @@ export class Observable<T> {
 	}
 
 	/**
-		* Return currently hold value.
+		* Listen for nay change in observed value. Callback is called each time value is changed.
 		*
 		* @param callback	Callback function called when the observed value change. Called with the new value as only parameter.
 		* @return 		A function to cancel this listener.
 		*
 		* @public
-		*
-		* @author Valentin Vivier <lanathlor>
 	*/
 	public listen = (callback : Function) : Function => {
-		let i = Math.random() * 10000 | 0;
+		let i = Math.random() * 100 | 0;
 		let mask = 1;
 		let tryied = 0;
 
@@ -126,12 +120,41 @@ export class Observable<T> {
 				tryied = 0;
 				mask++;
 			}
-			i = Math.random() * Math.pow(10000, mask) | 0;
+			i = Math.random() * Math.pow(100, mask) | 0;
 			tryied++;
 		}
 
 		this._listener[i] = callback;
 		return () : void => this._listener[i] = null;
+	}
+
+	/**
+		* Async function that resolve as soon as the observed value is changed.
+		*
+		* @param timeout	Time before timeout is triggered. If 0, the function will not timeout. Default to 0.
+		* @param enforce	If true, timeout will throw with Error("Observable: Timeout on change"). If false, timeout will resolve with null. Default to false.
+		* @return 		The promise reolving on value change.
+		*
+		* @public
+	*/
+	public change = (timeout : number = 0, enforce : boolean = false) : Promise<T | null> => {
+		const promise = new Promise<T>((resolve : Function, reject : Function) => {
+			const unsub = this.listen((value : T) => {
+				unsub();
+
+				resolve(value);
+			});
+
+			if (timeout) {
+				setTimeout(() => {
+					unsub();
+
+					enforce ? reject(new Error("Observable: Timeout on change")) : resolve(null);
+				}, timeout);
+			}
+		});
+
+		return promise;
 	}
 
 	/**
@@ -143,8 +166,6 @@ export class Observable<T> {
 		* @return 		If false is returned, change is cancel and listeners wont be called.
 		*
 		* @protected
-		*
-		* @author Valentin Vivier <lanathlor>
 	*/
 	protected willUpdate = (value : T, newValue : T) : boolean => true;
 	
@@ -154,10 +175,20 @@ export class Observable<T> {
 		* @param oldValue	Old value the observer holded.
 		* @param newValue	Current value hold by the observer.
 		* @template T		Type holded by the observer.
+		* @return 		If false is returned, listeners will not be called.
 		*
 		* @protected
+	*/
+	protected shouldCallListener = (oldValue : T, newValue : T) : boolean => true;
+
+	/**
+		* Overloadable by extending {@link Observable}. Called after change is made.
 		*
-		* @author Valentin Vivier <lanathlor>
+		* @param oldValue	Old value the observer holded.
+		* @param newValue	Current value hold by the observer.
+		* @template T		Type holded by the observer.
+		*
+		* @protected
 	*/
 	protected didUpdate = (oldValue : T, newValue : T) : void => {};
-} 
+}
