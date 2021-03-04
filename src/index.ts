@@ -10,6 +10,7 @@ import { Observable, observe } from './tools/observable';
 import { pipe } from './tools/pipe';
 import { tail, Tail } from './tools/tail';
 import { take } from './tools/take';
+import { tobe } from './tools/tobe';
 
 import type { Maybe, Just, Nothing } from './types/Maybe';
 
@@ -36,4 +37,5 @@ export {
 	pipe,
 	tail,
 	take,
+	tobe,
 };
