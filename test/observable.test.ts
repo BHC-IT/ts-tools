@@ -107,7 +107,7 @@ describe('test Observable', function() {
 		let i = 1;
 
 		(async () => {
-			for await (let value of observe(observable, 50, true)) {
+			for await (let value of observe(observable)) {
 				expect(value).to.equal(i);
 		
 				if (i === 3){
@@ -115,6 +115,33 @@ describe('test Observable', function() {
 					return;
 				}
 				i++;
+			}
+		})();
+
+		observable.set(1);
+		setTimeout(() => {
+			observable.set(2);
+			setTimeout(() => {
+				observable.set(3);
+			}, 10);
+		}, 10);
+	});
+
+	it('observable async for loop with observe with timeout', (done) => {
+		const observable = new Observable(0);
+		let i = 1;
+
+		(async () => {
+			try {
+				for await (let value of observe(observable, 50, true)) {
+					expect(value).to.equal(i);
+			
+					i++;
+				}
+			} catch (e : any) {
+				expect(e.message).to.equal("Observable: Timeout on change");
+				expect(observable.get()).to.equal(3);
+				done();
 			}
 		})();
 
