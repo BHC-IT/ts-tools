@@ -1,3 +1,10 @@
+## [1.3.3](https://github.com/BHC-IT/ts-tools/compare/v1.3.2...v1.3.3) (2021-03-04)
+
+
+### Bug Fixes
+
+* added change method to Observable ([9579866](https://github.com/BHC-IT/ts-tools/commit/9579866aae71e860724152dae917ca702891fc10))
+
 ## [1.3.2](https://github.com/BHC-IT/ts-tools/compare/v1.3.1...v1.3.2) (2021-03-02)
 
 
