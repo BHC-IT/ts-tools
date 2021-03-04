@@ -131,10 +131,12 @@
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="observable.observable-1.html#change" class="tsd-kind-icon">change</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><a href="observable.observable-1.html#didupdate" class="tsd-kind-icon">did<wbr>Update</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="observable.observable-1.html#get" class="tsd-kind-icon">get</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="observable.observable-1.html#listen" class="tsd-kind-icon">listen</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="observable.observable-1.html#set" class="tsd-kind-icon">set</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><a href="observable.observable-1.html#shouldcalllistener" class="tsd-kind-icon">should<wbr>Call<wbr>Listener</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><a href="observable.observable-1.html#willupdate" class="tsd-kind-icon">will<wbr>Update</a></li>
 							</ul>
 						</section>
@@ -153,18 +155,13 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/BHC-IT/ts-tools/blob/7cb04db/src/tools/observable.ts#L56">tools/observable.ts:56</a></li>
+									<li>Defined in <a href="https://github.com/BHC-IT/ts-tools/blob/c546866/src/tools/observable.ts#L56">tools/observable.ts:56</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Constructor for observable.</p>
 								</div>
-								<dl class="tsd-comment-tags">
-									<dt>author</dt>
-									<dd><p>Valentin Vivier <lanathlor></p>
-									</dd>
-								</dl>
 							</div>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
@@ -191,6 +188,44 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="change" class="tsd-anchor"></a>
+					<h3>change</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">change<span class="tsd-signature-symbol">(</span>timeout<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span>, enforce<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/BHC-IT/ts-tools/blob/c546866/src/tools/observable.ts#L140">tools/observable.ts:140</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Async function that resolve as soon as the observed value is changed.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>timeout: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Time before timeout is triggered. If 0, the function will not timeout. Default to 0.</p>
+									</div>
+								</li>
+								<li>
+									<h5>enforce: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>If true, timeout will throw with Error(&quot;Observable: Timeout on change&quot;). If false, timeout will resolve with null. Default to false.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>The promise reolving on value change.</p>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected">
 					<a name="didupdate" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagProtected">Protected</span> did<wbr>Update</h3>
@@ -201,7 +236,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/BHC-IT/ts-tools/blob/7cb04db/src/tools/observable.ts#L162">tools/observable.ts:162</a></li>
+									<li>Defined in <a href="https://github.com/BHC-IT/ts-tools/blob/c546866/src/tools/observable.ts#L193">tools/observable.ts:193</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -211,9 +246,6 @@
 								<dl class="tsd-comment-tags">
 									<dt>template</dt>
 									<dd><p>Type holded by the observer.</p>
-									</dd>
-									<dt>author</dt>
-									<dd><p>Valentin Vivier <lanathlor></p>
 									</dd>
 								</dl>
 							</div>
@@ -246,7 +278,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/BHC-IT/ts-tools/blob/7cb04db/src/tools/observable.ts#L82">tools/observable.ts:82</a></li>
+									<li>Defined in <a href="https://github.com/BHC-IT/ts-tools/blob/c546866/src/tools/observable.ts#L78">tools/observable.ts:78</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -256,9 +288,6 @@
 								<dl class="tsd-comment-tags">
 									<dt>template</dt>
 									<dd><p>Type holded by the observer.</p>
-									</dd>
-									<dt>author</dt>
-									<dd><p>Valentin Vivier <lanathlor></p>
 									</dd>
 								</dl>
 							</div>
@@ -277,18 +306,13 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/BHC-IT/ts-tools/blob/7cb04db/src/tools/observable.ts#L119">tools/observable.ts:119</a></li>
+									<li>Defined in <a href="https://github.com/BHC-IT/ts-tools/blob/c546866/src/tools/observable.ts#L113">tools/observable.ts:113</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Return currently hold value.</p>
+									<p>Listen for nay change in observed value. Callback is called each time value is changed.</p>
 								</div>
-								<dl class="tsd-comment-tags">
-									<dt>author</dt>
-									<dd><p>Valentin Vivier <lanathlor></p>
-									</dd>
-								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -314,7 +338,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/BHC-IT/ts-tools/blob/7cb04db/src/tools/observable.ts#L94">tools/observable.ts:94</a></li>
+									<li>Defined in <a href="https://github.com/BHC-IT/ts-tools/blob/c546866/src/tools/observable.ts#L88">tools/observable.ts:88</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -324,9 +348,6 @@
 								<dl class="tsd-comment-tags">
 									<dt>template</dt>
 									<dd><p>Type holded by the observer.</p>
-									</dd>
-									<dt>author</dt>
-									<dd><p>Valentin Vivier <lanathlor></p>
 									</dd>
 								</dl>
 							</div>
@@ -344,6 +365,49 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+					<a name="shouldcalllistener" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> should<wbr>Call<wbr>Listener</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">should<wbr>Call<wbr>Listener<span class="tsd-signature-symbol">(</span>oldValue<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, newValue<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/BHC-IT/ts-tools/blob/c546866/src/tools/observable.ts#L182">tools/observable.ts:182</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Overloadable by extending <a href="observable.observable-1.html">Observable</a>. Called after change is made.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>template</dt>
+									<dd><p>Type holded by the observer.</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>oldValue: <span class="tsd-signature-type">T</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Old value the observer holded.</p>
+									</div>
+								</li>
+								<li>
+									<h5>newValue: <span class="tsd-signature-type">T</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Current value hold by the observer.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<p>If false is returned, listeners will not be called.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected">
 					<a name="willupdate" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagProtected">Protected</span> will<wbr>Update</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected">
@@ -353,7 +417,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/BHC-IT/ts-tools/blob/7cb04db/src/tools/observable.ts#L149">tools/observable.ts:149</a></li>
+									<li>Defined in <a href="https://github.com/BHC-IT/ts-tools/blob/c546866/src/tools/observable.ts#L170">tools/observable.ts:170</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -363,9 +427,6 @@
 								<dl class="tsd-comment-tags">
 									<dt>template</dt>
 									<dd><p>Type holded by the observer.</p>
-									</dd>
-									<dt>author</dt>
-									<dd><p>Valentin Vivier <lanathlor></p>
 									</dd>
 								</dl>
 							</div>
@@ -451,6 +512,9 @@
 							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-has-type-parameter">
 								<a href="observable.observable-1.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="observable.observable-1.html#change" class="tsd-kind-icon">change</a>
+							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected">
 								<a href="observable.observable-1.html#didupdate" class="tsd-kind-icon">did<wbr>Update</a>
 							</li>
@@ -462,6 +526,9 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="observable.observable-1.html#set" class="tsd-kind-icon">set</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+								<a href="observable.observable-1.html#shouldcalllistener" class="tsd-kind-icon">should<wbr>Call<wbr>Listener</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected">
 								<a href="observable.observable-1.html#willupdate" class="tsd-kind-icon">will<wbr>Update</a>
