@@ -99,12 +99,13 @@ describe('test Observable', function() {
 
 describe('test Observable extended', function() {
 
-	class ObservableExtended<T> extends Observable<T> {
-		constructor(value : T) {
+	class ObservableExtended extends Observable<number> {
+		constructor(value : number) {
 			super(value);
 		}
 
-		protected willUpdate = (value : T, newValue : T) : boolean => !(value === newValue);		
+		protected willUpdate = (value : number, newValue : number) : boolean => !(value === newValue);
+		protected shouldCallListener = (value : number, newValue : number) : boolean => !(newValue === 5);
 	}
 
 	it('First set should not update observer', function(done) {
@@ -120,6 +121,22 @@ describe('test Observable extended', function() {
 
 		obs.set(1);
 		obs.set(2);
+
+	});
+
+	it('First set should not update observer', function(done) {
+		const obs = new ObservableExtended(0);
+
+		const unsub = obs.listen((value : number) => {
+
+			expect(value).to.equal(10);
+
+			unsub();
+			done();
+		});
+
+		obs.set(5);
+		obs.set(10);
 
 	});
 });
