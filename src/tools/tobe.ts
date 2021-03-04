@@ -50,3 +50,26 @@ export const tobe = async <T>(obs : Observable<T> | AsyncIterableIterator<T>, co
 		}
 	}
 }
+
+/**
+	* This function will regularly check for conditional function and maybe release the lock.
+	*
+	* @param cond		Conditinal function.
+	* @param timeout	Conditinal function.
+	* @param maxRecuse	Conditinal function.
+	* @returns 		A void promise to release the await.
+	*
+	* @author Valentin Vivier <lanathlor>
+*/
+export const lockFor = async <T>(cond : Function, timeout : number = 50, maxRecuse : number | null = null) : Promise<void> => {
+	while (maxRecuse === null || maxRecuse > 0) {
+		await (() => {
+			return new Promise((resolve : Function) => setTimeout(() => resolve(), timeout));
+		})();
+		if (cond())
+			return;
+		if (maxRecuse)
+			maxRecuse--;		
+	}
+	throw new Error("lockFor : max recurse depleted");
+}
