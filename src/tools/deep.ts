@@ -15,6 +15,7 @@
 	* @returns 		Copied array.
 	*
 	* @author Valentin Vivier <lanathlor>
+	* @internal
 */
 export const deepCopyArray = (arr : any[]) : any[] => {
 	let copy = [];
@@ -33,6 +34,7 @@ export const deepCopyArray = (arr : any[]) : any[] => {
 	* @template T		Object type to copy.
 	*
 	* @author Valentin Vivier <lanathlor>
+	* @internal
 */
 export const deepCopyObject = <T extends Object>(obj : T) : T => {
 	let copy : T = Object.assign({}, obj);
@@ -50,6 +52,7 @@ export const deepCopyObject = <T extends Object>(obj : T) : T => {
 	* @returns 		Copied Date.
 	*
 	* @author Valentin Vivier <lanathlor>
+	* @internal
 */
 export const deepCopyDate = (date : Date) : Date => {
 	let copy = new Date();

@@ -6,6 +6,7 @@ import { flip } from './tools/flip';
 import { head, Head } from './tools/head';
 import { init } from './tools/init';
 import { last } from './tools/last';
+import { Lens, lens, lensFrom, view, set } from './tools/lens';
 import { just, nothing, isJust, isNothing, callMaybe } from './tools/maybe';
 import { Observable, observe } from './tools/observable';
 import { pipe } from './tools/pipe';
@@ -21,6 +22,7 @@ const call = {...callMaybe};
 
 export type {
 	Head,
+	Lens,
 	Tail,
 
 	Maybe, Just, Nothing,
@@ -36,6 +38,7 @@ export {
 	init,
 	head,
 	last,
+	lens, lensFrom, view, set,
 	just, nothing, isJust, isNothing, callMaybe,
 	Observable, observe,
 	pipe,

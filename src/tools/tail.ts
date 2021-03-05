@@ -9,7 +9,7 @@
 	* Send back the type of the tuple or array without his first element.
 	*
 	*
-	* @template T		Any kind of tuple or array
+	* @template T		Any kind of tuple or array.
 	*
 	* @author Valentin Vivier <lanathlor>
 */
