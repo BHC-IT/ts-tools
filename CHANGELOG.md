@@ -1,3 +1,16 @@
+# [1.7.0](https://github.com/BHC-IT/ts-tools/compare/v1.6.0...v1.7.0) (2021-03-05)
+
+
+### Bug Fixes
+
+* import of deepCopy in index.ts ([61bfd54](https://github.com/BHC-IT/ts-tools/commit/61bfd5466adfa08e483195a0f4643c1222772af4))
+
+
+### Features
+
+* added lens ([db68f7b](https://github.com/BHC-IT/ts-tools/commit/db68f7b3df232958bdf3e8041d5a126b4d1032a2))
+* added range. added deepCopy ([86e544b](https://github.com/BHC-IT/ts-tools/commit/86e544b8140d684a5b7bd11adc0bded54884ec2c))
+
 # [1.6.0](https://github.com/BHC-IT/ts-tools/compare/v1.5.0...v1.6.0) (2021-03-05)
 
 
