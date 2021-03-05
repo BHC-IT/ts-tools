@@ -1,6 +1,6 @@
 import { compose } from './tools/compose';
 import { curry } from './tools/curry';
-import { deepCopy } from './tools/curry';
+import { deepCopy } from './tools/deep';
 import { drop } from './tools/drop';
 import { flip } from './tools/flip';
 import { head, Head } from './tools/head';
