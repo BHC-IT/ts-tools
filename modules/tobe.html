@@ -95,6 +95,7 @@
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="tobe.html#lockfor" class="tsd-kind-icon">lock<wbr>For</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="tobe.html#tobe-1" class="tsd-kind-icon">tobe</a></li>
 							</ul>
 						</section>
@@ -103,6 +104,61 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
+					<a name="lockfor" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> lock<wbr>For</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">lock<wbr>For&lt;T&gt;<span class="tsd-signature-symbol">(</span>cond<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function</span>, timeout<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span>, maxRecuse<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/BHC-IT/ts-tools/blob/1fb1e9c/src/tools/tobe.ts#L64">tools/tobe.ts:64</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>This function will regularly check for conditional function and maybe release the lock.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>author</dt>
+									<dd><p>Valentin Vivier <lanathlor></p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T</h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>cond: <span class="tsd-signature-type">Function</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Conditinal function.</p>
+									</div>
+								</li>
+								<li>
+									<h5>timeout: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 50</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Time in milliseconds between each check.</p>
+									</div>
+								</li>
+								<li>
+									<h5>maxRecuse: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = null</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Maximum number of check before force liberating with throw.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>A void promise to release the await.</p>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
 					<a name="tobe-1" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> tobe</h3>
@@ -113,7 +169,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/BHC-IT/ts-tools/blob/4ce6b2f/src/tools/tobe.ts#L39">tools/tobe.ts:39</a></li>
+									<li>Defined in <a href="https://github.com/BHC-IT/ts-tools/blob/1fb1e9c/src/tools/tobe.ts#L39">tools/tobe.ts:39</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -215,6 +271,9 @@
 						<a href="pipe.html">pipe</a>
 					</li>
 					<li class=" tsd-kind-module">
+						<a href="sleep.html">sleep</a>
+					</li>
+					<li class=" tsd-kind-module">
 						<a href="tail.html">tail</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -230,6 +289,9 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="tobe.html#lockfor" class="tsd-kind-icon">lock<wbr>For</a>
+					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
 						<a href="tobe.html#tobe-1" class="tsd-kind-icon">tobe</a>
 					</li>
