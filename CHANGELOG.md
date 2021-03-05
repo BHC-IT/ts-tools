@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/BHC-IT/ts-tools/compare/v1.5.0...v1.6.0) (2021-03-05)
+
+
+### Features
+
+* added sleep ([3b54214](https://github.com/BHC-IT/ts-tools/commit/3b5421496a8f133afe58fa35999b1d764455e6a2))
+
 # [1.5.0](https://github.com/BHC-IT/ts-tools/compare/v1.4.0...v1.5.0) (2021-03-04)
 
 
