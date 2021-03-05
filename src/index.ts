@@ -8,6 +8,7 @@ import { last } from './tools/last';
 import { just, nothing, isJust, isNothing, callMaybe } from './tools/maybe';
 import { Observable, observe } from './tools/observable';
 import { pipe } from './tools/pipe';
+import { sleep } from './tools/sleep';
 import { tail, Tail } from './tools/tail';
 import { take } from './tools/take';
 import { tobe, lockFor } from './tools/tobe';
@@ -35,6 +36,7 @@ export {
 	just, nothing, isJust, isNothing, callMaybe,
 	Observable, observe,
 	pipe,
+	sleep,
 	tail,
 	take,
 	tobe, lockFor,

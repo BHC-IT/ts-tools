@@ -55,8 +55,8 @@ export const tobe = async <T>(obs : Observable<T> | AsyncIterableIterator<T>, co
 	* This function will regularly check for conditional function and maybe release the lock.
 	*
 	* @param cond		Conditinal function.
-	* @param timeout	Conditinal function.
-	* @param maxRecuse	Conditinal function.
+	* @param timeout	Time in milliseconds between each check.
+	* @param maxRecuse	Maximum number of check before force liberating with throw.
 	* @returns 		A void promise to release the await.
 	*
 	* @author Valentin Vivier <lanathlor>
