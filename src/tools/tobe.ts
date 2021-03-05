@@ -25,6 +25,7 @@
 */
 
 import { Observable } from './observable';
+import { sleep } from './sleep';
 
 /**
 	* This function will create a silent lock on an {@link Observable}, releasing only when the conditional function return true.
@@ -63,9 +64,8 @@ export const tobe = async <T>(obs : Observable<T> | AsyncIterableIterator<T>, co
 */
 export const lockFor = async <T>(cond : Function, timeout : number = 50, maxRecuse : number | null = null) : Promise<void> => {
 	while (maxRecuse === null || maxRecuse > 0) {
-		await (() => {
-			return new Promise((resolve : Function) => setTimeout(() => resolve(), timeout));
-		})();
+		await sleep(timeout);
+
 		if (cond())
 			return;
 		if (maxRecuse)
