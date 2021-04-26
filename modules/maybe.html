@@ -69,17 +69,17 @@
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
 						<p>This is the documentation for maybe.ts
-						usage exemple :</p>
-						<p>```typescript
-							async function readDB() : Promise&lt;Maybe<object>&gt; {
-								try {
-								const response = await fetchSomethingInDB();
-								return just(response);
-								} catch (e : any) {
-								return nothing;
-								}
-						}</p>
+							usage exemple :
+						```typescript</p>
 					</div>
+					<p>async function readDB() : Promise&lt;Maybe<object>&gt; {
+							try {
+							const response = await fetchSomethingInDB();
+							return just(response);
+							} catch (e : any) {
+							return nothing;
+							}
+					}</p>
 					<p>async function main() : void {
 					const maybeResponse = await readDB();</p>
 					<pre><code><span style="color: #795E26">callMaybe</span><span style="color: #000000">((</span><span style="color: #001080">response</span><span style="color: #000000"> : </span><span style="color: #267F99">object</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> ...).</span><span style="color: #001080">when</span><span style="color: #000000">.</span><span style="color: #795E26">isJust</span><span style="color: #000000">(</span><span style="color: #001080">maybeResponse</span><span style="color: #000000">); </span><span style="color: #008000">// Callback in calMaybe will be called only if maybeResponse is a Just&lt;object&gt;.</span>
@@ -118,8 +118,8 @@
 					<div class="tsd-signature tsd-kind-icon">nothing<span class="tsd-signature-symbol">:</span> <a href="../interfaces/type_maybe.nothing.html" class="tsd-signature-type" data-tsd-kind="Interface">Nothing</a><span class="tsd-signature-symbol"> = ...</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/BHC-IT/ts-tools/blob/414a0a5/src/tools/maybe.ts#L46">tools/maybe.ts:46</a></li>
-							<li>Defined in <a href="https://github.com/BHC-IT/ts-tools/blob/414a0a5/src/index.ts#L42">index.ts:42</a></li>
+							<li>Defined in <a href="https://github.com/BHC-IT/ts-tools/blob/5d2ff48/src/tools/maybe.ts#L47">tools/maybe.ts:47</a></li>
+							<li>Defined in <a href="https://github.com/BHC-IT/ts-tools/blob/5d2ff48/src/index.ts#L42">index.ts:42</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -146,7 +146,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/BHC-IT/ts-tools/blob/414a0a5/src/tools/maybe.ts#L87">tools/maybe.ts:87</a></li>
+									<li>Defined in <a href="https://github.com/BHC-IT/ts-tools/blob/5d2ff48/src/tools/maybe.ts#L88">tools/maybe.ts:88</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -278,7 +278,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/BHC-IT/ts-tools/blob/414a0a5/src/tools/maybe.ts#L59">tools/maybe.ts:59</a></li>
+									<li>Defined in <a href="https://github.com/BHC-IT/ts-tools/blob/5d2ff48/src/tools/maybe.ts#L60">tools/maybe.ts:60</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -324,7 +324,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/BHC-IT/ts-tools/blob/414a0a5/src/tools/maybe.ts#L71">tools/maybe.ts:71</a></li>
+									<li>Defined in <a href="https://github.com/BHC-IT/ts-tools/blob/5d2ff48/src/tools/maybe.ts#L72">tools/maybe.ts:72</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -370,7 +370,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/BHC-IT/ts-tools/blob/414a0a5/src/tools/maybe.ts#L39">tools/maybe.ts:39</a></li>
+									<li>Defined in <a href="https://github.com/BHC-IT/ts-tools/blob/5d2ff48/src/tools/maybe.ts#L40">tools/maybe.ts:40</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
