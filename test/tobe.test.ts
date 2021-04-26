@@ -23,6 +23,23 @@ describe('test tobe', function() {
 		setTimeout(() => observable.set(5), 50);
 	});
 
+	it('tobe true before call', function(done) {
+		const observable = new Observable(0);
+		const time = Date.now();
+
+		(async () => {
+			await tobe(observable, (v : number) => v === 0);
+
+			// must be here directly as no lock is declared
+			const ellapsed = Date.now() - time;
+			expect(ellapsed >= 0 && ellapsed < 5).to.equal(true);
+			expect(observable.get()).to.equal(0);
+			done();
+		})();
+
+		setTimeout(() => observable.set(5), 50);
+	});
+
 	it('tobe falsy once', function(done) {
 		const observable = new Observable(0);
 		const time = Date.now();

@@ -5,7 +5,8 @@
 	"main": "dist/index.js",
 	"type": "dist/index.d.ts",
 	"keywords": [
-		"tools", "typescript"
+		"tools",
+		"typescript"
 	],
 	"author": "BHC-IT",
 	"license": "MIT",
