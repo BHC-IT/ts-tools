@@ -57,7 +57,9 @@ export const range = (start : number = 0, end : number = Infinity, increment : n
 	const ranger = rangeFunctional(start, end, increment);
 
 	let generationHandler = {
-		get: function(arr : number[], prop : number) {
+		// strangly enought, prop must not be number, but will be a number
+		// investigation required
+		get: function(arr : number[], prop : any) {
 			while (prop >= arr.length) {
 				arr.push(ranger());
 			}
