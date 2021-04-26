@@ -2,6 +2,7 @@
 	* This is the documentation for maybe.ts
 	* usage exemple :
 	* ```typescript
+	*
 	* async function readDB() : Promise<Maybe<object>> {
 	*	try {
 	*		const response = await fetchSomethingInDB();
