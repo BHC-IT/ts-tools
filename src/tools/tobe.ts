@@ -16,7 +16,7 @@
 	*
 	*	...
 	*
-	*	observable.set(5); // this will release the async lock 
+	*	observable.set(5); // this will release the async lock
 	* ```
 	*
 	* @packageDocumentation
@@ -69,7 +69,7 @@ export const lockFor = async <T>(cond : Function, timeout : number = 50, maxRecu
 		if (cond())
 			return;
 		if (maxRecuse)
-			maxRecuse--;		
+			maxRecuse--;
 	}
 	throw new Error("lockFor : max recurse depleted");
 }
