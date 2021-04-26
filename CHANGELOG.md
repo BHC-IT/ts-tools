@@ -1,3 +1,10 @@
+## [1.7.1](https://github.com/BHC-IT/ts-tools/compare/v1.7.0...v1.7.1) (2021-04-26)
+
+
+### Bug Fixes
+
+* tobe: no lock if observable is true initialy ([e2f97fc](https://github.com/BHC-IT/ts-tools/commit/e2f97fc2c391cca125ee9247c4a64bdb6cc1206c))
+
 # [1.7.0](https://github.com/BHC-IT/ts-tools/compare/v1.6.0...v1.7.0) (2021-03-05)
 
 
