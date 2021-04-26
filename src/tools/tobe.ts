@@ -40,6 +40,8 @@ import { sleep } from './sleep';
 export const tobe = async <T>(obs : Observable<T> | AsyncIterableIterator<T>, cond : (arg1 : T) => boolean) : Promise<void> => {
 	if (obs instanceof Observable) {
 		while (true) {
+			if (cond(obs.get()))
+				return;
 			const newValue = await obs.change();
 			if (cond(newValue))
 				return;
