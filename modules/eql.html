@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>take | @bhc/ts-tools</title>
+	<title>eql | @bhc/ts-tools</title>
 	<meta name="description" content="Documentation for @bhc/ts-tools">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -55,10 +55,10 @@
 					<a href="../modules.html">@bhc/ts-tools</a>
 				</li>
 				<li>
-					<a href="take.html">take</a>
+					<a href="eql.html">eql</a>
 				</li>
 			</ul>
-			<h1>Module take</h1>
+			<h1>Module eql</h1>
 		</div>
 	</div>
 </header>
@@ -68,7 +68,8 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>This is the documentation for take.ts</p>
+						<p>This is the documentation for eql.ts
+						This module implement object and array deep (nested) equality.</p>
 					</div>
 				</div>
 			</section>
@@ -79,7 +80,7 @@
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="take.html#take-1" class="tsd-kind-icon">take</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="eql.html#eql-1" class="tsd-kind-icon">eql</a></li>
 							</ul>
 						</section>
 					</div>
@@ -87,22 +88,23 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
-					<a name="take-1" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> take</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">take<span class="tsd-signature-symbol">(</span>nb<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, t<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></li>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
+					<a name="eql-1" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> eql</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">eql&lt;T, U&gt;<span class="tsd-signature-symbol">(</span>objLeft<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, objRight<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/BHC-IT/ts-tools/blob/68b96d0/src/tools/take.ts#L18">tools/take.ts:18</a></li>
+									<li>Defined in <a href="https://github.com/BHC-IT/ts-tools/blob/68b96d0/src/tools/eql.ts#L48">tools/eql.ts:48</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Take some element at the start of the tuple or array.</p>
+									<p>This function create a deep copy of any array based type, with any nesting construction.
+									May not support every type in the book. To test out.</p>
 								</div>
 								<dl class="tsd-comment-tags">
 									<dt>author</dt>
@@ -110,23 +112,26 @@
 									</dd>
 								</dl>
 							</div>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">unknown</span></h4>
+								</li>
+								<li>
+									<h4>U<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">unknown</span></h4>
+								</li>
+							</ul>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>nb: <span class="tsd-signature-type">number</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>nb elements to take at the start.</p>
-									</div>
+									<h5>objLeft: <span class="tsd-signature-type">T</span></h5>
 								</li>
 								<li>
-									<h5>t: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>Tuple or array to take from.</p>
-									</div>
+									<h5>objRight: <span class="tsd-signature-type">U</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h4>
-							<p>return a copy of t containing only nb firsts elements.</p>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<p>Copied array.</p>
 						</li>
 					</ul>
 				</section>
@@ -150,7 +155,7 @@
 					<li class=" tsd-kind-module">
 						<a href="drop.html">drop</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class="current tsd-kind-module">
 						<a href="eql.html">eql</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -189,7 +194,7 @@
 					<li class=" tsd-kind-module">
 						<a href="tail.html">tail</a>
 					</li>
-					<li class="current tsd-kind-module">
+					<li class=" tsd-kind-module">
 						<a href="take.html">take</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -202,8 +207,8 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="take.html#take-1" class="tsd-kind-icon">take</a>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="eql.html#eql-1" class="tsd-kind-icon">eql</a>
 					</li>
 				</ul>
 			</nav>
