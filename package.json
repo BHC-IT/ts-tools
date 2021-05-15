@@ -10,10 +10,6 @@
 	],
 	"author": "BHC-IT",
 	"license": "MIT",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/BHC-IT/ts-tools.git"
-	},
 	"private": false,
 	"scripts": {
 		"start": "npm run build && node dist/index.js",
