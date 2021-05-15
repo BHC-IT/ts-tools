@@ -29,5 +29,17 @@ describe('test range', function() {
 
 		expect(ranger[100]).to.eql(undefined);
 	});
+
+	it('range access unvalid index', function() {
+		const ranger = range(10, 100, 2);
+
+		expect((ranger as any).test).to.eql(undefined);
+	});
+
+	it('range access unvalid index', function() {
+		const ranger = range(10, 100, 2);
+
+		expect((ranger as any)[Symbol('test')]).to.eql(undefined);
+	});
 });
 

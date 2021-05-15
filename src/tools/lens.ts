@@ -6,7 +6,7 @@
 	*
 */
 
-import { deepCopy } from './deep';
+import { copy } from './deep';
 
 /**
 	* Lens type for hard typing & "type safety".
@@ -32,7 +32,7 @@ export type Lens<T, U> = {get : (arg0 : T) => U, set : (arg0 : U, arg1 : T) => T
 */
 export const lens = <T, U>(getter : Function, setter : Function) : Lens<T, U> => ({
 	get: (obj : T) : U => getter(obj),
-	set: (val : U, obj : T) : T => setter(val, deepCopy(obj)),
+	set: (val : U, obj : T) : T => setter(val, copy(obj)),
 });
 
 /**
@@ -57,7 +57,7 @@ export const lensFrom = <T, U>(path : string | (string | number)[], split : stri
 
 	const getter = (obj : T) : U => arrAccessor.reduce((prev : any, currA : string) => prev?.[currA], obj);
 	const setter = (value : U, obj : T) : T => {
-		
+
 		arrAccessor.reduce((prev : any, currA : string, i : number) => {
 			if (prev === undefined) return undefined;
 			if (i === arrAccessor.length - 1 && prev[currA] !== null)

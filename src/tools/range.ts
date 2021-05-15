@@ -57,11 +57,14 @@ export const range = (start : number = 0, end : number = Infinity, increment : n
 	const ranger = rangeFunctional(start, end, increment);
 
 	let generationHandler = {
-		get: function(arr : number[], prop : number) {
-			while (prop >= arr.length) {
+		get: function(arr : number[], prop : string | symbol) {
+			if (typeof prop !== "string")
+				return undefined;
+			const nprop : number = Number(prop);
+			while (nprop >= arr.length) {
 				arr.push(ranger());
 			}
-			return arr[prop];
+			return arr[nprop];
 		},
 	}
 	let p = new Proxy([] as number[], generationHandler);
