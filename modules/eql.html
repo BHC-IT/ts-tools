@@ -98,13 +98,12 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/BHC-IT/ts-tools/blob/68b96d0/src/tools/eql.ts#L48">tools/eql.ts:48</a></li>
+									<li>Defined in <a href="https://github.com/BHC-IT/ts-tools/blob/e40ddbd/src/tools/eql.ts#L48">tools/eql.ts:48</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>This function create a deep copy of any array based type, with any nesting construction.
-									May not support every type in the book. To test out.</p>
+									<p>This function deep compare anything.</p>
 								</div>
 								<dl class="tsd-comment-tags">
 									<dt>author</dt>
@@ -125,13 +124,19 @@
 							<ul class="tsd-parameters">
 								<li>
 									<h5>objLeft: <span class="tsd-signature-type">T</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>First things to compare.</p>
+									</div>
 								</li>
 								<li>
 									<h5>objRight: <span class="tsd-signature-type">U</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Second things to compare.</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-							<p>Copied array.</p>
+							<p>True if arrays match, false otherwise.</p>
 						</li>
 					</ul>
 				</section>
