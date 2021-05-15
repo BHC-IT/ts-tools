@@ -10,11 +10,11 @@
 
 
 /**
-	* This function create a deep copy of any array based type, with any nesting construction.
-	* May not support every type in the book. To test out.
+	* This function deep compare two array.
 	*
-	* @param arr		Array to copy.
-	* @returns 		Copied array.
+	* @param arrLeft	First array to compare.
+	* @param arrRight	Second array to compare.
+	* @returns 		True if arrays match, false otherwise.
 	*
 	* @author Valentin Vivier <lanathlor>
 	* @internal
@@ -24,11 +24,11 @@ export const eqlArray = <T extends any[], U extends any[]>(arrLeft : T, arrRight
 
 
 /**
-	* This function create a deep copy of any array based type, with any nesting construction.
-	* May not support every type in the book. To test out.
+	* This function deep compare two object.
 	*
-	* @param arr		Array to copy.
-	* @returns 		Copied array.
+	* @param objLeft	First object to compare.
+	* @param objRight	Second object to compare.
+	* @returns 		True if arrays match, false otherwise.
 	*
 	* @author Valentin Vivier <lanathlor>
 	* @internal
@@ -37,11 +37,11 @@ export const eqlObj = <T extends object>(objLeft : T, objRight : T) : boolean =>
 	(Object.keys(objLeft) as Array<keyof typeof objLeft>).reduce((s: boolean, e: keyof typeof objLeft) => s && eql(objLeft[e], objRight[e]), true);
 
 /**
-	* This function create a deep copy of any array based type, with any nesting construction.
-	* May not support every type in the book. To test out.
+	* This function deep compare anything.
 	*
-	* @param arr		Array to copy.
-	* @returns 		Copied array.
+	* @param objLeft	First things to compare.
+	* @param objRight	Second things to compare.
+	* @returns 		True if arrays match, false otherwise.
 	*
 	* @author Valentin Vivier <lanathlor>
 */
