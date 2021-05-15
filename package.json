@@ -17,8 +17,9 @@
 	"private": false,
 	"scripts": {
 		"start": "npm run build && node dist/index.js",
-		"dev": "npm run build && nodemon",
+		"dev": "nodemon",
 		"test": "mocha -r ts-node/register test/**/*.ts",
+		"test:dev": "nodemon --config ./nodemon.test.json",
 		"cov": "nyc npm run test",
 		"cov:html": "nyc --reporter=lcov --reporter=text-summary npm run test",
 		"build": "npm run clean && tsc",

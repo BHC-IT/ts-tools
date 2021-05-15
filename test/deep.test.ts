@@ -1,38 +1,38 @@
 import chai, { expect } from 'chai';
 import chaiAsPromised from 'chai-as-promised';
 
-import { deepCopy } from '../src/tools/deep';
+import { copy } from '../src/tools/deep';
 
 chai.use(chaiAsPromised);
 
-describe('test deepCopy', function() {
-	it('deepCopy simple case', function() {
+describe('test copy', function() {
+	it('copy simple case', function() {
 		const test = {
 			deep: {
 				value: 1
 			}
 		};
 
-		const copy = deepCopy(test);
+		const testCopy = copy(test);
 
-		expect(copy).to.eql(test);
+		expect(testCopy).to.eql(test);
 	});
 
-	it('deepCopy no deep reference', function() {
+	it('copy no deep reference', function() {
 		const test = {
 			deep: {
 				value: 1
 			}
 		};
 
-		const copy = deepCopy(test);
+		const testCopy = copy(test);
 
 		test.deep.value = 2;
 
-		expect(copy.deep.value).to.eql(1);
+		expect(testCopy.deep.value).to.eql(1);
 	});
 
-	it('deepCopy with array', function() {
+	it('copy with array', function() {
 		const test = {
 			deep: {
 				value: 1,
@@ -43,12 +43,12 @@ describe('test deepCopy', function() {
 			}
 		};
 
-		const copy = deepCopy(test);
+		const testCopy = copy(test);
 
-		expect(copy).to.eql(test);
+		expect(testCopy).to.eql(test);
 	});
 
-	it('deepCopy with Date', function() {
+	it('copy with Date', function() {
 		const test = {
 			deep: {
 				value: 1,
@@ -60,12 +60,12 @@ describe('test deepCopy', function() {
 			someDate : new Date(),
 		};
 
-		const copy = deepCopy(test);
+		const testCopy = copy(test);
 
-		expect(copy).to.eql(test);
+		expect(testCopy).to.eql(test);
 	});
 
-	it('deepCopy with custom class', function() {
+	it('copy with custom class', function() {
 
 		class classTest {
 			a : number;
@@ -88,9 +88,9 @@ describe('test deepCopy', function() {
 			someDate : new classTest(1, 2),
 		};
 
-		const copy = deepCopy(test);
+		const testCopy = copy(test);
 
-		expect(copy).to.eql(test);
+		expect(testCopy).to.eql(test);
 	});
 });
 

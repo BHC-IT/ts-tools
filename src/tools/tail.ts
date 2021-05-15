@@ -13,7 +13,7 @@
 	*
 	* @author Valentin Vivier <lanathlor>
 */
-export type Tail<T extends any[]> = ((...args: T) => void) extends (head: any, ...tail: infer U) => any ? U : never;
+export type Tail<T extends any[]> = T extends [any[], infer U] ? U : never;
 
 /**
 	* Send back a copy of a tuple or array without his first element.
