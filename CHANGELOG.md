@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/BHC-IT/ts-tools/compare/v1.7.1...v1.8.0) (2021-05-16)
+
+
+### Features
+
+* added deep eql ([6cd0004](https://github.com/BHC-IT/ts-tools/commit/6cd000456b2c225e92da37d97daabcfad01f7e5e))
+
 ## [1.7.1](https://github.com/BHC-IT/ts-tools/compare/v1.7.0...v1.7.1) (2021-04-26)
 
 
