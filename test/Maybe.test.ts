@@ -41,5 +41,22 @@ describe('test Maybe', function() {
 		const res = Maybe.fmap((e : number) => e + 1, i);
 		expect(res).to.equal(Maybe.nothing);
 	});
+
+	it ('Maybe lift', function() {
+		const i : Maybe<number> = Maybe.from(0);
+		const inc = (e : number) => e + 1;
+		const minc = Maybe.lift(inc);
+
+		const res = minc(i);
+
+		Maybe.fmap((e : number) => expect(e).to.equal(1), res);
+	});
+
+	it ('Maybe from nothing', function() {
+		const i = Maybe.from(Maybe.nothing);
+
+		expect(i).to.equal(Maybe.nothing);
+	});
+
 });
 
