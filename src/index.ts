@@ -8,7 +8,6 @@ import { head, Head } from './tools/head';
 import { init } from './tools/init';
 import { last } from './tools/last';
 import { Lens, lens, lensFrom, view, set } from './tools/lens';
-import { just, nothing, isJust, isNothing, callMaybe } from './tools/maybe';
 import { Observable, observe } from './tools/observable';
 import { pipe } from './tools/pipe';
 import { range } from './tools/range';
@@ -17,20 +16,18 @@ import { tail, Tail } from './tools/tail';
 import { take } from './tools/take';
 import { tobe, lockFor } from './tools/tobe';
 
-import type { Maybe, Just, Nothing } from './types/Maybe';
+import { Effect } from './types/Effect';
+import { Maybe } from './effects/Maybe';
 
-const call = {...callMaybe};
 
 export type {
 	Head,
 	Lens,
 	Tail,
-
-	Maybe, Just, Nothing,
 };
 
 export {
-	call,
+	// call,
 	compose,
 	curry,
 	copy,
@@ -41,7 +38,6 @@ export {
 	head,
 	last,
 	lens, lensFrom, view, set,
-	just, nothing, isJust, isNothing, callMaybe,
 	Observable, observe,
 	pipe,
 	range,
@@ -49,4 +45,7 @@ export {
 	tail,
 	take,
 	tobe, lockFor,
+
+	Effect,
+	Maybe,
 };

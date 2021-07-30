@@ -72,4 +72,4 @@ export interface Just<T> {
 	*
 	* @author Valentin Vivier <lanathlor>
 */
-export type Maybe<T> = Just<T> | Nothing;
+export type MaybeConstructor<T> = Just<T> | Nothing;
