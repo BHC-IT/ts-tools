@@ -4,11 +4,11 @@ import { copy } from './tools/deep';
 import { drop } from './tools/drop';
 import { eql } from './tools/eql';
 import { flip } from './tools/flip';
+import { fmap } from './tools/fmap';
 import { head, Head } from './tools/head';
 import { init } from './tools/init';
 import { last } from './tools/last';
 import { Lens, lens, lensFrom, view, set } from './tools/lens';
-import { just, nothing, isJust, isNothing, callMaybe } from './tools/maybe';
 import { Observable, observe } from './tools/observable';
 import { pipe } from './tools/pipe';
 import { range } from './tools/range';
@@ -17,31 +17,29 @@ import { tail, Tail } from './tools/tail';
 import { take } from './tools/take';
 import { tobe, lockFor } from './tools/tobe';
 
-import type { Maybe, Just, Nothing } from './types/Maybe';
+import { Effect, recordType } from './effects/Effect';
+import { Maybe } from './effects/Maybe';
 
-const call = {...callMaybe};
 
 export type {
 	Head,
 	Lens,
 	Tail,
-
-	Maybe, Just, Nothing,
 };
 
 export {
-	call,
+	// call,
 	compose,
 	curry,
 	copy,
 	drop,
 	eql,
 	flip,
+	fmap,
 	init,
 	head,
 	last,
 	lens, lensFrom, view, set,
-	just, nothing, isJust, isNothing, callMaybe,
 	Observable, observe,
 	pipe,
 	range,
@@ -49,4 +47,7 @@ export {
 	tail,
 	take,
 	tobe, lockFor,
+
+	Effect, recordType,
+	Maybe,
 };
