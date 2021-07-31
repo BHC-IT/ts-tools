@@ -16,3 +16,15 @@
 	* @author Valentin Vivier <lanathlor>
 */
 export const curry = (func : Function, ...args : any[]) => (...trail : any[]) => func(...args, ...trail);
+
+/**
+	* Reverse curry a function.
+	*
+	*
+	* @param func		Function to curry.
+	* @param args		Argument to pine to curried function.
+	* @return Curried function.
+	*
+	* @author Valentin Vivier <lanathlor>
+*/
+export const rcurry = (func : Function, ...args : any[]) => (...trail : any[]) => func(...(trail.reverse()), ...(args.reverse()));

@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { curry } from '../src/tools/curry';
+import { curry, rcurry } from '../src/tools/curry';
 
 const add = (x1 : number, x2 : number) => x1 + x2;
 
@@ -8,6 +8,11 @@ const many_add = (x1 : number, x2 : number, x3 : number, x4 : number) => x1 + x2
 const addc = curry(add, 1);
 
 const addcm = curry(many_add, 1, 2);
+
+const minus = (a: number, b: number) => a - b
+
+const minusc = curry(minus, 1);
+const minuscr = rcurry(minus, 1);
 
 describe('test curry', function() {
 	it('curry(...) should return 1', function() {
@@ -32,6 +37,22 @@ describe('test curry', function() {
 
 	it('curry(...) should return NaN', function() {
 		expect(addcm(2)).to.eql(NaN);
+	});
+
+	it('rcurry(...) should return 1', function() {
+		expect(minuscr(2)).to.equal(1);
+	});
+
+	it('rcurry(...) should return -1', function() {
+		expect(minuscr(0)).to.equal(-1);
+	});
+
+	it('curry(...) should return -1', function() {
+		expect(minusc(2)).to.equal(-1);
+	});
+
+	it('curry(...) should return 1', function() {
+		expect(minusc(0)).to.equal(1);
 	});
 });
 
