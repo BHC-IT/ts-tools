@@ -4,6 +4,7 @@ import { copy } from './tools/deep';
 import { drop } from './tools/drop';
 import { eql } from './tools/eql';
 import { flip } from './tools/flip';
+import { fmap } from './tools/fmap';
 import { head, Head } from './tools/head';
 import { init } from './tools/init';
 import { last } from './tools/last';
@@ -34,6 +35,7 @@ export {
 	drop,
 	eql,
 	flip,
+	fmap,
 	init,
 	head,
 	last,
