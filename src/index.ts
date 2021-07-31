@@ -48,6 +48,6 @@ export {
 	take,
 	tobe, lockFor,
 
-	Effect, recordType
+	Effect, recordType,
 	Maybe,
 };
