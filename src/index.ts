@@ -16,7 +16,7 @@ import { tail, Tail } from './tools/tail';
 import { take } from './tools/take';
 import { tobe, lockFor } from './tools/tobe';
 
-import { Effect } from './types/Effect';
+import { Effect, recordType } from './effects/Effect';
 import { Maybe } from './effects/Maybe';
 
 
@@ -46,6 +46,6 @@ export {
 	take,
 	tobe, lockFor,
 
-	Effect,
+	Effect, recordType
 	Maybe,
 };

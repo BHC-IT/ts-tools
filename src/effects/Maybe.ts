@@ -1,4 +1,4 @@
-import { Effect } from '../types/Effect';
+import { Effect } from './Effect';
 
 export interface Nothing {
 	readonly _tag: 'nothing',
@@ -28,6 +28,8 @@ export class Maybe<A extends any> extends Effect<A> {
 	public static from = <A extends any>(a: A): Maybe<A> => Maybe.nothing === a ? Maybe.nothing : Maybe.just(a)
 
 	public static lift =  <A, B extends any>(f:(a: A) => B): ((a: Maybe<A>) => Maybe<B>) => (a: Maybe<A>) => Maybe.fmap(f, a)
+
+	public identity = <T extends typeof Effect>(): T => Maybe as unknown as T;
 
 	public static just = <A extends any>(a: A): Maybe<A> => new Maybe<A>({_tag: 'just', value: a});
 

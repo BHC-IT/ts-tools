@@ -58,5 +58,11 @@ describe('test Maybe', function() {
 		expect(i).to.equal(Maybe.nothing);
 	});
 
+	it ('Maybe identity', function() {
+		const i = Maybe.from(Maybe.nothing);
+
+		expect(i.identity()).to.equal(Maybe);
+	});
+
 });
 
