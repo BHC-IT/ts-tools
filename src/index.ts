@@ -1,5 +1,5 @@
 import { compose } from './tools/compose';
-import { curry } from './tools/curry';
+import { curry, rcurry } from './tools/curry';
 import { copy } from './tools/deep';
 import { drop } from './tools/drop';
 import { eql } from './tools/eql';
@@ -30,7 +30,7 @@ export type {
 export {
 	// call,
 	compose,
-	curry,
+	curry, rcurry,
 	copy,
 	drop,
 	eql,
