@@ -20,6 +20,8 @@ import { tobe, lockFor } from './tools/tobe';
 import { Effect, recordType } from './effects/Effect';
 import { Maybe } from './effects/Maybe';
 
+import { String } from './Namespaces/string';
+
 
 export type {
 	Head,
@@ -50,4 +52,6 @@ export {
 
 	Effect, recordType,
 	Maybe,
+
+	String,
 };
