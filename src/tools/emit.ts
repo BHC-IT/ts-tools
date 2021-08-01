@@ -1,0 +1,1 @@
+export const emit = (s : string) : never => {throw new Error('s')}

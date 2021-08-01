@@ -1,8 +1,8 @@
 import { expect } from 'chai';
 
 import { Maybe } from '../src/effects/Maybe';
-// import { Just, Nothing } from '../src/types/Maybe';
 
+import { emit } from '../src/tools/emit';
 
 describe('test Maybe', function() {
 
@@ -64,5 +64,84 @@ describe('test Maybe', function() {
 		expect(i.identity()).to.equal(Maybe);
 	});
 
+	it ('Maybe fromJust of just', function() {
+		const i = Maybe.just(0);
+
+		expect(Maybe.fromJust(i)).to.equal(0);
+	});
+
+	it ('Maybe fromJust of nothing', function() {
+		const i = Maybe.nothing;
+
+		expect(() => Maybe.fromJust(i)).to.throws();
+	});
+
+	it ('Maybe fromMaybe of just', function() {
+		const i = Maybe.just(0);
+
+		expect(Maybe.fromMaybe(1, i)).to.equal(0);
+	});
+
+	it ('Maybe fromMaybe of nothing', function() {
+		const i = Maybe.nothing;
+
+		expect(Maybe.fromMaybe(1, i)).to.equal(1);
+	});
+
+	it ('Maybe listToMaybe', function() {
+		const i = Maybe.listToMaybe([0, 1]);
+
+		expect(Maybe.fromMaybe(1, i)).to.equal(0);
+	});
+
+	it ('Maybe listToMaybe empty list', function() {
+		const i = Maybe.listToMaybe([]);
+
+		expect(Maybe.fromMaybe(1, i)).to.equal(1);
+	});
+
+	it ('Maybe maybeToList just', function() {
+		const i = Maybe.just(1);
+
+		expect(Maybe.maybeToList(i)).to.eql([1]);
+	});
+
+	it ('Maybe maybeToList nothing', function() {
+		const i = Maybe.nothing;
+
+		expect(Maybe.maybeToList(i)).to.eql([]);
+	});
+
+	it ('Maybe catMaybe', function() {
+		const i = [Maybe.just(1), Maybe.nothing, Maybe.just(2)];
+
+		expect(Maybe.catMaybes(i)).to.eql([1, 2]);
+	});
+
+	it ('Maybe identity', function() {
+
+		expect(Maybe.just(0).identity()).to.eql(Maybe);
+	});
+
+	it ('Maybe mapMaybe', function() {
+		const f = (a: number) => a % 2 === 0 ? Maybe.just(a) : Maybe.nothing;
+
+		const bs = Maybe.mapMaybe(f, [0, 1, 2, 3, 4, 5]);
+
+		expect(bs).to.eql([0, 2, 4]);
+	});
+
+	it ('Maybe liftFromThrowable', function() {
+		const f = (a: number) => a % 2 === 0 ? a : emit('');
+
+		const fm = Maybe.liftFromThrowable(f);
+
+		const a = fm(0);
+		const b = fm(1);
+
+		expect(Maybe.fromJust(a)).to.eql(0);
+
+		expect(Maybe.isNothing(b)).to.equal(true);
+	});
 });
 

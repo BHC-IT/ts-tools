@@ -2,6 +2,7 @@ import { compose } from './tools/compose';
 import { curry, rcurry } from './tools/curry';
 import { copy } from './tools/deep';
 import { drop } from './tools/drop';
+import { emit } from './tools/emit';
 import { eql } from './tools/eql';
 import { flip } from './tools/flip';
 import { fmap } from './tools/fmap';
@@ -20,8 +21,9 @@ import { tobe, lockFor } from './tools/tobe';
 import { Effect, recordType } from './effects/Effect';
 import { Maybe } from './effects/Maybe';
 
-import { String } from './Namespaces/string';
+import * as String from './namespaces/string';
 
+console.log(String);
 
 export type {
 	Head,
@@ -35,6 +37,7 @@ export {
 	curry, rcurry,
 	copy,
 	drop,
+	emit,
 	eql,
 	flip,
 	fmap,
