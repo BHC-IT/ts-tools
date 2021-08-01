@@ -14,6 +14,7 @@ import { Lens, lens, lensFrom, view, set } from './tools/lens';
 import { Observable, observe } from './tools/observable';
 import { pipe } from './tools/pipe';
 import { range } from './tools/range';
+import { show, showf } from './tools/show';
 import { sleep } from './tools/sleep';
 import { tail, Tail } from './tools/tail';
 import { take } from './tools/take';
@@ -22,7 +23,7 @@ import { tobe, lockFor } from './tools/tobe';
 import { Effect, recordType } from './effects/Effect';
 import { Maybe } from './effects/Maybe';
 
-import * as String from './namespaces/string';
+import { String } from './namespaces/string';
 
 export type {
 	Head,
@@ -48,6 +49,7 @@ export {
 	Observable, observe,
 	pipe,
 	range,
+	show, showf,
 	sleep,
 	tail,
 	take,
