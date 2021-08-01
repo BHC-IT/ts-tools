@@ -23,8 +23,6 @@ import { Maybe } from './effects/Maybe';
 
 import * as String from './namespaces/string';
 
-console.log(String);
-
 export type {
 	Head,
 	Lens,
