@@ -1,3 +1,10 @@
+# [1.11.0](https://github.com/BHC-IT/ts-tools/compare/v1.10.0...v1.11.0) (2021-08-01)
+
+
+### Features
+
+* added Maybe liftFromThrowableAsync && removed console.log ([7bebbae](https://github.com/BHC-IT/ts-tools/commit/7bebbaef7dfa4aec8526bff28a5ced875ec41ebe))
+
 # [1.10.0](https://github.com/BHC-IT/ts-tools/compare/v1.9.0...v1.10.0) (2021-08-01)
 
 
