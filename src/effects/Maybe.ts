@@ -65,9 +65,17 @@ export class Maybe<A extends any> extends Effect<A> {
 		]
 
 
-	public static liftFromThrowable = <A extends any>(f: ((...a: any[]) => A)): ((...a: any[]) => Maybe<A>) => (...a: any[]) => {
+	public static liftFromThrowable = <A extends any, Args extends any[]>(f: ((...a: Args) => A)): ((...a: Args) => Maybe<A>) => (...a: Args) => {
 		try {
 			return Maybe.just(f(...a));
+		} catch {
+			return Maybe.nothing
+		}
+	}
+
+	public static liftFromThrowableAsync = <A extends any, Args extends any[]>(f: ((...a: Args) => Promise<A>)): ((...a: Args) => Promise<Maybe<A>>) => async (...a: Args) => {
+		try {
+			return Maybe.just(await f(...a));
 		} catch {
 			return Maybe.nothing
 		}
