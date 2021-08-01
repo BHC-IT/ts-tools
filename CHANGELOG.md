@@ -1,3 +1,10 @@
+# [1.12.0](https://github.com/BHC-IT/ts-tools/compare/v1.11.1...v1.12.0) (2021-08-01)
+
+
+### Features
+
+* added show ([bd6c7c5](https://github.com/BHC-IT/ts-tools/commit/bd6c7c56d4bb963cc877a7f4c251554d1e5dbd1f))
+
 ## [1.11.1](https://github.com/BHC-IT/ts-tools/compare/v1.11.0...v1.11.1) (2021-08-01)
 
 
