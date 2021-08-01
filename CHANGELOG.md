@@ -1,3 +1,17 @@
+# [1.9.0](https://github.com/BHC-IT/ts-tools/compare/v1.8.0...v1.9.0) (2021-07-31)
+
+
+### Bug Fixes
+
+* corrected test and cleaned up ([d10f402](https://github.com/BHC-IT/ts-tools/commit/d10f402b2c1016017b298b292f8300f50d897afa))
+* patched a little oopsi ([4bfeba7](https://github.com/BHC-IT/ts-tools/commit/4bfeba7ee62aca2502f44e43778a5a4c8868e3d6))
+
+
+### Features
+
+* added fmap ([2035b41](https://github.com/BHC-IT/ts-tools/commit/2035b41dfc60afacfbeda2b9d6036ccd27d8fc5d))
+* added fmap ([07701a4](https://github.com/BHC-IT/ts-tools/commit/07701a4704ad5b535c0df024029869d2667404cb))
+
 # [1.8.0](https://github.com/BHC-IT/ts-tools/compare/v1.7.1...v1.8.0) (2021-05-16)
 
 
