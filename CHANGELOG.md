@@ -1,3 +1,10 @@
+## [1.11.1](https://github.com/BHC-IT/ts-tools/compare/v1.11.0...v1.11.1) (2021-08-01)
+
+
+### Bug Fixes
+
+* forward export forward module ([1ad1be4](https://github.com/BHC-IT/ts-tools/commit/1ad1be45bf5156ccbfd64f165141c4a51b75c07e))
+
 # [1.11.0](https://github.com/BHC-IT/ts-tools/compare/v1.10.0...v1.11.0) (2021-08-01)
 
 
