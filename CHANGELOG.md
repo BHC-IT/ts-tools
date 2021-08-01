@@ -1,3 +1,22 @@
+# [1.10.0](https://github.com/BHC-IT/ts-tools/compare/v1.9.0...v1.10.0) (2021-08-01)
+
+
+### Bug Fixes
+
+* export String ([993e51e](https://github.com/BHC-IT/ts-tools/commit/993e51ef643e5ffb63955ca547fb466dd1466ba5))
+
+
+### Features
+
+* added rcurry ([ad4c56f](https://github.com/BHC-IT/ts-tools/commit/ad4c56f937275035a3c135e24aa7172071a88d00))
+* added rcurry ([78d5d3c](https://github.com/BHC-IT/ts-tools/commit/78d5d3c9297c39cf5cb2ceea57517c02d76768a8))
+* created string namespace ([0fbff31](https://github.com/BHC-IT/ts-tools/commit/0fbff31a2fc05151da49b82f746b13de113c05d0))
+
+
+### Performance Improvements
+
+* added Maybe tooling ([20f39fe](https://github.com/BHC-IT/ts-tools/commit/20f39fefb98853c131407c20cdf8d597ad70ae0c))
+
 # [1.9.0](https://github.com/BHC-IT/ts-tools/compare/v1.8.0...v1.9.0) (2021-07-31)
 
 
