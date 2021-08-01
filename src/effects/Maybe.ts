@@ -1,5 +1,9 @@
 import { Effect } from './Effect';
 
+import { emit } from '../tools/emit';
+import { tail } from '../tools/tail';
+import { forwardTern } from '../tools/forward';
+
 export interface Nothing {
 	readonly _tag: 'nothing',
 };
@@ -33,11 +37,42 @@ export class Maybe<A extends any> extends Effect<A> {
 
 	public static just = <A extends any>(a: A): Maybe<A> => new Maybe<A>({_tag: 'just', value: a});
 
-	public static nothing = new Maybe<any>({_tag: 'nothing'});
+	public static nothing = new Maybe<never>({_tag: 'nothing'});
 
 	public static isJust = <A extends any>(a: Maybe<A>): boolean => a.record._tag === 'just';
 
 	public static isNothing = <A extends any>(a: Maybe<A>): boolean => a.record._tag === 'nothing';
+
+	public static fromJust = <A extends any>(a: Maybe<A>) : A => isJust(a.record) ? a.record.value : emit("Error: Maybe opened on nothing")
+
+	public static fromMaybe = <A extends any>(d: A, a: Maybe<A>) : A => isJust(a.record) ? a.record.value : d
+
+	public static listToMaybe = <A extends any>(a: A[]) : Maybe<A> => a.length === 0 ? Maybe.nothing : Maybe.just(a[0]);
+
+	public static maybeToList = <A extends any>(a: Maybe<A>) : A[] => isJust(a.record) ? [a.record.value] : [];
+
+	public static catMaybes = <A extends any>(a: Maybe<A>[]) : A[] =>
+		[
+			...(a.length && isJust(a[0].record) ? [a[0].record.value] : []),
+			...(a.length ? Maybe.catMaybes(tail(a)) as A[] : [])
+		]
+
+		/* todo with forwardTernary */
+	public static mapMaybe = <A, B extends any>(f:(a: A) => Maybe<B>, a: A[]) : B[] =>
+		[
+			...(a.length ? forwardTern(f(a[0]), (b: Maybe<B>) => isJust(b.record), (b: Maybe<B>) => [Maybe.fromJust(b)], () => []) : []),
+			...(a.length ? Maybe.mapMaybe(f, tail(a)) : [])
+		]
+
+
+	public static liftFromThrowable = <A extends any>(f: ((...a: any[]) => A)): ((...a: any[]) => Maybe<A>) => (...a: any[]) => {
+		try {
+			return Maybe.just(f(...a));
+		} catch {
+			return Maybe.nothing
+		}
+	}
+
 
 }
 
