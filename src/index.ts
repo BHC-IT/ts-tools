@@ -6,6 +6,7 @@ import { emit } from './tools/emit';
 import { eql } from './tools/eql';
 import { flip } from './tools/flip';
 import { fmap } from './tools/fmap';
+import { forwardTern, forwardIf } from './tools/forward';
 import { head, Head } from './tools/head';
 import { init } from './tools/init';
 import { last } from './tools/last';
@@ -39,6 +40,7 @@ export {
 	eql,
 	flip,
 	fmap,
+	forwardTern, forwardIf,
 	init,
 	head,
 	last,
