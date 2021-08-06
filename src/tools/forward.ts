@@ -1,3 +1,6 @@
+export const forward = <A extends any>(forward: A, ...fs: ((a: A) => any)[]) =>
+	fs.forEach(f => f(forward));
+
 export const forwardIf = <A extends any>(forward: A, pred: (a: A) => boolean, f: (a: A) => any) =>
 	pred(forward) ? f(forward) : undefined;
 

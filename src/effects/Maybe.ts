@@ -28,6 +28,7 @@ export class Maybe<A extends any> extends Effect<A> {
 	}
 
 	public static fmap = <A extends any, B extends any>(f:(a: A) => B, a: Maybe<A>): Maybe<B> => isJust(a.record) ? Maybe.from(f(a.record.value)) : Maybe.nothing
+	public fmap = <B extends any>(f:(a: A) => B): Maybe<B> => Maybe.fmap(f, this);
 
 	public static from = <A extends any>(a: A): Maybe<A> => Maybe.nothing === a ? Maybe.nothing : Maybe.just(a)
 
@@ -40,16 +41,21 @@ export class Maybe<A extends any> extends Effect<A> {
 	public static nothing = new Maybe<never>({_tag: 'nothing'});
 
 	public static isJust = <A extends any>(a: Maybe<A>): boolean => a.record._tag === 'just';
+	public isJust = (): boolean => Maybe.isJust(this);
 
 	public static isNothing = <A extends any>(a: Maybe<A>): boolean => a.record._tag === 'nothing';
+	public isNothing = (): boolean => Maybe.isNothing(this);
 
 	public static fromJust = <A extends any>(a: Maybe<A>) : A => isJust(a.record) ? a.record.value : emit("Error: Maybe opened on nothing")
+	public fromJust = () : A => Maybe.fromJust(this);
 
 	public static fromMaybe = <A extends any>(d: A, a: Maybe<A>) : A => isJust(a.record) ? a.record.value : d
+	public fromMaybe = (d: A) : A => Maybe.fromMaybe(d, this);
 
 	public static listToMaybe = <A extends any>(a: A[]) : Maybe<A> => a.length === 0 ? Maybe.nothing : Maybe.just(a[0]);
 
 	public static maybeToList = <A extends any>(a: Maybe<A>) : A[] => isJust(a.record) ? [a.record.value] : [];
+	public maybeToList = () : A[] => Maybe.maybeToList(this);
 
 	public static catMaybes = <A extends any>(a: Maybe<A>[]) : A[] =>
 		[
@@ -80,6 +86,9 @@ export class Maybe<A extends any> extends Effect<A> {
 			return Maybe.nothing
 		}
 	}
+
+	public static case = <A, B>(a: Maybe<A>, f: (a: A) => B, n: () => B) => isJust(a.record) ? f(a.record.value) : n();
+	public case = <B>(f: (a: A) => B, n: () => B) => Maybe.case(this, f, n);
 
 
 }

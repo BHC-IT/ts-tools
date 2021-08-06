@@ -24,7 +24,7 @@ export namespace String {
 	export const toLocaleLowerCase = (s: string, local: string | string[]) => s.toLocaleLowerCase(local)
 	export const toLocaleUpperCase = (s: string, local: string | string[]) => s.toLocaleUpperCase(local)
 	export const toLowerCase = (s: string) => s.toLowerCase()
-	export const toString = (s: string) => s.toString()
+	export const toString = (s: any) => s.toString()
 	export const toUpperCase = (s: string) => s.toUpperCase()
 	export const trim = (s: string) => s.trim()
 	export const trimEnd = (s: string) => s.trimEnd()

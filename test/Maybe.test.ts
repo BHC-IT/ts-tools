@@ -9,7 +9,7 @@ describe('test Maybe', function() {
 	it('isJust of Just', function() {
 		const i : Maybe<number> = Maybe.just(0);
 
-		expect(Maybe.isJust(i)).to.equal(true);
+		expect(i.isJust()).to.equal(true);
 	});
 	it('isJust of Nothing', function() {
 		let i : Maybe<number> = Maybe.nothing;
@@ -20,7 +20,7 @@ describe('test Maybe', function() {
 	it('isNothing of Just', function() {
 		const i : Maybe<number> = Maybe.just(0);
 
-		expect(Maybe.isNothing(i)).to.equal(false);
+		expect(i.isNothing()).to.equal(false);
 	});
 
 	it('isNothing of Nothing', function() {
@@ -32,13 +32,13 @@ describe('test Maybe', function() {
 	it ('Maybe for Just when Just', function() {
 		const i : Maybe<number> = Maybe.just(0);
 
-		const res = Maybe.fmap((e : number) => e + 1, i);
-		Maybe.fmap((e : number) => expect(e).to.equal(1), res);
+		const res = i.fmap((e : number) => e + 1);
+		expect(res.fromJust()).to.equal(1);
 	});
 	it ('Maybe for Just when Nothing', function() {
 		const i : Maybe<number> = Maybe.nothing;
 
-		const res = Maybe.fmap((e : number) => e + 1, i);
+		const res = i.fmap((e : number) => e + 1);
 		expect(res).to.equal(Maybe.nothing);
 	});
 
@@ -79,7 +79,7 @@ describe('test Maybe', function() {
 	it ('Maybe fromMaybe of just', function() {
 		const i = Maybe.just(0);
 
-		expect(Maybe.fromMaybe(1, i)).to.equal(0);
+		expect(i.fromMaybe(1)).to.equal(0);
 	});
 
 	it ('Maybe fromMaybe of nothing', function() {
@@ -103,7 +103,7 @@ describe('test Maybe', function() {
 	it ('Maybe maybeToList just', function() {
 		const i = Maybe.just(1);
 
-		expect(Maybe.maybeToList(i)).to.eql([1]);
+		expect(i.maybeToList()).to.eql([1]);
 	});
 
 	it ('Maybe maybeToList nothing', function() {
@@ -142,6 +142,43 @@ describe('test Maybe', function() {
 		expect(Maybe.fromJust(a)).to.eql(0);
 
 		expect(Maybe.isNothing(b)).to.equal(true);
+	});
+
+	it ('Maybe liftFromThrowableAsync', async function() {
+		const f = async (a: number) => a % 2 === 0 ? a : emit('');
+
+		const fm = Maybe.liftFromThrowableAsync(f);
+
+		const a = fm(0);
+		const b = fm(1);
+
+		expect(Maybe.fromJust(await a)).to.eql(0);
+
+		expect(Maybe.isNothing(await b)).to.equal(true);
+	});
+
+	it ('Maybe case 1', async function() {
+		let i = 0;
+		const f = (a: number) => i = a;
+		const n = () => i = -1;
+
+		const m = Maybe.just(1);
+
+		m.case(f, n);
+
+		expect(i).to.equal(1);
+	});
+
+	it ('Maybe case 2', async function() {
+		let i = 0;
+		const f = (a: number) => i = a;
+		const n = () => i = -1;
+
+		const m = Maybe.nothing;
+
+		m.case(f, n);
+
+		expect(i).to.equal(-1);
 	});
 });
 
