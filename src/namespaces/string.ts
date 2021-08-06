@@ -7,7 +7,7 @@ export namespace String {
 	export const includes = (s: string, n: string) => s.includes(n)
 	export const indexOf = (s: string, n: string) => s.indexOf(n)
 	export const lastIndexOf = (s: string, n: string) => s.lastIndexOf(n)
-	export const localeCompare = (s: string, n: string, local?: string | string[], params?: object) => s.localeCompare(n, local, params)
+	export const localeCompare = (s: string, n: string, local?: string | string[], params?: object) => s.localeCompare(n, local, params) === 1
 	export const match = (s: string, n: string | RegExp) => s.match(n)
 	export const matchAll = (s: string, n: RegExp) => s.matchAll(n)
 	export const normalize = (s: string, n: "NFC" | "NFD" | "NFKC" | "NFKD") => s.normalize(n)
