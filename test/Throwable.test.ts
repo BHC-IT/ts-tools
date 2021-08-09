@@ -64,6 +64,12 @@ describe('test Throwable', function() {
 		expect(i.identity()).to.equal(Throwable);
 	});
 
+	it ('Throwable isValide', function() {
+		const i = Throwable.from(0);
+
+		expect(i.isValide()).to.equal(true);
+	});
+
 	it ('Throwable fromJust of just', function() {
 		const i = Throwable.resolved(0);
 

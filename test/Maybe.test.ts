@@ -64,6 +64,12 @@ describe('test Maybe', function() {
 		expect(i.identity()).to.equal(Maybe);
 	});
 
+	it ('Maybe isValide', function() {
+		const i = Maybe.from(0);
+
+		expect(i.isValide()).to.equal(true);
+	});
+
 	it ('Maybe fromJust of just', function() {
 		const i = Maybe.just(0);
 

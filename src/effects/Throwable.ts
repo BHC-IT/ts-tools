@@ -24,10 +24,11 @@ export class Throwable<A extends any> extends Effect<A> {
 	public fmap = <B extends any>(f:(a: A) => B): Throwable<B> => Throwable.fmap(f, this);
 
 	public static from = <A extends any, E extends Error>(a: A | E): Throwable<A> => a instanceof Error ? Throwable.thrown(a) : Throwable.resolved(a)
-
 	public static lift =  <A, B extends any>(f:(a: A) => B): ((a: Throwable<A>) => Throwable<B>) => (a: Throwable<A>) => Throwable.fmap(f, a)
 
 	public identity = <T extends typeof Effect>(): T => Throwable as unknown as T
+
+	public isValide = (): boolean => Throwable.isResolved(this);
 
 	public static resolved = <A extends any>(a: A): Throwable<A> => new Throwable<A>([true, a]);
 
