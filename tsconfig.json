@@ -7,7 +7,7 @@
 		"preserveConstEnums": true,
 		"declaration": true,
 		"target": "es6",
-		"lib": ["es2021", "dom"],
+		"lib": ["es2021", "dom", "dom.iterable"],
 		"outDir": "./dist",
 		"noUnusedLocals": true,
 		"noImplicitReturns": true,

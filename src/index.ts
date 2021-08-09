@@ -26,7 +26,7 @@ import { Throwable } from './effects/Throwable';
 
 import { String } from './namespaces/string';
 
-import { Void, PureFunction, Program,  EffectfulProgram } from './types/Functions';
+import { Func, F, Void, PureFunction, Program,  EffectfulProgram } from './types/Functions';
 import { Identity } from './types/Identity';
 
 export type {
@@ -34,7 +34,7 @@ export type {
 	Lens,
 	Tail,
 
-	Void, PureFunction, Program,  EffectfulProgram,
+	Func, F, Void, PureFunction, Program,  EffectfulProgram,
 	Identity,
 };
 

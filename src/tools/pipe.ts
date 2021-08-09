@@ -1,3 +1,5 @@
+import { Func, F } from '../types/Functions';
+
 /**
 	* This is the documentation for pipe.ts
 	* @packageDocumentation
@@ -14,6 +16,17 @@
 	*
 	* @author Valentin Vivier <lanathlor>
 */
-export const pipe = (...fns : Function[]) => fns.reduce((f, g) => (...args : any[]) => g(f(...args)));
+/*
+declare function pipe<T extends Func, U extends Func, R extends Func>
+    (...functions: [T, ...U[], R]) : (...args: Parameters<T>) => ReturnType<R>;
+*/
 
-export const pipeAsync = (...fns : Function[]) => fns.reduce((f, g) => async (...args : any[]) => g(await f(...args)));
+export const pipe = <A extends Func, B extends Func, R extends Func>(...fns : [A, ...B[], R]): F<Parameters<A>, ReturnType<R>> =>
+	fns.reduce(
+		(f: Func, g: Func): any => (...a: any[]) => g(f(...a)),
+	)
+
+export const pipeAsync = <A extends Func, B extends Func, R extends Func>(...fns : [A, ...B[], R]): F<Parameters<A>, ReturnType<R>> =>
+	fns.reduce(
+		(f: Func, g: Func): any => async (...args : any[]) => g(await f(...args))
+	)

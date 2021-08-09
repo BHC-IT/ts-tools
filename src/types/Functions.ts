@@ -1,6 +1,10 @@
 import { Effect } from '../effects/Effect';
 
-export type Void = (..._1: any[]) => void
+export type Func = (...args: any) => any
+
+export type F<A extends any[], B> = (...args: A) => B
+
+export type Void = (...args: any[]) => void
 
 export type PureFunction<A> = (_1: A) => A
 
