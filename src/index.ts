@@ -22,6 +22,7 @@ import { tobe, lockFor } from './tools/tobe';
 
 import { Effect, recordType } from './effects/Effect';
 import { Maybe } from './effects/Maybe';
+import { Throwable } from './effects/Throwable';
 
 import { String } from './namespaces/string';
 
@@ -57,6 +58,7 @@ export {
 
 	Effect, recordType,
 	Maybe,
+	Throwable,
 
 	String,
 };
