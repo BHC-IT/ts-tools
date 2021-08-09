@@ -12,7 +12,7 @@ import { init } from './tools/init';
 import { last } from './tools/last';
 import { Lens, lens, lensFrom, view, set } from './tools/lens';
 import { Observable, observe } from './tools/observable';
-import { pipe } from './tools/pipe';
+import { pipe, pipeAsync } from './tools/pipe';
 import { range } from './tools/range';
 import { show, showf, showfAsync } from './tools/show';
 import { sleep } from './tools/sleep';
@@ -26,10 +26,16 @@ import { Throwable } from './effects/Throwable';
 
 import { String } from './namespaces/string';
 
+import { Void, PureFunction, Program,  EffectfulProgram } from './types/Functions';
+import { Identity } from './types/Identity';
+
 export type {
 	Head,
 	Lens,
 	Tail,
+
+	Void, PureFunction, Program,  EffectfulProgram,
+	Identity,
 };
 
 export {
@@ -48,7 +54,7 @@ export {
 	last,
 	lens, lensFrom, view, set,
 	Observable, observe,
-	pipe,
+	pipe, pipeAsync,
 	range,
 	show, showf, showfAsync,
 	sleep,

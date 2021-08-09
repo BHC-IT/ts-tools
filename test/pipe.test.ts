@@ -1,7 +1,8 @@
 import { expect } from 'chai';
-import { pipe } from '../src/tools/pipe';
+import { pipe, pipeAsync } from '../src/tools/pipe';
 
 const result = pipe((x : number) => x + 1, (x : number) => x * 2, (x : number) => x - 1);
+const resultAsync = pipeAsync(async (x : number) => x + 1, async (x : number) => x * 2, (x : number) => x - 1);
 
 describe('test pipe', function() {
 	it('pipe(...) should return 1', function() {
@@ -12,6 +13,9 @@ describe('test pipe', function() {
 	});
 	it('pipe(...) should return 5', function() {
 		expect(result(2)).to.equal(5);
+	});
+	it('pipeAsync(...) should return 5', async function() {
+		expect(await resultAsync(2)).to.equal(5);
 	});
 });
 

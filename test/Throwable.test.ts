@@ -1,10 +1,18 @@
 import { expect } from 'chai';
 
 import { Throwable } from '../src/effects/Throwable';
+import { Effect } from '../src/effects/Effect';
 
 import { emit } from '../src/tools/emit';
 
 describe('test Throwable', function() {
+
+	it('check instance', function() {
+		const i : Throwable<number> = Throwable.resolved(0);
+
+		expect(i instanceof Effect).to.equal(true);
+		expect(i instanceof Throwable).to.equal(true);
+	});
 
 	it('isResolved of resolved', function() {
 		const i : Throwable<number> = Throwable.resolved(0);

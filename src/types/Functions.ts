@@ -2,7 +2,7 @@ import { Effect } from '../effects/Effect';
 
 export type Void = (..._1: any[]) => void
 
-export type PureFonction<A> = (_1: A) => A
+export type PureFunction<A> = (_1: A) => A
 
 export type Program<A, B> = (_1: A) => B
 

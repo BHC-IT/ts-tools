@@ -1,16 +1,25 @@
 import { expect } from 'chai';
 
 import { Maybe } from '../src/effects/Maybe';
+import { Effect } from '../src/effects/Effect';
 
 import { emit } from '../src/tools/emit';
 
 describe('test Maybe', function() {
+
+	it('check instance', function() {
+		const i : Maybe<number> = Maybe.just(0);
+
+		expect(i instanceof Effect).to.equal(true);
+		expect(i instanceof Maybe).to.equal(true);
+	});
 
 	it('isJust of Just', function() {
 		const i : Maybe<number> = Maybe.just(0);
 
 		expect(i.isJust()).to.equal(true);
 	});
+
 	it('isJust of Nothing', function() {
 		let i : Maybe<number> = Maybe.nothing;
 
