@@ -6,36 +6,37 @@ import { emit } from '../src/tools/emit';
 
 describe('test Throwable', function() {
 
-	it('isJust of Just', function() {
+	it('isResolved of resolved', function() {
 		const i : Throwable<number> = Throwable.resolved(0);
 
 		expect(i.isResolved()).to.equal(true);
 	});
-	it('isJust of Nothing', function() {
+	it('isResolved of thrown', function() {
 		let i : Throwable<number> = Throwable.thrown(new Error('test'));
 
 		expect(Throwable.isResolved(i)).to.equal(false);
 	});
 
-	it('isNothing of Just', function() {
+	it('isNothing of resolved', function() {
 		const i : Throwable<number> = Throwable.resolved(0);
 
 		expect(i.isThrown()).to.equal(false);
 	});
 
-	it('isNothing of Nothing', function() {
+	it('isNothing of thrown', function() {
 		let i : Throwable<number> = Throwable.thrown(new Error('test'));
 
 		expect(Throwable.isThrown(i)).to.equal(true);
 	});
 
-	it ('Throwable for Just when Just', function() {
+	it ('Throwable for resolved when resolved', function() {
 		const i : Throwable<number> = Throwable.resolved(0);
 
 		const res = i.fmap((e : number) => e + 1);
 		expect(res.fromResolved()).to.equal(1);
 	});
-	it ('Throwable for Just when Nothing', function() {
+
+	it ('Throwable for resolved when thrown', function() {
 		const i : Throwable<number> = Throwable.thrown(new Error('test'));;
 
 		const res = i.fmap((e : number) => e + 1);
@@ -70,25 +71,37 @@ describe('test Throwable', function() {
 		expect(i.isValide()).to.equal(true);
 	});
 
-	it ('Throwable fromJust of just', function() {
+	it ('Throwable fromResolved of resolved', function() {
 		const i = Throwable.resolved(0);
 
 		expect(Throwable.fromResolved(i)).to.equal(0);
 	});
 
-	it ('Throwable fromJust of nothing', function() {
+	it ('Throwable fromResolved of thrown', function() {
 		const i = Throwable.thrown('test');
 
 		expect(() => Throwable.fromResolved(i)).to.throws();
 	});
 
-	it ('Throwable fromThrowable of just', function() {
+	it ('Throwable fromThrown of resolved', function() {
+		const i = Throwable.resolved(0);
+
+		expect(() => Throwable.fromThrown(i)).to.throws();
+	});
+
+	it ('Throwable fromThrown of thrown', function() {
+		const i = Throwable.thrown('test');
+
+		expect(Throwable.fromThrown(i).message).to.equal('test');
+	});
+
+	it ('Throwable fromThrowable of resolved', function() {
 		const i = Throwable.resolved(0);
 
 		expect(i.fromThrowable(1)).to.equal(0);
 	});
 
-	it ('Throwable fromThrowable of nothing', function() {
+	it ('Throwable fromThrowable of thrown', function() {
 		const i = Throwable.thrown('test');
 
 		expect(Throwable.fromThrowable(1, i)).to.equal(1);
@@ -106,13 +119,13 @@ describe('test Throwable', function() {
 		expect(Throwable.fromThrowable(1, i)).to.equal(1);
 	});
 
-	it ('Throwable ThrowableToList just', function() {
+	it ('Throwable ThrowableToList resolved', function() {
 		const i = Throwable.resolved(1);
 
 		expect(i.ThrowableToList()).to.eql([1]);
 	});
 
-	it ('Throwable ThrowableToList nothing', function() {
+	it ('Throwable ThrowableToList thrown', function() {
 		const i = Throwable.thrown('test');
 
 		expect(Throwable.ThrowableToList(i)).to.eql([]);
