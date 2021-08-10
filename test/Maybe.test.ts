@@ -51,6 +51,19 @@ describe('test Maybe', function() {
 		expect(res).to.equal(Maybe.nothing);
 	});
 
+	it ('Maybe for Just when Just', function() {
+		const i : Maybe<number> = Maybe.just(0);
+
+		const res = i.bind((e : number) => Maybe.just(e + 1));
+		expect(res.fromJust()).to.equal(1);
+	});
+	it ('Maybe for Just when Nothing', function() {
+		const i : Maybe<number> = Maybe.nothing;
+
+		const res = i.bind((e : number) => Maybe.just(e + 1));
+		expect(res).to.equal(Maybe.nothing);
+	});
+
 	it ('Maybe lift', function() {
 		const i : Maybe<number> = Maybe.from(0);
 		const inc = (e : number) => e + 1;

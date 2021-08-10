@@ -51,6 +51,20 @@ describe('test Throwable', function() {
 		expect(res.fromThrown().message).to.eql('test');
 	});
 
+	it ('Throwable for resolved when resolved', function() {
+		const i : Throwable<number> = Throwable.resolved(0);
+
+		const res = i.bind((e : number) => Throwable.resolved(e + 1));
+		expect(res.fromResolved()).to.equal(1);
+	});
+
+	it ('Throwable for resolved when thrown', function() {
+		const i : Throwable<number> = Throwable.thrown(new Error('test'));;
+
+		const res = i.bind((e : number) => Throwable.resolved(e + 1));
+		expect(res.fromThrown().message).to.eql('test');
+	});
+
 	it ('Throwable lift', function() {
 		const i : Throwable<number> = Throwable.from(0);
 		const inc = (e : number) => e + 1;

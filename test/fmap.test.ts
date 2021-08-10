@@ -32,8 +32,8 @@ describe('test fmap', function() {
 		const res : Maybe<number>[] = fmap((e:number) => e + 1, i);
 
 		Maybe.fmap((e : number) => expect(e).to.equal(1), res[0]);
-		Maybe.fmap((e : number) => expect(e).to.equal(3), res[1]);
-		Maybe.fmap((e : number) => expect(e).to.equal(5), res[2]);
+		Maybe.fmap((e : number) => expect(e).to.equal(3), res[2]);
+		Maybe.fmap((e : number) => expect(e).to.equal(5), res[5]);
 	});
 
 	it('fmap of Throwable', function() {
@@ -60,8 +60,8 @@ describe('test fmap', function() {
 		const res : Throwable<number>[] = fmap((e:number) => e + 1, i);
 
 		Throwable.fmap((e : number) => expect(e).to.equal(1), res[0]);
-		Throwable.fmap((e : number) => expect(e).to.equal(3), res[1]);
-		Throwable.fmap((e : number) => expect(e).to.equal(6), res[2]);
+		Throwable.fmap((e : number) => expect(e).to.equal(3), res[2]);
+		Throwable.fmap((e : number) => expect(e).to.equal(6), res[5]);
 	});
 });
 

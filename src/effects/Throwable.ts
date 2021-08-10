@@ -21,7 +21,10 @@ export class Throwable<A extends any> extends Effect<A> {
 	}
 
 	public static fmap = <A extends any, B extends any>(f:(a: A) => B, a: Throwable<A>): Throwable<B> => isResolved(a.record) ? Throwable.resolved(f(a.fromResolved())) : new Throwable<B>(a.record)
-	public fmap = <B extends any>(f:(a: A) => B): Throwable<B> => Throwable.fmap(f, this);
+	public fmap = <B extends any>(f:(a: A) => B): Throwable<B> => Throwable.fmap(f, this)
+
+	public static bind = <A extends any, B extends any>(f:(a: A) => Throwable<B>, a: Throwable<A>): Throwable<B> => isResolved(a.record) ? f(a.fromResolved()) : new Throwable<B>(a.record)
+	public bind = <B extends any>(f:(a: A) => Throwable<B>): Throwable<B> => Throwable.bind(f, this)
 
 	public static from = <A extends any, E extends Error>(a: A | E): Throwable<A> => a instanceof Error ? Throwable.thrown(a) : Throwable.resolved(a)
 	public static lift =  <A, B extends any>(f:(a: A) => B): ((a: Throwable<A>) => Throwable<B>) => (a: Throwable<A>) => Throwable.fmap(f, a)

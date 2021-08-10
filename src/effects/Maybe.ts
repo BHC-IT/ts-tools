@@ -30,6 +30,9 @@ export class Maybe<A extends any> extends Effect<A> {
 	public static fmap = <A extends any, B extends any>(f:(a: A) => B, a: Maybe<A>): Maybe<B> => isJust(a.record) ? Maybe.from(f(a.record.value)) : Maybe.nothing
 	public fmap = <B extends any>(f:(a: A) => B): Maybe<B> => Maybe.fmap(f, this)
 
+	public static bind = <A extends any, B extends any>(f:(a: A) => Maybe<B>, a: Maybe<A>): Maybe<B> => isJust(a.record) ? f(a.record.value) : Maybe.nothing
+	public bind = <B extends any>(f:(a: A) => Maybe<B>): Maybe<B> => Maybe.bind(f, this)
+
 	public static from = <A extends any>(a: A): Maybe<A> => Maybe.nothing === a || a === null || a === undefined ? Maybe.nothing : Maybe.just(a)
 
 	public static lift =  <A, B extends any>(f:(a: A) => B): ((a: Maybe<A>) => Maybe<B>) => (a: Maybe<A>) => Maybe.fmap(f, a)

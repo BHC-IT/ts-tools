@@ -12,7 +12,7 @@ import { init } from './tools/init';
 import { last } from './tools/last';
 import { Lens, lens, lensFrom, view, set } from './tools/lens';
 import { Observable, observe } from './tools/observable';
-import { pipe, pipeAsync } from './tools/pipe';
+import { pipe, pipeAsync, pipeEffect, pipeEffectAsync } from './tools/pipe';
 import { range } from './tools/range';
 import { show, showf, showfAsync } from './tools/show';
 import { sleep } from './tools/sleep';
@@ -54,7 +54,7 @@ export {
 	last,
 	lens, lensFrom, view, set,
 	Observable, observe,
-	pipe, pipeAsync,
+	pipe, pipeAsync, pipeEffect, pipeEffectAsync,
 	range,
 	show, showf, showfAsync,
 	sleep,
