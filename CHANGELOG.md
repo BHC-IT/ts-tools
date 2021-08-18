@@ -1,3 +1,25 @@
+# [1.13.0](https://github.com/BHC-IT/ts-tools/compare/v1.12.0...v1.13.0) (2021-08-18)
+
+
+### Bug Fixes
+
+* added sinon in devDep ([57fc878](https://github.com/BHC-IT/ts-tools/commit/57fc87810d32a05ad44c5ef479a702814ac8270e))
+* added sinon in devDep ([27f93e5](https://github.com/BHC-IT/ts-tools/commit/27f93e5cbffcfb88dac641a39399a1844de0813c))
+* added sinon in devDep & audit fix ([b560d11](https://github.com/BHC-IT/ts-tools/commit/b560d111c8694aabdf937bb15a6cd3381f409815))
+* test coverage is up again ([fd6ca6a](https://github.com/BHC-IT/ts-tools/commit/fd6ca6a800cda1216b686e0145ffc9892e64ab65))
+
+
+### Features
+
+* added async pipe ([f74be26](https://github.com/BHC-IT/ts-tools/commit/f74be26bf97bcf69c0e5a729ac1afcf9aa6d62e4))
+* added basic function types ([109ce29](https://github.com/BHC-IT/ts-tools/commit/109ce292b63a21754f4216509247140e4f73ab74))
+* added bind on Effect, added pipeEffect & pipeEffectAsync ([2afdb7c](https://github.com/BHC-IT/ts-tools/commit/2afdb7c586a8d828f2d09ffb9fa6c76827c95440))
+* added forward ([f6c961b](https://github.com/BHC-IT/ts-tools/commit/f6c961bdee3a06ecc0b1c8e8df4d18959fb119dd))
+* added Throwable Effect ([ad5500f](https://github.com/BHC-IT/ts-tools/commit/ad5500f808b2718fd582c6a627a403db0e6e284d))
+* added Throwable Effect ([aaeb384](https://github.com/BHC-IT/ts-tools/commit/aaeb384195f70f28d4eedb92524291a6992d56b8))
+* better typecheck on pipes ([45d8045](https://github.com/BHC-IT/ts-tools/commit/45d80455185e18ea762820ee03a697a1f51c5a50))
+* made a stronger fmap ([2dca43c](https://github.com/BHC-IT/ts-tools/commit/2dca43cf862a4b8cabf8c1909f308b4d989d3b9c))
+
 # [1.12.0](https://github.com/BHC-IT/ts-tools/compare/v1.11.1...v1.12.0) (2021-08-01)
 
 
