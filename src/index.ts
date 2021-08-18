@@ -12,9 +12,9 @@ import { init } from './tools/init';
 import { last } from './tools/last';
 import { Lens, lens, lensFrom, view, set } from './tools/lens';
 import { Observable, observe } from './tools/observable';
-import { pipe } from './tools/pipe';
+import { pipe, pipeAsync, pipeEffect, pipeEffectAsync } from './tools/pipe';
 import { range } from './tools/range';
-import { show, showf } from './tools/show';
+import { show, showf, showfAsync } from './tools/show';
 import { sleep } from './tools/sleep';
 import { tail, Tail } from './tools/tail';
 import { take } from './tools/take';
@@ -22,13 +22,20 @@ import { tobe, lockFor } from './tools/tobe';
 
 import { Effect, recordType } from './effects/Effect';
 import { Maybe } from './effects/Maybe';
+import { Throwable } from './effects/Throwable';
 
 import { String } from './namespaces/string';
+
+import { Func, F, Void, PureFunction, Program,  EffectfulProgram } from './types/Functions';
+import { Identity } from './types/Identity';
 
 export type {
 	Head,
 	Lens,
 	Tail,
+
+	Func, F, Void, PureFunction, Program,  EffectfulProgram,
+	Identity,
 };
 
 export {
@@ -47,9 +54,9 @@ export {
 	last,
 	lens, lensFrom, view, set,
 	Observable, observe,
-	pipe,
+	pipe, pipeAsync, pipeEffect, pipeEffectAsync,
 	range,
-	show, showf,
+	show, showf, showfAsync,
 	sleep,
 	tail,
 	take,
@@ -57,6 +64,7 @@ export {
 
 	Effect, recordType,
 	Maybe,
+	Throwable,
 
 	String,
 };

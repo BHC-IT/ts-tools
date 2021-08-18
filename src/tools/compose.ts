@@ -15,3 +15,5 @@
 	* @author Valentin Vivier <lanathlor>
 */
 export const compose = (...fns : Function[]) => fns.reduce((f, g) => (...args : any[]) => f(g(...args)));
+
+export const composeAsync = (...fns : Function[]) => fns.reduce((f, g) => async (...args : any[]) => f(await g(...args)));
