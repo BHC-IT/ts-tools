@@ -2,7 +2,6 @@ import { Effect } from './Effect';
 
 import { emit } from '../tools/emit';
 import { tail } from '../tools/tail';
-import { forwardTern } from '../tools/forward';
 
 export interface Nothing {
 	readonly _tag: 'nothing',
@@ -71,7 +70,7 @@ export class Maybe<A extends any> extends Effect<A> {
 		/* todo with forwardTernary */
 	public static mapMaybe = <A, B extends any>(f:(a: A) => Maybe<B>, a: A[]) : B[] =>
 		[
-			...(a.length ? forwardTern(f(a[0]), (b: Maybe<B>) => isJust(b.record), (b: Maybe<B>) => [Maybe.fromJust(b)], () => []) : []),
+			...(a.length ? Maybe.maybeToList(f(a[0])) : []),
 			...(a.length ? Maybe.mapMaybe(f, tail(a)) : [])
 		]
 

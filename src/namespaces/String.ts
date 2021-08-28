@@ -15,7 +15,7 @@ export namespace String {
 	export const padStart = (s: string, n: number, f?: string) => s.padStart(n, f)
 	export const repeat = (s: string, n: number) => s.repeat(n)
 	export const replace = (s: string, n: string | RegExp, ns: string) => s.replace(n, ns)
-	export const replaceAll = (s: string, n: string | RegExp, ns: string) => s.replaceAll(n, ns)
+//	export const replaceAll = (s: string, n: string | RegExp, ns: string) => s.replaceAll(n, ns)
 	export const search = (s: string, n: RegExp) => s.search(n)
 	export const slice = (s: string, start: number, end?: number) => s.slice(start, end)
 	export const split = (s: string, sep: string, end?: number) => s.split(sep, end)
@@ -30,5 +30,4 @@ export namespace String {
 	export const trimEnd = (s: string) => s.trimEnd()
 	export const trimStart = (s: string) => s.trimStart()
 	export const valueOf = (s: string) => s.valueOf()
-
 }

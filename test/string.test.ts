@@ -82,9 +82,9 @@ describe('test String', function() {
 		expect(String.replace("test", "e", "s")).to.eql("tsst");
 	});
 
-	it('replaceAll', function() {
+/*	it('replaceAll', function() {
 		expect(String.replaceAll("test", "t", "e")).to.eql("eese");
-	});
+	}); */
 
 	it('search', function() {
 		expect(String.search("test", /o/g)).to.eql(-1);
