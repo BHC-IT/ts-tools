@@ -1,17 +1,17 @@
-import { Effect } from './Effect';
+import { Effect } from './Effect'
 
-import { emit } from '../tools/emit';
-import { tail } from '../tools/tail';
+import { emit } from '../tools/emit'
+import { tail } from '../tools/tail'
 
 export interface Nothing {
 	readonly _tag: 'nothing',
-};
+}
 
 export interface Just<T> {
 	readonly _tag: 'just',
 
 	readonly value: T,
-};
+}
 
 export type MaybeRecord<T> = Just<T> | Nothing
 
@@ -22,8 +22,8 @@ export class Maybe<A extends any> extends Effect<A> {
 	private readonly record : Just<A> | Nothing
 
 	private constructor(a: Just<A> | Nothing) {
-		super();
-		this.record = a;
+		super()
+		this.record = a
 	}
 
 	public static fmap = <A extends any, B extends any>(f:(a: A) => B, a: Maybe<A>): Maybe<B> => isJust(a.record) ? Maybe.from(f(a.record.value)) : Maybe.nothing
@@ -39,6 +39,8 @@ export class Maybe<A extends any> extends Effect<A> {
 	public identity = <T extends typeof Effect>(): T => Maybe as unknown as T
 
 	public isValide = (): boolean => Maybe.isJust(this)
+
+	public _open = (): unknown => this.record
 
 	public static just = <A extends any>(a: A): Maybe<A> => new Maybe<A>({_tag: 'just', value: a})
 

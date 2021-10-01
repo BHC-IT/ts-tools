@@ -12,6 +12,7 @@ import { head, Head } from './tools/head';
 import { init } from './tools/init';
 import { last } from './tools/last';
 import { Lens, lens, lensFrom, view, set } from './tools/lens';
+import { memoise } from './tools/memoise';
 import { Observable, observe } from './tools/observable';
 import { pipe, pipeAsync, pipeEffect, pipeEffectAsync } from './tools/pipe';
 import { range } from './tools/range';
@@ -27,6 +28,7 @@ import { Throwable } from './effects/Throwable';
 
 import { String } from './namespaces/String';
 import { Array } from './namespaces/Array';
+import { Pipe } from './namespaces/Pipe';
 
 import { Func, F, Void, PureFunction, Program,  EffectfulProgram } from './types/Functions';
 import { Identity } from './types/Identity';
@@ -55,6 +57,7 @@ export {
 	head,
 	last,
 	lens, lensFrom, view, set,
+	memoise,
 	Observable, observe,
 	pipe, pipeAsync, pipeEffect, pipeEffectAsync,
 	range,
@@ -70,21 +73,5 @@ export {
 
 	String,
 	Array,
+	Pipe,
 };
-
-const mmap = <C extends {forEach: Function}>(f:(e: any) => any, m: C) => {
-	const arr: [any, any][] = [];
-
-	m.forEach((v: any, i: any) =>
-		arr.push([i, f(v)])
-	)
-
-	return new Map(arr as any)
-}
-
-const test = new Map([[0, '0'], [1, '1']])
-const test2 = [0, 1]
-
-console.log(test)
-console.log(mmap((e) => e + 1, test))
-console.log(mmap((e) => e + 1, test2))

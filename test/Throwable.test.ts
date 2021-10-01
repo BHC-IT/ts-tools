@@ -221,5 +221,11 @@ describe('test Throwable', function() {
 
 		expect(i).to.equal(-1);
 	});
+
+	it ('Throwable _open', function() {
+		const m = Throwable.resolved(0);
+
+		expect(m._open()).to.eql([true, 0]);
+	});
 });
 

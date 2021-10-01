@@ -208,5 +208,11 @@ describe('test Maybe', function() {
 
 		expect(i).to.equal(-1);
 	});
+
+	it ('Maybe open', function() {
+		const m = Maybe.just(0);
+
+		expect(m._open()).to.eql({_tag: 'just', value: 0});
+	});
 });
 
