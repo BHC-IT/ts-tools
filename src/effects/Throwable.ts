@@ -1,23 +1,23 @@
-import { Effect } from './Effect';
+import { Effect } from './Effect'
 
-import { emit } from '../tools/emit';
-import { tail } from '../tools/tail';
-import { forwardTern } from '../tools/forward';
+import { emit } from '../tools/emit'
+import { tail } from '../tools/tail'
+import { forwardTern } from '../tools/forward'
 
-type resolved<A> = [true, A];
-type thrown<E extends Error> = [false, E];
+type resolved<A> = [true, A]
+type thrown<E extends Error> = [false, E]
 
-type ErrTuple<A, E extends Error> = resolved<A> | thrown<E>;
+type ErrTuple<A, E extends Error> = resolved<A> | thrown<E>
 
-const isResolved = <A, E extends Error>(e: ErrTuple<A, E>) : e is resolved<A> => e[0];
+const isResolved = <A, E extends Error>(e: ErrTuple<A, E>) : e is resolved<A> => e[0]
 
 export class Throwable<A extends any> extends Effect<A> {
 	private readonly record : ErrTuple<A, Error>
 
 	private constructor(a: ErrTuple<A, Error>) {
-		super();
+		super()
 
-		this.record = a;
+		this.record = a
 	}
 
 	public static fmap = <A extends any, B extends any>(f:(a: A) => B, a: Throwable<A>): Throwable<B> => isResolved(a.record) ? Throwable.resolved(f(a.fromResolved())) : new Throwable<B>(a.record)
@@ -31,20 +31,22 @@ export class Throwable<A extends any> extends Effect<A> {
 
 	public identity = <T extends typeof Effect>(): T => Throwable as unknown as T
 
-	public isValide = (): boolean => Throwable.isResolved(this);
+	public isValide = (): boolean => Throwable.isResolved(this)
 
-	public static resolved = <A extends any>(a: A): Throwable<A> => new Throwable<A>([true, a]);
+	public _open = (): unknown => this.record
+
+	public static resolved = <A extends any>(a: A): Throwable<A> => new Throwable<A>([true, a])
 
 	public static thrown = <A extends any, E extends Error>(a: E | string): Throwable<A> => !(a instanceof Error) ? new Throwable<A>([false, new Error(a)]) : new Throwable<A>([false, a])
 
-	public static isResolved = <A extends any>(a: Throwable<A>): boolean => isResolved(a.record);
-	public isResolved = (): boolean => Throwable.isResolved(this);
+	public static isResolved = <A extends any>(a: Throwable<A>): boolean => isResolved(a.record)
+	public isResolved = (): boolean => Throwable.isResolved(this)
 
-	public static isThrown = <A extends any>(a: Throwable<A>): boolean => !Throwable.isResolved(a);
-	public isThrown = (): boolean => !Throwable.isResolved(this);
+	public static isThrown = <A extends any>(a: Throwable<A>): boolean => !Throwable.isResolved(a)
+	public isThrown = (): boolean => !Throwable.isResolved(this)
 
 	public static fromResolved = <A extends any>(a: Throwable<A>) : A => isResolved(a.record) ? a.record[1] : emit(a.record[1])
-	public fromResolved = () : A => Throwable.fromResolved(this);
+	public fromResolved = () : A => Throwable.fromResolved(this)
 
 	public static fromThrown = <A extends any>(a: Throwable<A>) : Error => !isResolved(a.record) ? a.record[1] : emit('Throwable resolved')
 	public fromThrown = () : Error => Throwable.fromThrown(this)
@@ -52,7 +54,7 @@ export class Throwable<A extends any> extends Effect<A> {
 	public static fromThrowable = <A extends any>(d: A, a: Throwable<A>) : A => isResolved(a.record) ? a.fromResolved() : d
 	public fromThrowable = (d: A) : A => Throwable.fromThrowable(d, this)
 
-	public static listToThrowable = <A extends any>(a: A[]) : Throwable<A> => a.length === 0 ? Throwable.thrown(new Error('empty')) : Throwable.resolved(a[0]);
+	public static listToThrowable = <A extends any>(a: A[]) : Throwable<A> => a.length === 0 ? Throwable.thrown(new Error('empty')) : Throwable.resolved(a[0])
 
 	public static ThrowableToList = <A extends any>(a: Throwable<A>) : A[] => isResolved(a.record) ? [a.fromResolved()] : []
 	public ThrowableToList = () : A[] => Throwable.ThrowableToList(this)
@@ -72,7 +74,7 @@ export class Throwable<A extends any> extends Effect<A> {
 
 	public static liftFromThrowable = <A extends any, Args extends any[]>(f: ((...a: Args) => A)): ((...a: Args) => Throwable<A>) => (...a: Args) => {
 		try {
-			return Throwable.resolved(f(...a));
+			return Throwable.resolved(f(...a))
 		} catch (e) {
 			return Throwable.thrown(e)
 		}
@@ -80,7 +82,7 @@ export class Throwable<A extends any> extends Effect<A> {
 
 	public static liftFromThrowableAsync = <A extends any, Args extends any[]>(f: ((...a: Args) => Promise<A>)): ((...a: Args) => Promise<Throwable<A>>) => async (...a: Args) => {
 		try {
-			return Throwable.resolved(await f(...a));
+			return Throwable.resolved(await f(...a))
 		} catch (e) {
 			return Throwable.thrown(e)
 		}
