@@ -1,3 +1,11 @@
+# [1.14.0](https://github.com/BHC-IT/ts-tools/compare/v1.13.0...v1.14.0) (2021-10-18)
+
+
+### Features
+
+* added Array namespace ([49acaf9](https://github.com/BHC-IT/ts-tools/commit/49acaf9539006d4dfc865dab5b546b352ac77657))
+* Added Either ([ee824ae](https://github.com/BHC-IT/ts-tools/commit/ee824aeca77d95f5f6aed4ea404ddea6be9d7177))
+
 # [1.13.0](https://github.com/BHC-IT/ts-tools/compare/v1.12.0...v1.13.0) (2021-08-18)
 
 
