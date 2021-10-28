@@ -42,4 +42,5 @@ export namespace Array {
 	export const init = <A>(arr: Array<A>) => ts.init(arr)
 	export const last = <A>(arr: Array<A>) => ts.last(arr)
 	export const repeat = <A>(value: A, nb: number): A[] => nb > 0 ? [value, ...repeat(value, nb - 1)] : []
+	export const zip = <A, B>(arr1: A[], arr2: B[]): [A, B][] => arr1.map((e, i) => [e, arr2[i]])
 }

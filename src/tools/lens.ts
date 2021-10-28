@@ -30,7 +30,7 @@ export type Lens<T, U> = {get : (arg0 : T) => U, set : (arg0 : U, arg1 : T) => T
 	*
 	* @author Valentin Vivier <lanathlor>
 */
-export const lens = <T, U>(getter : Function, setter : Function) : Lens<T, U> => ({
+export const lens = <T, U>(getter : (_1: T) => U, setter : (_1: U, _2: T) => T) : Lens<T, U> => ({
 	get: (obj : T) : U => getter(obj),
 	set: (val : U, obj : T) : T => setter(val, copy(obj)),
 });
