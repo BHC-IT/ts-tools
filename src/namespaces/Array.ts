@@ -37,9 +37,11 @@ export namespace Array {
 	export const unshift = <A>([...arr]: Array<A>, v:A, ...values: A[]) => ts.forward(arr.unshift(v, ...values), () => arr)
 	export const values = <A>(arr: Array<A>) => arr.values()
 
-	export const head = <A>(arr: Array<A>) => ts.head(arr)
-	export const tail = <A>(arr: Array<A>) => ts.tail(arr)
+	export const head = <A>([head, ...tail]: Array<A>) => head
+	export const tail = <A>([head, ...tail]: Array<A>) => tail
+	//@ts-ignore
 	export const init = <A>(arr: Array<A>) => ts.init(arr)
+	//@ts-ignore
 	export const last = <A>(arr: Array<A>) => ts.last(arr)
 	export const repeat = <A>(value: A, nb: number): A[] => nb > 0 ? [value, ...repeat(value, nb - 1)] : []
 	export const zip = <A, B>(arr1: A[], arr2: B[]): [A, B][] => arr1.map((e, i) => [e, arr2[i]])

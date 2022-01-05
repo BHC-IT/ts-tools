@@ -66,14 +66,14 @@ export class Maybe<A extends any> extends Effect<A> {
 	public static catMaybes = <A extends any>(a: Maybe<A>[]) : A[] =>
 		[
 			...(a.length && isJust(a[0].record) ? [a[0].record.value] : []),
-			...(a.length ? Maybe.catMaybes(tail(a)) as A[] : [])
+			...(a.length ? Maybe.catMaybes(tail(a as [Maybe<A>])) as A[] : [])
 		]
 
 		/* todo with forwardTernary */
 	public static mapMaybe = <A, B extends any>(f:(a: A) => Maybe<B>, a: A[]) : B[] =>
 		[
 			...(a.length ? Maybe.maybeToList(f(a[0])) : []),
-			...(a.length ? Maybe.mapMaybe(f, tail(a)) : [])
+			...(a.length ? Maybe.mapMaybe(f, tail(a as [A])) : [])
 		]
 
 

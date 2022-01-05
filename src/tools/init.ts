@@ -6,6 +6,16 @@
 */
 
 /**
+	* Send back the types of the tuple or array elements but last.
+	*
+	*
+	* @template T		Any kind of tuple or array.
+	*
+	* @author Valentin Vivier <lanathlor>
+*/
+export type Init<T extends any[]> = T extends [...infer I, infer L] ? I : never;
+
+/**
 	* Drop the last element of the tuple or array.
 	*
 	*
@@ -14,4 +24,4 @@
 	*
 	* @author Valentin Vivier <lanathlor>
 */
-export const init = (tuple : any[]) : any => [...tuple].splice(0, tuple.length - 1);
+export const init = <T extends any[]>(tuple : [...T, any]) : T => [...tuple].splice(0, tuple.length - 1) as T;

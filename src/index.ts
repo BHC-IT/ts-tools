@@ -9,8 +9,8 @@ import { flip } from './tools/flip';
 import { fmap } from './tools/fmap';
 import { forwardTern, forwardIf, forwardIfAsync, forward, forwardTernAsync } from './tools/forward';
 import { head, Head } from './tools/head';
-import { init } from './tools/init';
-import { last } from './tools/last';
+import { init, Init } from './tools/init';
+import { last, Last } from './tools/last';
 import { Lens, lens, lensFrom, view, set } from './tools/lens';
 import { memoise } from './tools/memoise';
 import { Observable, observe } from './tools/observable';
@@ -25,6 +25,7 @@ import { tobe, lockFor } from './tools/tobe';
 import { Effect, recordType } from './effects/Effect';
 import { Maybe } from './effects/Maybe';
 import { Throwable } from './effects/Throwable';
+import { Either } from './effects/Either';
 
 import { String } from './namespaces/String';
 import { Array } from './namespaces/Array';
@@ -35,8 +36,11 @@ import { Identity } from './types/Identity';
 
 export type {
 	Head,
-	Lens,
 	Tail,
+	Init,
+	Last,
+
+	Lens,
 
 	Func, F, Void, PureFunction, Program,  EffectfulProgram,
 	Identity,
@@ -53,8 +57,8 @@ export {
 	flip,
 	fmap,
 	forwardTern, forwardIf, forwardIfAsync, forward, forwardTernAsync,
-	init,
 	head,
+	init,
 	last,
 	lens, lensFrom, view, set,
 	memoise,
@@ -70,6 +74,7 @@ export {
 	Effect, recordType,
 	Maybe,
 	Throwable,
+	Either,
 
 	String,
 	Array,

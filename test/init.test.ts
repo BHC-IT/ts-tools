@@ -6,6 +6,7 @@ describe('test init', function() {
 		expect(init([1, 2, 3])).to.eql([1, 2]);
 	});
 	it('init([]) should return empty', function() {
+		//@ts-ignore
 		expect(init([])).to.eql([]);
 	});
 	it('init([1]) should return [1]', function() {
@@ -13,7 +14,7 @@ describe('test init', function() {
 	});
 
 	it('init return by value', function() {
-		const t = [1, 2, 3, 4];
+		const t: [number, number, number, number] = [1, 2, 3, 4];
 		const inited = init(t);
 
 		expect(inited).to.eql([1, 2, 3]);
