@@ -36,6 +36,7 @@ describe('test curry', function() {
 	});
 
 	it('curry(...) should return NaN', function() {
+		//@ts-ignore
 		expect(addcm(2)).to.eql(NaN);
 	});
 

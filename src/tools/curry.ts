@@ -15,7 +15,7 @@
 	*
 	* @author Valentin Vivier <lanathlor>
 */
-export const curry = (func : Function, ...args : any[]) => (...trail : any[]) => func(...args, ...trail);
+export const curry = <T extends any[], U extends any[], R extends any>(func : (...args: [...T, ...U]) => R, ...args : T) => (...trail : U) => func(...args, ...trail);
 
 /**
 	* Reverse curry a function.
@@ -27,4 +27,4 @@ export const curry = (func : Function, ...args : any[]) => (...trail : any[]) =>
 	*
 	* @author Valentin Vivier <lanathlor>
 */
-export const rcurry = (func : Function, ...args : any[]) => (...trail : any[]) => func(...(trail.reverse()), ...(args.reverse()));
+export const rcurry = <T extends any[], U extends any[], R extends any>(func : (...args: [...U, ...T]) => R, ...args : T) => (...trail : U) => func(...(trail.reverse() as U), ...(args.reverse() as T));

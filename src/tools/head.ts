@@ -25,4 +25,4 @@ export type Head<T extends any[]> = T extends [infer U, ...any[]] ? U : never;
 	*
 	* @author Valentin Vivier <lanathlor>
 */
-export const head = <T extends any[]>([head, ...tail] : T) : Head<T> => head as Head<T>;
+export const head = <T extends any>([head, ...tail] : [T, ...any]) : T => head;

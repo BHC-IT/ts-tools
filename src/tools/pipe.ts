@@ -2,7 +2,7 @@ import type { Func, F } from '../types/Functions';
 
 import { Effect } from '../effects/Effect';
 
-import { forwardTern } from './forward';
+import { forward } from './forward';
 
 /**
 	* This is the documentation for pipe.ts
@@ -38,21 +38,18 @@ export const pipeAsync = <A extends Func, B extends Func, R extends Func>(...fns
 export const pipeEffect = <A extends Func, B extends Func, R extends Func>(...fns : [A, ...B[], R]): F<Parameters<A>, ReturnType<R>> =>
 	fns.reduce(
 		(f: Func, g: Func): any => (...args : any[]) =>
-			forwardTern(
+			forward(
 				f(...args),
 				(e) => e instanceof Effect,
-				(e) =>  e.isValide() ? e.bind(g) : e,
-				(e) => g(e)
+				(e) => e instanceof Effect ? (e.isValide() ? e.bind(g) : e) : g(e) ,
 			)
 	)
 
 export const pipeEffectAsync = <A extends Func, B extends Func, R extends Func>(...fns : [A, ...B[], R]): F<Parameters<A>, ReturnType<R>> =>
 	fns.reduce(
 		(f: Func, g: Func): any => async (...args : any[]) =>
-			forwardTern(
+			forward(
 				await f(...args),
-				(e) => e instanceof Effect,
-				(e) =>  e.isValide() ? e.bind(g) : e,
-				(e) => g(e)
+				(e) => e instanceof Effect ? (e.isValide() ? e.bind(g) : e) : g(e) ,
 			)
 	)

@@ -243,5 +243,9 @@ describe('test Array', function() {
 		expect(Array.repeat(0, 5)).to.eql([0, 0, 0, 0, 0]);
 	});
 
+	it('zip', function() {
+		expect(Array.zip([0, 1, 2], ["0", "1", "2"])).to.eql([[0, "0"], [1, "1"], [2, "2"]]);
+	});
+
 });
 

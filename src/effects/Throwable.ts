@@ -2,7 +2,7 @@ import { Effect } from './Effect'
 
 import { emit } from '../tools/emit'
 import { tail } from '../tools/tail'
-import { forwardTern } from '../tools/forward'
+import { forward } from '../tools/forward'
 
 type resolved<A> = [true, A]
 type thrown<E extends Error> = [false, E]
@@ -62,13 +62,13 @@ export class Throwable<A extends any> extends Effect<A> {
 	public static catThrowables = <A extends any>(a: Throwable<A>[]) : A[] =>
 		[
 			...(a.length && isResolved(a[0].record) ? [a[0].fromResolved()] : []),
-			...(a.length ? Throwable.catThrowables(tail(a)) as A[] : [])
+			...(a.length ? Throwable.catThrowables(tail(a as [Throwable<A>])) as A[] : [])
 		]
 
 	public static mapThrowable = <A, B extends any>(f:(a: A) => Throwable<B>, a: A[]) : B[] =>
 		[
-			...(a.length ? forwardTern(f(a[0]), (b: Throwable<B>) => isResolved(b.record), (b: Throwable<B>) => [Throwable.fromResolved(b)], () => []) : []),
-			...(a.length ? Throwable.mapThrowable(f, tail(a)) : [])
+			...(a.length ? forward(f(a[0]), (b: Throwable<B>) => isResolved(b.record) ? [Throwable.fromResolved(b)] : []) : []),
+			...(a.length ? Throwable.mapThrowable(f, tail(a as [A])) : [])
 		]
 
 

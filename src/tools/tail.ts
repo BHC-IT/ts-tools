@@ -6,7 +6,7 @@
 */
 
 /**
-	* Send back the type of the tuple or array without his first element.
+	* Send back the types of the tuple or array without his first element.
 	*
 	*
 	* @template T		Any kind of tuple or array.
@@ -25,4 +25,4 @@ export type Tail<T extends any[]> = T extends [any[], infer U] ? U : never;
 	*
 	* @author Valentin Vivier <lanathlor>
 */
-export const tail = <T extends any[]>([head, ...tail] : T) : Tail<T> => tail as Tail<T>;
+export const tail = <T extends any[]>([head, ...tail] : [any, ...T]) : T => tail;
