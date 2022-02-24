@@ -1,4 +1,5 @@
 import { always } from './tools/always';
+import * as Combinators from './tools/combinators';
 import { compose } from './tools/compose';
 import { curry, rcurry } from './tools/curry';
 import { copy } from './tools/deep';
@@ -48,6 +49,7 @@ export type {
 
 export {
 	always,
+	Combinators,
 	compose,
 	curry, rcurry,
 	copy,

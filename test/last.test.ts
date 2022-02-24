@@ -8,7 +8,6 @@ describe('test last', function() {
 		expect(test).to.equal(3);
 	});
 	it('last([]) should return empty', function() {
-		//@ts-ignore
 		expect(last([])).to.equal(undefined);
 	});
 });
