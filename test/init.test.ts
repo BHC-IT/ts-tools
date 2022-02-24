@@ -14,16 +14,16 @@ describe('test init', function() {
 	});
 
 	it('init return by value', function() {
-		const t: [number, number, number, number] = [1, 2, 3, 4];
+		const t: [number, string, number, string] = [1, '2', 3, '4'];
 		const inited = init(t);
 
-		expect(inited).to.eql([1, 2, 3]);
+		expect(inited).to.eql([1, '2', 3]);
 
-		t[1]++;
-		inited[1]++;
+		t[0]++;
+		inited[0]++;
 
-		expect(inited).to.eql([1, 3, 3]);
-		expect(t).to.eql([1, 3, 3, 4]);
+		expect(inited).to.eql([2, '2', 3]);
+		expect(t).to.eql([2, '2', 3, '4']);
 	});
 });
 

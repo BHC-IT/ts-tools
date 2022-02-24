@@ -24,4 +24,4 @@ export type Init<T extends any[]> = T extends [...infer I, infer L] ? I : never;
 	*
 	* @author Valentin Vivier <lanathlor>
 */
-export const init = <T extends any[]>(tuple : [...T, any]) : T => [...tuple].splice(0, tuple.length - 1) as T;
+export const init = <T extends any[]>(tuple : T) : Init<T> => [...tuple].splice(0, tuple.length - 1) as Init<T>;

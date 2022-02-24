@@ -13,7 +13,7 @@
 	*
 	* @author Valentin Vivier <lanathlor>
 */
-export type Head<T extends any[]> = T extends [infer U, ...any[]] ? U : never;
+export type Head<T extends any[]> = T extends [head: infer U, ...tail: any[]] ? U : never;
 
 /**
 	* Send back a copy of the first element of the tuple or array.
@@ -25,4 +25,4 @@ export type Head<T extends any[]> = T extends [infer U, ...any[]] ? U : never;
 	*
 	* @author Valentin Vivier <lanathlor>
 */
-export const head = <T extends any>([head, ...tail] : [T, ...any]) : T => head;
+export const head = <T extends any[]>([head, ...tail] : [...T]) : Head<T> => head;

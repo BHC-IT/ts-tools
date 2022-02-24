@@ -26,4 +26,4 @@ export type Last<T extends any[]> = T extends [...infer I, infer L] ? L : T[0];
 	*
 	* @author Valentin Vivier <lanathlor>
 */
-export const last = <T extends any>(arg : [...any[], T]) : T => arg[arg.length - 1];
+export const last = <T extends any[]>(arg : T) : Last<T> => arg[arg.length - 1];
