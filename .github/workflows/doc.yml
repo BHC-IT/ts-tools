@@ -1,7 +1,7 @@
 name: Doc release
 on:
   workflow_run:
-    workflows: ["Node.js CI Tests"]
+    workflows: ["SemVer release"]
     branches: [ master ]
     types:
       - completed
