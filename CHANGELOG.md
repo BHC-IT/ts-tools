@@ -1,3 +1,16 @@
+# [1.15.0](https://github.com/BHC-IT/ts-tools/compare/v1.14.0...v1.15.0) (2022-02-25)
+
+
+### Bug Fixes
+
+* better typing ([f4ad9e7](https://github.com/BHC-IT/ts-tools/commit/f4ad9e7ef60ba79ff1372eb670f02ad2587a1130))
+* better typings ([98e51b7](https://github.com/BHC-IT/ts-tools/commit/98e51b7c232ab3e7403f7b71fcd4e6fafc634004))
+
+
+### Features
+
+* added combinators ([53e0bee](https://github.com/BHC-IT/ts-tools/commit/53e0bee32eec9d4a1040c2532db541d4c7053e41))
+
 # [1.14.0](https://github.com/BHC-IT/ts-tools/compare/v1.13.0...v1.14.0) (2021-10-18)
 
 
