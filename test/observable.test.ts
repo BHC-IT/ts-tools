@@ -109,7 +109,7 @@ describe('test Observable', function() {
 		(async () => {
 			for await (let value of observe(observable)) {
 				expect(value).to.equal(i);
-		
+
 				if (i === 3){
 					done();
 					return;
@@ -135,7 +135,7 @@ describe('test Observable', function() {
 			try {
 				for await (let value of observe(observable, 50, true)) {
 					expect(value).to.equal(i);
-			
+
 					i++;
 				}
 			} catch (e : any) {
