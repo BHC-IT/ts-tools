@@ -3,10 +3,10 @@ import { init } from '../src/tools/init';
 
 describe('test init', function() {
 	it('init([1, 2, 3]) should return [1, 2]', function() {
-		expect(init([1, 2, 3])).to.eql([1, 2]);
+		const res = init([1, 2, 3]);
+		expect(res).to.eql([1, 2]);
 	});
 	it('init([]) should return empty', function() {
-		//@ts-ignore
 		expect(init([])).to.eql([]);
 	});
 	it('init([1]) should return [1]', function() {

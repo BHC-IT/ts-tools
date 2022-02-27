@@ -19,8 +19,8 @@
 	* @author Valentin Vivier <lanathlor>
 	* @internal
 */
-export const eqlArray = <T extends any[], U extends any[]>(arrLeft : T, arrRight : U) : boolean =>
-	arrLeft.reduce((s : boolean, e : any, i : number) => s && eql(e, arrRight[i]), true);
+export const eqlArray = <T extends unknown[], U extends unknown[]>(arrLeft : T, arrRight : U) : boolean =>
+	arrLeft.reduce((s : boolean, e : unknown, i : number) => s && eql(e, arrRight[i]), true) as boolean;
 
 
 /**
@@ -45,13 +45,13 @@ export const eqlObj = <T extends object>(objLeft : T, objRight : T) : boolean =>
 	*
 	* @author Valentin Vivier <lanathlor>
 */
-export const eql = <T extends any, U extends any>(objLeft : T, objRight : U) : boolean => {
+export const eql = <T, U>(objLeft : T, objRight : U) : boolean => {
 
 	if (typeof objLeft !== typeof objRight) return false;
 
-	if (typeof objLeft !== "object") return objLeft === objRight;
+	if (typeof objLeft === typeof objRight && typeof objLeft !== "object") return objLeft === (objRight as unknown as T);
 
-	if (objLeft instanceof Array) return (objLeft.length === (objRight as any[]).length ? eqlArray(objLeft, objRight as any[]) : false);
+	if (objLeft instanceof Array && objRight instanceof Array) return (objLeft.length === (objRight as unknown[]).length ? eqlArray(objLeft, objRight as unknown[]) : false);
 
-	return eqlObj(objLeft as any, objRight);
+	return eqlObj(objLeft as unknown as object, objRight as unknown as object);
 }

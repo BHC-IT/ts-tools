@@ -14,7 +14,7 @@
 	*
 	* @author Valentin Vivier <lanathlor>
 */
-export type Tail<T extends any[]> = T extends [head: any, ...tail: infer U] ? U : never;
+export type Tail<T extends unknown[]> = T extends [head: unknown, ...tail: infer U] ? U : never;
 
 /**
 	* Send back a copy of a tuple or array without his first element.
@@ -26,4 +26,4 @@ export type Tail<T extends any[]> = T extends [head: any, ...tail: infer U] ? U 
 	*
 	* @author Valentin Vivier <lanathlor>
 */
-export const tail = <T extends any[]>([head, ...tail]: [...T]): Tail<T> => tail as Tail<T>;
+export const tail = <T extends unknown[]>([, ...tail]: [...T]): Tail<T> => tail as Tail<T>;

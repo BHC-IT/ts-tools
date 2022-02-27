@@ -5,6 +5,8 @@
 	*
 */
 
+import type { Func, F } from '../index'
+
 /**
 	* Compose a reverse pipe.
 	*
@@ -14,6 +16,8 @@
 	*
 	* @author Valentin Vivier <lanathlor>
 */
-export const compose = (...fns : Function[]) => fns.reduce((f, g) => (...args : any[]) => f(g(...args)));
+export const compose = <A, R>(...fns: [ (a: unknown) => R, ...Func[], (...a: A[]) => unknown]): F<A, R> =>
+	fns.reduce((f: Func, g: Func): Func => (...args : unknown[]) => f(g(...args))) as unknown as F<A, R>;
 
-export const composeAsync = (...fns : Function[]) => fns.reduce((f, g) => async (...args : any[]) => f(await g(...args)));
+export const composeAsync = <A, R>(...fns: [ (a: unknown) => R, ...Func[], (...a: A[]) => unknown]): F<A, R> =>
+	fns.reduce((f: Func, g: Func) => async (...args : unknown[]) => f(await g(...args))) as unknown as F<A, R>;

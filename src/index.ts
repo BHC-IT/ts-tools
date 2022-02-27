@@ -3,10 +3,10 @@ import * as Combinators from './tools/combinators';
 import { compose } from './tools/compose';
 import { curry, rcurry } from './tools/curry';
 import { copy } from './tools/deep';
-import { drop } from './tools/drop';
+import { Drop, drop } from './tools/drop';
 import { emit } from './tools/emit';
 import { eql } from './tools/eql';
-import { flip } from './tools/flip';
+import { FlipT, FlipF, flipt, flip } from './tools/flip';
 import { fmap } from './tools/fmap';
 import { forwardTern, forwardIf, forwardIfAsync, forward, forwardTernAsync } from './tools/forward';
 import { head, Head } from './tools/head';
@@ -36,6 +36,8 @@ import { Func, F, Void, PureFunction, Program,  EffectfulProgram } from './types
 import { Identity } from './types/Identity';
 
 export type {
+	Drop,
+	FlipT, FlipF,
 	Head,
 	Tail,
 	Init,
@@ -56,7 +58,7 @@ export {
 	drop,
 	emit,
 	eql,
-	flip,
+	flipt, flip,
 	fmap,
 	forwardTern, forwardIf, forwardIfAsync, forward, forwardTernAsync,
 	head,

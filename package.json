@@ -20,8 +20,10 @@
 		"cov:html": "nyc --reporter=lcov --reporter=text-summary npm run test",
 		"build": "npm run clean && tsc",
 		"clean": "rimraf ./dist",
-		"doc": "typedoc -plugin typedoc-plugin-param-names --excludePrivate --excludeInternal ./src/* --out doc",
-		"doc:internal": "typedoc -plugin typedoc-plugin-param-names --excludeInternal false ./src/* --out internal",
+		"doc": "typedoc --excludePrivate --excludeInternal ./src/* --out doc",
+		"doc:internal": "typedoc --excludeInternal false ./src/* --out internal",
+		"lint": "eslint . --ext .ts",
+		"lint:fix": "eslint . --fix --ext .ts",
 		"prepublish": "tsc"
 	},
 	"devDependencies": {
@@ -35,9 +37,12 @@
 		"@types/chai-as-promised": "^7.1.4",
 		"@types/mocha": "^9.0.0",
 		"@types/node": "^17.0.5",
+		"@typescript-eslint/eslint-plugin": "^5.12.1",
+		"@typescript-eslint/parser": "^5.12.1",
 		"chai": "^4.3.4",
 		"chai-as-promised": "^7.1.1",
 		"concurrently": "^6.5.1",
+		"eslint": "^8.10.0",
 		"mocha": "^9.1.3",
 		"mocha-sinon": "^2.1.2",
 		"nodemon": "^2.0.15",
@@ -47,7 +52,6 @@
 		"sinon": "^12.0.1",
 		"ts-node": "^10.4.0",
 		"typedoc": "^0.22.10",
-		"typedoc-plugin-param-names": "^2.0.0",
 		"typescript": "^4.5.4"
 	}
 }

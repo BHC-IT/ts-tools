@@ -1,9 +1,11 @@
+node_modules
 src
 doc
 coverage
 test
 .github
 .nycrc.json
+.nyc_output
 .gitignore
 .releaserc.json
 nodemon.json

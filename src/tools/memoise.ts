@@ -1,6 +1,6 @@
 import { eql } from '../index'
 
-export const memoise = <A extends any[], B>(f:(...args: A) => B): ((...args: A) => B) => {
+export const memoise = <A extends unknown[], B>(f:(...args: A) => B): ((...args: A) => B) => {
 
 	const state: [A, B][] = []
 

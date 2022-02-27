@@ -56,7 +56,7 @@ export class Either<A, B> extends Effect<B> {
 	public static case = <A, B, C>(a: Either<A, B>, f:(a: A) => C, g:(a: B) => C) : C => isRight(a.record) ? g(a.record[1]) : f(a.record[1])
 	public case = <C>(f:(a: A) => C, g:(a: B) => C) : C => Either.case(this, f, g)
 
-	public static liftFromThrowable = <A, B, Args extends any[]>(f: (...a: Args) => B) => (...a: Args): Either<A, B> => {
+	public static liftFromThrowable = <A, B, Args extends unknown[]>(f: (...a: Args) => B) => (...a: Args): Either<A, B> => {
 		try {
 			return Either.right(f(...a))
 		} catch (e) {
@@ -64,7 +64,7 @@ export class Either<A, B> extends Effect<B> {
 		}
 	}
 
-	public static liftFromThrowableAsync = <A, B, Args extends any[]>(f: (...a: Args) => Promise<B>) => async (...a: Args): Promise<Either<A, B>> => {
+	public static liftFromThrowableAsync = <A, B, Args extends unknown[]>(f: (...a: Args) => Promise<B>) => async (...a: Args): Promise<Either<A, B>> => {
 		try {
 			return Either.right(await f(...a));
 		} catch (e) {

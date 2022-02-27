@@ -1,0 +1,8 @@
+node_modules
+dist
+doc
+coverage
+test
+.nyc_output
+.github
+typings

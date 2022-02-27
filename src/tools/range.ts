@@ -52,22 +52,22 @@ export const rangeFunctional = (start : number, end : number, increment : number
 	* @author Valentin Vivier <lanathlor>
 	* @internal
 */
-export const range = (start : number = 0, end : number = Infinity, increment : number = 1) : number[] => {
+export const range = (start  = 0, end  = Infinity, increment  = 1) : number[] => {
 
 	const ranger = rangeFunctional(start, end, increment);
 
-	let generationHandler = {
+	const generationHandler = {
 		get: function(arr : number[], prop : string | symbol) {
 			if (typeof prop !== "string")
 				return undefined;
-			const nprop : number = Number(prop);
+			const nprop  = Number(prop);
 			while (nprop >= arr.length) {
 				arr.push(ranger());
 			}
 			return arr[nprop];
 		},
 	}
-	let p = new Proxy([] as number[], generationHandler);
+	const p = new Proxy([] as number[], generationHandler);
 
 	return p;
 }

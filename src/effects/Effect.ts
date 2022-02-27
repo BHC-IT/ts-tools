@@ -1,11 +1,11 @@
-export abstract class Effect<A extends any> {
+export abstract class Effect<A> {
 
-	static fmap: <A extends any, B extends any>(f:(a: A) => B, a: Effect<A>) => Effect<B>
-	abstract fmap: <B extends any>(f:(a: A) => B) => Effect<B>
-	static bind: <A extends any, B extends any>(f:(a: A) => Effect<B>, a: Effect<A>) => Effect<B>
-	abstract bind: <B extends any>(f:(a: A) => Effect<B>) => Effect<B>
-	static from: <A extends any>(a: A) => Effect<A>
-	static lift: <A, B extends any>(f: (a: A) => B) => (a: Effect<A>) => Effect<B>
+	static fmap: <A, B>(f:(a: A) => B, a: Effect<A>) => Effect<B>
+	abstract fmap: <B>(f:(a: A) => B) => Effect<B>
+	static bind: <A, B>(f:(a: A) => Effect<B>, a: Effect<A>) => Effect<B>
+	abstract bind: <B>(f:(a: A) => Effect<B>) => Effect<B>
+	static from: <A>(a: A) => Effect<A>
+	static lift: <A, B>(f: (a: A) => B) => (a: Effect<A>) => Effect<B>
 	public identity = () => Effect
 	abstract isValide: () => boolean
 	abstract _open: () => unknown

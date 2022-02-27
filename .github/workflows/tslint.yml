@@ -1,21 +1,33 @@
-name: tslint
+name: Node.js CI Lint
 
 on:
   push:
-    branches: [ dev ]
-  pull_request:
     branches: [ master, dev ]
 
 jobs:
-  tslinting:
+  lint:
+
     runs-on: ubuntu-latest
-    timeout-minutes: 3
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+
     steps:
-      - uses: actions/checkout@v1
-      - name: Prepare
-        run: npm i
-      - name: Lint
-        uses: mooyoul/tslint-actions@v1.1.1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          pattern: '*.ts'
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }} to build
+
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: Setup Node.js
+      run: npm i
+
+    - name: Building package
+      run: npm run build --if-present
+
+    - name: Running lint
+      run: npm run lint
+      env:
+        CI: true

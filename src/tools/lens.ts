@@ -46,7 +46,7 @@ export const lens = <T, U>(getter : (_1: T) => U, setter : (_1: U, _2: T) => T) 
 	*
 	* @author Valentin Vivier <lanathlor>
 */
-export const lensFrom = <T, U>(path : string | (string | number)[], split : string = '.') : Lens<T, U> => {
+export const lensFrom = <T, U>(path : string | (string | number)[], split  = '.') : Lens<T, U> => {
 
 	let arrAccessor : (string | number)[];
 
@@ -55,10 +55,10 @@ export const lensFrom = <T, U>(path : string | (string | number)[], split : stri
 	else
 		arrAccessor = path;
 
-	const getter = (obj : T) : U => arrAccessor.reduce((prev : any, currA : string) => prev?.[currA], obj);
+	const getter = (obj : T) : U => arrAccessor.reduce((prev : {[key: string]: unknown}, currA : string) => prev?.[currA], obj) as U;
 	const setter = (value : U, obj : T) : T => {
 
-		arrAccessor.reduce((prev : any, currA : string, i : number) => {
+		arrAccessor.reduce((prev : {[key: string]: unknown}, currA : string, i : number) => {
 			if (prev === undefined) return undefined;
 			if (i === arrAccessor.length - 1 && prev[currA] !== null)
 				prev[currA] = value;

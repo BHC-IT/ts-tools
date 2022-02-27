@@ -14,4 +14,4 @@
 	*
 	* @author Valentin Vivier <lanathlor>
 */
-export const sleep = async (timeout : number) : Promise<void> => new Promise((resolve : Function) => setTimeout(() => resolve(), timeout));
+export const sleep = async (timeout : number) : Promise<void> => new Promise((resolve : () => void) => setTimeout(() => resolve(), timeout));

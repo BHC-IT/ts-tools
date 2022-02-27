@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-namespace
 export namespace String {
 	export const charAt = (s : string, i: number) => s.charAt(i)
 	export const charCodeAt = (s : string, i: number) => s.charCodeAt(i)
@@ -24,7 +25,7 @@ export namespace String {
 	export const toLocaleLowerCase = (s: string, local: string | string[]) => s.toLocaleLowerCase(local)
 	export const toLocaleUpperCase = (s: string, local: string | string[]) => s.toLocaleUpperCase(local)
 	export const toLowerCase = (s: string) => s.toLowerCase()
-	export const toString = (s: any) => s.toString()
+	export const toString = <A>(s: A) => s.toString()
 	export const toUpperCase = (s: string) => s.toUpperCase()
 	export const trim = (s: string) => s.trim()
 	export const trimEnd = (s: string) => s.trimEnd()
