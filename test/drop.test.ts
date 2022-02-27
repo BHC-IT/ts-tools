@@ -12,5 +12,8 @@ describe('test drop', function() {
 	it('drop(5, [1,2,3,4]) should return [1,2,3,4]', function() {
 		expect(drop(5, [1,2,3,4])).to.eql([]);
 	});
+	it('drop(1, ["1",true,1]) should return [true,1]', function() {
+		expect(drop(1, ["1",true,1])).to.eql([true,1]);
+	});
 });
 

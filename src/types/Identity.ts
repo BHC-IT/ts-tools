@@ -1,1 +1,1 @@
-export type Identity<A extends any> = A;
+export type Identity<A> = A;

@@ -25,31 +25,30 @@ declare function pipe<T extends Func, U extends Func, R extends Func>
     (...functions: [T, ...U[], R]) : (...args: Parameters<T>) => ReturnType<R>;
 */
 
-export const pipe = <A extends Func, B extends Func, R extends Func>(...fns : [A, ...B[], R]): F<Parameters<A>, ReturnType<R>> =>
+export const pipe = <A, R>(...fns: [(...a: A[]) => unknown, ...Func[], (a: unknown) => R]): F<A, R> =>
 	fns.reduce(
-		(f: Func, g: Func): any => (...a: any[]) => g(f(...a)),
-	)
+		(f: Func, g: Func): Func => (...a: unknown[]) => g(f(...a)),
+	) as F<A, R>
 
-export const pipeAsync = <A extends Func, B extends Func, R extends Func>(...fns : [A, ...B[], R]): F<Parameters<A>, ReturnType<R>> =>
+export const pipeAsync = <A, R>(...fns: [(...a: A[]) => unknown, ...Func[], (a: unknown) => R]): F<A, R> =>
 	fns.reduce(
-		(f: Func, g: Func): any => async (...args : any[]) => g(await f(...args))
-	)
+		(f: Func, g: Func): Func => async (...args : unknown[]) => g(await f(...args))
+	) as F<A, R>
 
-export const pipeEffect = <A extends Func, B extends Func, R extends Func>(...fns : [A, ...B[], R]): F<Parameters<A>, ReturnType<R>> =>
+export const pipeEffect = <A, R>(...fns: [(...a: A[]) => unknown, ...Func[], (a: unknown) => R]): F<A, R> =>
 	fns.reduce(
-		(f: Func, g: Func): any => (...args : any[]) =>
+		(f: Func, g: Func | F<unknown, Effect<unknown>>): Func => (...args : unknown[]) =>
 			forward(
 				f(...args),
-				(e) => e instanceof Effect,
-				(e) => e instanceof Effect ? (e.isValide() ? e.bind(g) : e) : g(e) ,
+				(e) => e instanceof Effect ? e.bind( g as F<unknown, Effect<unknown>> ) : g(e) ,
 			)
-	)
+	) as F<A, R>
 
-export const pipeEffectAsync = <A extends Func, B extends Func, R extends Func>(...fns : [A, ...B[], R]): F<Parameters<A>, ReturnType<R>> =>
+export const pipeEffectAsync = <A, R>(...fns: [(...a: A[]) => unknown, ...Func[], (a: unknown) => R]): F<A, R> =>
 	fns.reduce(
-		(f: Func, g: Func): any => async (...args : any[]) =>
+		(f: Func, g: Func): Func => async (...args : unknown[]) =>
 			forward(
 				await f(...args),
-				(e) => e instanceof Effect ? (e.isValide() ? e.bind(g) : e) : g(e) ,
+				(e) => e instanceof Effect ? e.bind( g as F<unknown, Effect<unknown>> ) : g(e) ,
 			)
-	)
+	) as F<A, R>

@@ -13,7 +13,7 @@
 	*
 	* @author Valentin Vivier <lanathlor>
 */
-export type Last<T extends any[]> = T extends [...infer I, infer L] ? L : T[0];
+export type Last<T extends unknown[]> = T extends [...(unknown[]), infer L] ? L : T[0];
 
 
 /**
@@ -26,4 +26,4 @@ export type Last<T extends any[]> = T extends [...infer I, infer L] ? L : T[0];
 	*
 	* @author Valentin Vivier <lanathlor>
 */
-export const last = <T extends any[]>(arg : T) : Last<T> => arg[arg.length - 1];
+export const last = <T extends unknown[]>(arg : T) : Last<T> => arg[arg.length - 1] as Last<T>;

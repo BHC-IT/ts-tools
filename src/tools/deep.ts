@@ -17,14 +17,14 @@
 	* @author Valentin Vivier <lanathlor>
 	* @internal
 */
-export const deepCopyArray = <T extends any[]>(arr : T) : T => {
-	let copyArr = [];
+export const deepCopyArray = <T extends unknown[]>(arr : [...T]) : [...T] => {
+	const copyArr = [];
 
 	for (let i = 0, len = arr.length; i < len; i++) {
 		copyArr[i] = copy(arr[i]);
 	}
 
-	return copyArr as T;
+	return copyArr as [...T];
 }
 
 /**
@@ -39,9 +39,9 @@ export const deepCopyArray = <T extends any[]>(arr : T) : T => {
 	* @internal
 */
 export const deepCopyObject = <T extends object>(obj : T) : T => {
-	let copyObj : T = Object.assign({}, obj);
+	const copyObj : T = Object.assign({}, obj);
 
-	for (let attr in obj) {
+	for (const attr in obj) {
 		copyObj[attr] = copy(obj[attr]);
 	}
 
@@ -57,12 +57,12 @@ export const deepCopyObject = <T extends object>(obj : T) : T => {
 	* @author Valentin Vivier <lanathlor>
 	* @internal
 */
-export const deepCopyDate = (date : Date) : Date => {
-	let copyDate = new Date();
+export const deepCopyDate = <T extends Date>(date : T) : T => {
+	const copyDate = new Date();
 
 	copyDate.setTime(date.getTime());
 
-	return copyDate;
+	return copyDate as T;
 }
 
 /**
@@ -75,7 +75,7 @@ export const deepCopyDate = (date : Date) : Date => {
 	*
 	* @author Valentin Vivier <lanathlor>
 */
-export const copy = <T extends any>(obj : T) : T => {
+export const copy = <T>(obj : T) : T => {
 
 	if (obj === null || typeof obj === "undefined" || typeof obj !== "object") return obj;
 
@@ -84,8 +84,8 @@ export const copy = <T extends any>(obj : T) : T => {
 	}
 
 	if (obj instanceof Array) {
-		return deepCopyArray(obj) as T;
+		return deepCopyArray(obj) as unknown as T;
 	}
 
-	return deepCopyObject(obj as any) as T;
+	return deepCopyObject(obj as unknown as object) as unknown as T;
 }

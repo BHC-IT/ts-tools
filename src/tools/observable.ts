@@ -4,7 +4,7 @@
 	* ```typescript
 	*	const observable = new Observable(1); // create the observable on a number. Inital value set to 1.
 	*
-	*	const unsub = observable.listen((value : number) => { // add a listener to be called when observed value is changed (observable.set() is called).
+	*	const unsub = observable.listen((value: number) => { // add a listener to be called when observed value is changed (observable.set() is called).
 	*
 	*		// value is equel to the new value of the observable. Here value === 2.
 	*		// code
@@ -31,7 +31,7 @@
 	* ```typescript
 	*	const observable = new Observable(1); // create the observable on a number. Inital value set to 1.
 	*
-	*	const unsub = observable.listen((value : number) => { // add a listener to be called when observed value is changed (observable.set() is called).
+	*	const unsub = observable.listen((value: number) => { // add a listener to be called when observed value is changed (observable.set() is called).
 	*
 	*		// value is equel to the new value of the observable. Here value === 2.
 	*		// code
@@ -52,8 +52,8 @@
 	* @author Valentin Vivier <lanathlor>
 */
 export class Observable<T> {
-	private _value : T;
-	private readonly _listener : Function[] = [];
+	private _value: T;
+	private readonly _listener: ((a: T) => void)[] = [];
 
 	/**
 		* Constructor for observable.
@@ -63,7 +63,7 @@ export class Observable<T> {
 		*
 		* @public
 	*/
-	constructor(value : T) {
+	constructor(value: T) {
 		this._value = value;
 	}
 
@@ -75,7 +75,7 @@ export class Observable<T> {
 		*
 		* @public
 	*/
-	public get = () : T => this._value;
+	public get = (): T => this._value;
 
 	/**
 		* Change currently hold value.
@@ -85,9 +85,9 @@ export class Observable<T> {
 		*
 		* @public
 	*/
-	public set = (newValue : T) : this => {
+	public set = (newValue: T) : this => {
 		const oldValue = this._value;
-		
+
 		if (this.willUpdate(oldValue, newValue) === false)
 			return this;
 
@@ -95,8 +95,8 @@ export class Observable<T> {
 
 		if (this.shouldCallListener(oldValue, newValue) === false)
 			return this;
-		this._listener.forEach((f : Function) => f?.(newValue));
-		
+		this._listener.forEach((f: (a: T) => void) => f?.(newValue));
+
 		this.didUpdate(oldValue, newValue);
 
 		return this;
@@ -110,7 +110,7 @@ export class Observable<T> {
 		*
 		* @public
 	*/
-	public listen = (callback : Function) : Function => {
+	public listen = (callback: (a: T) => void): (() => void) => {
 		let i = Math.random() * 100 | 0;
 		let mask = 1;
 		let tryied = 0;
@@ -125,7 +125,7 @@ export class Observable<T> {
 		}
 
 		this._listener[i] = callback;
-		return () : void => this._listener[i] = null;
+		return (): void => this._listener[i] = null;
 	}
 
 	/**
@@ -137,9 +137,9 @@ export class Observable<T> {
 		*
 		* @public
 	*/
-	public change = (timeout : number = 0, enforce : boolean = false) : Promise<T | null> => {
-		const promise = new Promise<T>((resolve : Function, reject : Function) => {
-			const unsub = this.listen((value : T) => {
+	public change = (timeout  = 0, enforce  = false): Promise<T | null> => {
+		const promise = new Promise<T>((resolve: ((a: T) => void), reject: ((e: Error) => void)) => {
+			const unsub = this.listen((value: T) => {
 				unsub();
 
 				resolve(value);
@@ -149,7 +149,7 @@ export class Observable<T> {
 				setTimeout(() => {
 					unsub();
 
-					enforce ? reject(new Error("Observable: Timeout on change")) : resolve(null);
+					enforce ? reject(new Error("Observable: Timeout on change")): resolve(null);
 				}, timeout);
 			}
 		});
@@ -167,8 +167,8 @@ export class Observable<T> {
 		*
 		* @protected
 	*/
-	protected willUpdate = (value : T, newValue : T) : boolean => true;
-	
+	protected willUpdate: ((a: T, b: T) => boolean) = (): boolean => true;
+
 	/**
 		* Overloadable by extending {@link Observable}. Called after change is made.
 		*
@@ -179,7 +179,7 @@ export class Observable<T> {
 		*
 		* @protected
 	*/
-	protected shouldCallListener = (oldValue : T, newValue : T) : boolean => true;
+	protected shouldCallListener: ((a: T, b: T) => boolean) = (): boolean => true;
 
 	/**
 		* Overloadable by extending {@link Observable}. Called after change is made.
@@ -190,7 +190,7 @@ export class Observable<T> {
 		*
 		* @protected
 	*/
-	protected didUpdate = (oldValue : T, newValue : T) : void => {};
+	protected didUpdate: ((a: T, b: T) => boolean) = (): boolean => true;
 }
 
 /**
@@ -203,6 +203,6 @@ export class Observable<T> {
 	*
 	* @author Valentin Vivier <lanathlor>
 */
-export async function* observe<T>(obs : Observable<T>, timeout : number = 0, enforce : boolean = false) : AsyncIterableIterator<T> {
+export async function* observe<T>(obs: Observable<T>, timeout  = 0, enforce  = false): AsyncIterableIterator<T> {
 	while (true) yield await obs.change(timeout, enforce);
 }

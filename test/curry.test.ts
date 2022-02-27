@@ -12,7 +12,7 @@ const addcm = curry(many_add, 1, 2);
 const minus = (a: number, b: number) => a - b
 
 const minusc = curry(minus, 1);
-const minuscr = rcurry(minus, 1);
+const minuscr = rcurry<[number], [number], number>(minus, 1);
 
 describe('test curry', function() {
 	it('curry(...) should return 1', function() {

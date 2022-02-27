@@ -1,5 +1,6 @@
 import * as ts from '../index'
 
+// eslint-disable-next-line @typescript-eslint/no-namespace
 export namespace Array {
 	export type Predicate<A> = ((value: A, index: number, array: Array<A>) => boolean)
 	export type Map<A, B> = ((value: A, index: number, array: Array<A>) => B)
@@ -24,7 +25,7 @@ export namespace Array {
 	export const map = <A, B>(arr: Array<A>, f:Map<A, B>) => arr.map(f)
 	export const pop = <A>([...arr]: Array<A>) => ts.forward(arr.pop(), () => arr)
 	export const push = <A>([...arr]: Array<A>, ...values: A[]) => ts.forward(arr.push(...values), () => arr)
-	export const reduce = <A, B>(arr: Array<A>, f: Accumulator<A, B>, initialValue?: any) => arr.reduce(f, initialValue)
+	export const reduce = <A, B>(arr: Array<A>, f: Accumulator<A, B>, initialValue?: B) => arr.reduce(f, initialValue)
 	export const reduceRight = <A, B>(arr: Array<A>, f: Accumulator<A, B>, initialValue?: B) => arr.reduceRight(f, initialValue)
 	export const reverse = <A>([...arr]: Array<A>) => arr.reverse()
 	export const shift = <A>([...arr]: Array<A>) => ts.forward(arr.shift(), () => arr)
@@ -37,8 +38,8 @@ export namespace Array {
 	export const unshift = <A>([...arr]: Array<A>, v:A, ...values: A[]) => ts.forward(arr.unshift(v, ...values), () => arr)
 	export const values = <A>(arr: Array<A>) => arr.values()
 
-	export const head = <A>([head, ...tail]: Array<A>) => head
-	export const tail = <A>([head, ...tail]: Array<A>) => tail
+	export const head = <A>([head,]: Array<A>) => head
+	export const tail = <A>([, ...tail]: Array<A>) => tail
 	export const init = <A>(arr: Array<A>) => ts.init(arr)
 	export const last = <A>(arr: Array<A>) => ts.last(arr)
 	export const repeat = <A>(value: A, nb: number): A[] => nb > 0 ? [value, ...repeat(value, nb - 1)] : []

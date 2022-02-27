@@ -39,6 +39,7 @@ import { sleep } from './sleep';
 */
 export const tobe = async <T>(obs : Observable<T> | AsyncIterableIterator<T>, cond : (arg1 : T) => boolean) : Promise<void> => {
 	if (obs instanceof Observable) {
+		/*eslint no-constant-condition: ["error", { "checkLoops": false }]*/
 		while (true) {
 			if (cond(obs.get()))
 				return;
@@ -47,7 +48,7 @@ export const tobe = async <T>(obs : Observable<T> | AsyncIterableIterator<T>, co
 				return;
 		}
 	} else {
-		for await (let value of obs) {
+		for await (const value of obs) {
 			if (cond(value))
 				return;
 		}
@@ -64,7 +65,7 @@ export const tobe = async <T>(obs : Observable<T> | AsyncIterableIterator<T>, co
 	*
 	* @author Valentin Vivier <lanathlor>
 */
-export const lockFor = async <T>(cond : Function, timeout : number = 50, maxRecuse : number | null = null) : Promise<void> => {
+export const lockFor = async (cond : () => boolean, timeout  = 50, maxRecuse : number | null = null) : Promise<void> => {
 	while (maxRecuse === null || maxRecuse > 0) {
 		await sleep(timeout);
 

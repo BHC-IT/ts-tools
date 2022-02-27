@@ -3,7 +3,7 @@
 export const identity = <A>(a: A): A => a
 
 // A -> B -> A
-export const constant = <A, B>(a: A, b: B): A => a
+export const constant: <A, B>(a: A, b: B) => A = <A>(a: A): A => a
 
 // (A -> B) -> A -> B
 export const apply = <A, B>(f: (a: A) => B, a: A): B => f(a)
