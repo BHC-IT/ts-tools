@@ -1,3 +1,10 @@
+## [1.16.1](https://github.com/BHC-IT/ts-tools/compare/v1.16.0...v1.16.1) (2022-02-27)
+
+
+### Bug Fixes
+
+* dependecies vulns ([60c2412](https://github.com/BHC-IT/ts-tools/commit/60c2412d3bdcb586c4288c5c6f6ab73429a94b78))
+
 # [1.16.0](https://github.com/BHC-IT/ts-tools/compare/v1.15.0...v1.16.0) (2022-02-27)
 
 
