@@ -1,3 +1,15 @@
+# [1.16.0](https://github.com/BHC-IT/ts-tools/compare/v1.15.0...v1.16.0) (2022-02-27)
+
+
+### Bug Fixes
+
+* CI ([408e24b](https://github.com/BHC-IT/ts-tools/commit/408e24b9493b39c98822b4ce0a09e5a3532b8c89))
+
+
+### Features
+
+* types overall redesign. Added eslint. Repared doc. Added utils types ([d784740](https://github.com/BHC-IT/ts-tools/commit/d784740c1971a4aafec665e24b4effcf983e8c32))
+
 # [1.15.0](https://github.com/BHC-IT/ts-tools/compare/v1.14.0...v1.15.0) (2022-02-25)
 
 
