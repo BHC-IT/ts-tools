@@ -34,6 +34,8 @@ import { Pipe } from './namespaces/Pipe';
 
 import { Func, F, Void, PureFunction, Program,  EffectfulProgram } from './types/Functions';
 import { Identity } from './types/Identity';
+import { Next } from './types/testTypes'
+
 
 export type {
 	Drop,
@@ -47,6 +49,8 @@ export type {
 
 	Func, F, Void, PureFunction, Program,  EffectfulProgram,
 	Identity,
+
+	Next,
 };
 
 export {
