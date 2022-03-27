@@ -14,8 +14,9 @@ type _Recurse<T> =
 	: T extends { __rec: infer U } ? U
 	: T;
 
+//export type Repeat<T, N extends number> = Recurse<_Repeat<T, N, []>>
 export type Repeat<T, N extends number> = TestArray<Recurse<_Repeat<T, N, []>>>
-type TestArray<T> = T extends [] ? T : []
+type TestArray<T> = T extends any[] ? T : []
 
 type _Repeat<T, N extends number, A extends T[]> =
 	A["length"] extends N
