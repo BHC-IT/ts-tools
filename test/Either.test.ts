@@ -183,7 +183,7 @@ describe('test Either', function() {
 	it ('Either _open', function() {
 		const m = Either.right(0);
 
-		expect(m._open()).to.eql([true, 0]);
+		expect(m._open()).to.eql(0);
 	});
 });
 

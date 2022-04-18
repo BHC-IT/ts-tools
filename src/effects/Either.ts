@@ -31,7 +31,7 @@ export class Either<A, B> extends Effect<B> {
 	public isValide = (): boolean => Either.isRight(this)
 
 	public open = (): A | B => this.record[1]
-	public _open = (): unknown => this.record
+	public _open = (): unknown => this.record[1]
 
 	public static left = <A, B>(a: A): Either<A, B> => new Either<A, B>([false, a])
 

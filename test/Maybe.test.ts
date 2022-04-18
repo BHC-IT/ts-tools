@@ -128,22 +128,22 @@ describe('test Maybe', function() {
 		expect(Maybe.fromMaybe(1, i)).to.equal(1);
 	});
 
-	it ('Maybe maybeToList just', function() {
+	it ('Maybe toList just', function() {
 		const i = Maybe.just(1);
 
-		expect(i.maybeToList()).to.eql([1]);
+		expect(i.toList()).to.eql([1]);
 	});
 
-	it ('Maybe maybeToList nothing', function() {
+	it ('Maybe toList nothing', function() {
 		const i = Maybe.nothing;
 
-		expect(Maybe.maybeToList(i)).to.eql([]);
+		expect(Maybe.toList(i)).to.eql([]);
 	});
 
-	it ('Maybe catMaybe', function() {
+	it ('Maybe cat', function() {
 		const i = [Maybe.just(1), Maybe.nothing, Maybe.just(2)];
 
-		expect(Maybe.catMaybes(i)).to.eql([1, 2]);
+		expect(Maybe.cat(i)).to.eql([1, 2]);
 	});
 
 	it ('Maybe identity', function() {
@@ -151,12 +151,28 @@ describe('test Maybe', function() {
 		expect(Maybe.just(0).identity()).to.eql(Maybe);
 	});
 
-	it ('Maybe mapMaybe', function() {
+	it ('Maybe map', function() {
 		const f = (a: number) => a % 2 === 0 ? Maybe.just(a) : Maybe.nothing;
 
-		const bs = Maybe.mapMaybe(f, [0, 1, 2, 3, 4, 5]);
+		const bs = Maybe.map(f, [0, 1, 2, 3, 4, 5]);
 
 		expect(bs).to.eql([0, 2, 4]);
+	});
+
+	it ('Maybe<number> flatten', function() {
+		const deepMaybe = Maybe.just(Maybe.just(Maybe.just(Maybe.just(Maybe.just(5)))))
+
+		const flatMaybe = Maybe.flatten(deepMaybe)
+
+		expect(flatMaybe.fromMaybe(0)).to.eql(5);
+	});
+
+	it ('Maybe.nothing flatten', function() {
+		const deepMaybe = Maybe.just(Maybe.just(Maybe.just(Maybe.just(Maybe.nothing as Maybe<number>))))
+
+		const flatMaybe = Maybe.flatten(deepMaybe)
+
+		expect(flatMaybe.fromMaybe(0)).to.eql(0);
 	});
 
 	it ('Maybe liftFromThrowable', function() {
@@ -212,7 +228,7 @@ describe('test Maybe', function() {
 	it ('Maybe open', function() {
 		const m = Maybe.just(0);
 
-		expect(m._open()).to.eql({_tag: 'just', value: 0});
+		expect(m._open()).to.eql(0);
 	});
 });
 

@@ -225,7 +225,7 @@ describe('test Throwable', function() {
 	it ('Throwable _open', function() {
 		const m = Throwable.resolved(0);
 
-		expect(m._open()).to.eql([true, 0]);
+		expect(m._open()).to.eql(0);
 	});
 });
 

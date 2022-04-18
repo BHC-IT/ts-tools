@@ -92,6 +92,8 @@ export const start = <T>(): SafeArray<T, 0> => ({
 	length: 0,
 })
 
+export const length = <T, L extends number>(arr: SafeArray<T, L>): L => arr.length
+
 export const push = <T, L extends number>(arr: SafeArray<T, L>, i: T): SafeArray<T, Next<L>> => ({
 	record: [...arr.record, i],
 	length: arr.length + 1 as Next<L>,

@@ -18,6 +18,10 @@ export type MaybeRecord<T> = Just<T> | Nothing
 
 const isJust = <T>(a: MaybeRecord<T>): a is Just<T> => a._tag === 'just'
 
+export type OpenMaybe<A> = A extends Maybe<infer B> ? B : never
+
+export type MaybeRecusif<A> = A extends Maybe<infer B> ? B extends Maybe<unknown> ? MaybeRecusif<B> : B : never
+
 export class Maybe<A> extends Effect<A> {
 	private readonly record : Just<A> | Nothing
 
@@ -40,7 +44,7 @@ export class Maybe<A> extends Effect<A> {
 
 	public isValide = (): boolean => Maybe.isJust(this)
 
-	public _open = (): unknown => this.record
+	public _open = (): unknown => (this.record as Just<A>).value
 
 	public static just = <A>(a: A): Maybe<A> => new Maybe<A>({_tag: 'just', value: a})
 
@@ -60,22 +64,34 @@ export class Maybe<A> extends Effect<A> {
 
 	public static listToMaybe = <A>(a: A[]) : Maybe<A> => a.length === 0 ? Maybe.nothing : Maybe.just(a[0])
 
-	public static maybeToList = <A>(a: Maybe<A>) : A[] => isJust(a.record) ? [a.record.value] : []
-	public maybeToList = () : A[] => Maybe.maybeToList(this)
+	public static toList = <A>(a: Maybe<A>) : A[] => isJust(a.record) ? [a.record.value] : []
+	public toList = () : A[] => Maybe.toList(this)
 
-	public static catMaybes = <A>(a: Maybe<A>[]) : A[] =>
+	public static cat = <A>(a: Maybe<A>[]) : A[] =>
 		[
 			...(a.length && isJust(a[0].record) ? [a[0].record.value] : []),
-			...(a.length ? Maybe.catMaybes(tail(a as [Maybe<A>])) as A[] : [])
+			...(a.length ? Maybe.cat(tail(a as [Maybe<A>])) as A[] : [])
 		]
 
 	/* todo with forwardTernary */
-	public static mapMaybe = <A, B>(f:(a: A) => Maybe<B>, a: A[]) : B[] =>
+	public static map = <A, B>(f:(a: A) => Maybe<B>, a: A[]) : B[] =>
 		[
-			...(a.length ? Maybe.maybeToList(f(a[0])) : []),
-			...(a.length ? Maybe.mapMaybe(f, tail(a as [A])) : [])
+			...(a.length ? Maybe.toList(f(a[0])) : []),
+			...(a.length ? Maybe.map(f, tail(a)) : [])
 		]
 
+	public static flatten = <A>(a: Maybe<A>): Maybe<MaybeRecusif<Maybe<A>>> => {
+		if (a.isJust()) {
+			const rec = a.fromJust();
+			if (rec instanceof Maybe) {
+				return Maybe.flatten(rec)
+			} else {
+				return Maybe.just(rec) as Maybe<MaybeRecusif<Maybe<A>>>
+			}
+		} else {
+			return Maybe.nothing
+		}
+	}
 
 	public static liftFromThrowable = <A, Args extends unknown[]>(f: ((...a: Args) => A)): ((...a: Args) => Maybe<A>) => (...a: Args) => {
 		try {

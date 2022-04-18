@@ -63,5 +63,11 @@ describe('test fmap', function() {
 		Throwable.fmap((e : number) => expect(e).to.equal(3), res[2]);
 		Throwable.fmap((e : number) => expect(e).to.equal(6), res[5]);
 	});
+
+	it('fmap of nested Maybe', function() {
+		const monad = Maybe.just(Maybe.just(Maybe.just(5)))
+		const res = fmap((a: number) => a + 5, monad)
+		expect(res.fromJust()).to.eql(10);
+	});
 });
 

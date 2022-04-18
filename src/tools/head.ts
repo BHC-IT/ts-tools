@@ -26,3 +26,4 @@ export type Head<T extends unknown[]> = T extends [head: infer U, ...tail: unkno
 	* @author Valentin Vivier <lanathlor>
 */
 export const head = <T extends unknown[]>([head,] : [...T]) : Head<T> => head as Head<T>;
+

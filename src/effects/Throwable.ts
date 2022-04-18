@@ -33,7 +33,7 @@ export class Throwable<A> extends Effect<A> {
 
 	public isValide = (): boolean => Throwable.isResolved(this)
 
-	public _open = (): unknown => this.record
+	public _open = (): unknown => this.record[1]
 
 	public static resolved = <A>(a: A): Throwable<A> => new Throwable<A>([true, a])
 
