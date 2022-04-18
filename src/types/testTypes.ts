@@ -16,7 +16,7 @@ type _Recurse<T> =
 
 //export type Repeat<T, N extends number> = Recurse<_Repeat<T, N, []>>
 export type Repeat<T, N extends number> = TestArray<Recurse<_Repeat<T, N, []>>>
-type TestArray<T> = T extends any[] ? T : []
+type TestArray<T> = T extends unknown[] ? T : []
 
 type _Repeat<T, N extends number, A extends T[]> =
 	A["length"] extends N
@@ -110,5 +110,5 @@ export const testArr = start<number>()
 export const testArr2 = push(testArr, 0)
 export const testArr3 = push(testArr2, 0)
 export const testArr4 = push(testArr3, 0)
-export let testArr5 = at(testArr3, 1)
-export let testArr6 = at(testArr3, 5)
+export const testArr5 = at(testArr3, 1)
+export const testArr6 = at(testArr3, 5)

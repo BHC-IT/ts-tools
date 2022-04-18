@@ -10,21 +10,20 @@ export abstract class Effect<A> {
 	abstract _open: () => unknown
 
 	public flatten = (): Effect<A> => {
-	console.log(this.isValide())
-	if (this.isValide()) {
-		const rec = this._open();
-		console.log({rec})
-		console.log(rec instanceof Effect)
-		console.log(rec instanceof Maybe)
-		if (rec instanceof Effect) {
-			return rec.flatten()
+		if (this.isValide()) {
+			const rec = this._open();
+			console.log({rec})
+			console.log(rec instanceof Effect)
+			console.log(rec instanceof Maybe)
+			if (rec instanceof Effect) {
+				return rec.flatten()
+			} else {
+				return this
+			}
 		} else {
 			return this
 		}
-	} else {
-		return this
 	}
-}
 }
 
 export type recordType<A extends Effect<A>> = A
