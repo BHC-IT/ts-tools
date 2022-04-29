@@ -31,10 +31,12 @@ import { Either } from './effects/Either';
 import { String } from './namespaces/String';
 import { Array } from './namespaces/Array';
 import { Pipe } from './namespaces/Pipe';
+import { Numeric } from './namespaces/Numeric';
 
-import { Func, F, Void, PureFunction, Program,  EffectfulProgram } from './types/Functions';
-import { Identity } from './types/Identity';
-import { Next } from './types/testTypes'
+import type { Func, F, Void, PureFunction, Program,  EffectfulProgram } from './types/Functions';
+import type { Identity } from './types/Identity';
+import type { Repeat } from './types/Tuple';
+import type * as NumericTypes from './types/Numeric';
 
 
 export type {
@@ -44,13 +46,14 @@ export type {
 	Tail,
 	Init,
 	Last,
+	Repeat,
 
 	Lens,
 
 	Func, F, Void, PureFunction, Program,  EffectfulProgram,
 	Identity,
 
-	Next,
+	NumericTypes,
 };
 
 export {
@@ -87,5 +90,6 @@ export {
 	String,
 	Array,
 	Pipe,
+	Numeric,
 };
 
