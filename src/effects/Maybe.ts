@@ -138,5 +138,5 @@ export class Maybe<A> extends Effect<A> {
 
 	public static case = <A, B>(a: Maybe<A>, f: (a: A) => B, n: () => B) =>
 		isJust(a.record) ? f(a.record.value) : n()
-	public case = <B>(f: (a: A) => B, n: () => B) => Maybe.case(this, f, n)
+	public case = <B>(f: (a: A) => B, n: () => B): B => Maybe.case(this, f, n)
 }

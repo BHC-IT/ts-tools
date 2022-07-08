@@ -1,5 +1,6 @@
 import { NumericTypes } from '../index'
 
+// eslint-disable-next-line @typescript-eslint/no-namespace
 export namespace Numeric {
 	export const next = <A extends number>(a: A): NumericTypes.Next<A> =>
 		(a + 1) as NumericTypes.Next<A>
