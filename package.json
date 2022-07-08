@@ -12,7 +12,7 @@
 	"license": "MIT",
 	"private": false,
 	"scripts": {
-		"start": "npm run build && node dist/index.js",
+		"start": "ts-node ./src/index.ts",
 		"dev": "nodemon",
 		"test": "mocha -r ts-node/register test/**/*.ts",
 		"test:dev": "nodemon --config ./nodemon.test.json",
@@ -24,7 +24,9 @@
 		"doc:internal": "typedoc --excludeInternal false ./src/* --out internal",
 		"lint": "eslint . --ext .ts",
 		"lint:fix": "eslint . --fix --ext .ts",
-		"prepublish": "tsc"
+		"prepublish": "tsc",
+		"prettier:check": "npx prettier --check .",
+		"prettier:write": "npx prettier --write ."
 	},
 	"devDependencies": {
 		"@istanbuljs/nyc-config-typescript": "^1.0.2",
@@ -43,10 +45,12 @@
 		"chai-as-promised": "^7.1.1",
 		"concurrently": "^7.0.0",
 		"eslint": "^8.10.0",
+		"eslint-config-prettier": "^8.5.0",
 		"mocha": "^9.2.1",
 		"mocha-sinon": "^2.1.2",
 		"nodemon": "^2.0.15",
 		"nyc": "^15.1.0",
+		"prettier": "^2.7.1",
 		"rimraf": "^3.0.2",
 		"semantic-release": "^19.0.2",
 		"sinon": "^13.0.1",

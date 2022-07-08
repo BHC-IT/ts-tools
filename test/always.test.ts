@@ -1,15 +1,11 @@
-import { expect } from 'chai';
+import { expect } from 'chai'
 
-import { always } from '../src/index';
+import { always } from '../src/index'
 
+describe('test always', function () {
+	it('always', function () {
+		const alwOne = always(1)
 
-describe('test always', function() {
-
-	it('always', function() {
-		const alwOne = always(1);
-
-		expect(alwOne()).to.equal(1);
-	});
-
-});
-
+		expect(alwOne()).to.equal(1)
+	})
+})

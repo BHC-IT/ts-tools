@@ -1,45 +1,44 @@
-import chai, { expect } from 'chai';
-import chaiAsPromised from 'chai-as-promised';
+import chai, { expect } from 'chai'
+import chaiAsPromised from 'chai-as-promised'
 
-import { range } from '../src/tools/range';
+import { range } from '../src/tools/range'
 
-chai.use(chaiAsPromised);
+chai.use(chaiAsPromised)
 
-describe('test range', function() {
-	it('range simple case', function() {
-		const ranger = range();
+describe('test range', function () {
+	it('range simple case', function () {
+		const ranger = range()
 
-		expect(ranger[10]).to.eql(10);
-	});
+		expect(ranger[10]).to.eql(10)
+	})
 
-	it('range increment by 2', function() {
-		const ranger = range(0, Infinity, 2);
+	it('range increment by 2', function () {
+		const ranger = range(0, Infinity, 2)
 
-		expect(ranger[10]).to.eql(20);
-	});
+		expect(ranger[10]).to.eql(20)
+	})
 
-	it('range start at 10 increment by 2', function() {
-		const ranger = range(10, Infinity, 2);
+	it('range start at 10 increment by 2', function () {
+		const ranger = range(10, Infinity, 2)
 
-		expect(ranger[10]).to.eql(30);
-	});
+		expect(ranger[10]).to.eql(30)
+	})
 
-	it('range start at 10 stop at 100 increment by 2', function() {
-		const ranger = range(10, 100, 2);
+	it('range start at 10 stop at 100 increment by 2', function () {
+		const ranger = range(10, 100, 2)
 
-		expect(ranger[100]).to.eql(undefined);
-	});
+		expect(ranger[100]).to.eql(undefined)
+	})
 
-	it('range access unvalid index', function() {
-		const ranger = range(10, 100, 2);
+	it('range access unvalid index', function () {
+		const ranger = range(10, 100, 2)
 
-		expect((ranger as any).test).to.eql(undefined);
-	});
+		expect((ranger as any).test).to.eql(undefined)
+	})
 
-	it('range access unvalid index', function() {
-		const ranger = range(10, 100, 2);
+	it('range access unvalid index', function () {
+		const ranger = range(10, 100, 2)
 
-		expect((ranger as any)[Symbol('test')]).to.eql(undefined);
-	});
-});
-
+		expect((ranger as any)[Symbol('test')]).to.eql(undefined)
+	})
+})

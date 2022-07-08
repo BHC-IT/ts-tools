@@ -1,0 +1,10 @@
+dist
+coverage
+node_modules
+.github
+.nyc_output
+typings/**
+*.json
+*.yaml
+*.md
+.*

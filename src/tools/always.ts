@@ -1,1 +1,4 @@
-export const always = <A>(value: A) => () => value
+export const always =
+	<A>(value: A) =>
+	() =>
+		value

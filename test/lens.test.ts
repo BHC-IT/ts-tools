@@ -1,133 +1,133 @@
-import chai, { expect } from 'chai';
-import chaiAsPromised from 'chai-as-promised';
+import chai, { expect } from 'chai'
+import chaiAsPromised from 'chai-as-promised'
 
-import { lensFrom, view, set } from '../src/tools/lens';
+import { lensFrom, view, set } from '../src/tools/lens'
 
-chai.use(chaiAsPromised);
+chai.use(chaiAsPromised)
 
-describe('test lens', function() {
-	it('lens simple case', function() {
+describe('test lens', function () {
+	it('lens simple case', function () {
 		const test = {
 			test: {
 				here: {
 					deep: {
-						value: 0
+						value: 0,
 					},
-					arr:[{value: 0}]
-				}
-			}
-		};
+					arr: [{ value: 0 }],
+				},
+			},
+		}
 
-		const testLensFrom = lensFrom('test.here.deep.value');
+		const testLensFrom = lensFrom('test.here.deep.value')
 
-		expect(view(testLensFrom, test)).to.eql(0);
-	});
+		expect(view(testLensFrom, test)).to.eql(0)
+	})
 
-	it('lens tuple with index in it', function() {
+	it('lens tuple with index in it', function () {
 		const test = {
 			test: {
 				here: {
 					deep: {
-						value: 0
+						value: 0,
 					},
-					arr:[{value: 1}]
-				}
-			}
-		};
+					arr: [{ value: 1 }],
+				},
+			},
+		}
 
-		const testLensFrom = lensFrom(["test", "here", "arr", 0, "value"]);
+		const testLensFrom = lensFrom(['test', 'here', 'arr', 0, 'value'])
 
-		expect(view(testLensFrom, test)).to.eql(1);
-	});
+		expect(view(testLensFrom, test)).to.eql(1)
+	})
 
-	it('lens string with index in it', function() {
+	it('lens string with index in it', function () {
 		const test = {
 			test: {
 				here: {
 					deep: {
-						value: 0
+						value: 0,
 					},
-					arr:[{value: 1}]
-				}
-			}
-		};
+					arr: [{ value: 1 }],
+				},
+			},
+		}
 
-		const testLensFrom = lensFrom("test.here.arr.0.value");
+		const testLensFrom = lensFrom('test.here.arr.0.value')
 
-		expect(view(testLensFrom, test)).to.eql(1);
-	});
+		expect(view(testLensFrom, test)).to.eql(1)
+	})
 
-	it('lens string with index in it and none default spliter', function() {
+	it('lens string with index in it and none default spliter', function () {
 		const test = {
 			test: {
 				here: {
 					deep: {
-						value: 0
+						value: 0,
 					},
-					arr:[{value: 1}]
-				}
-			}
-		};
+					arr: [{ value: 1 }],
+				},
+			},
+		}
 
-		const testLensFrom = lensFrom("test/here/arr/0/value", '/');
+		const testLensFrom = lensFrom('test/here/arr/0/value', '/')
 
-		expect(view(testLensFrom, test)).to.eql(1);
-	});
+		expect(view(testLensFrom, test)).to.eql(1)
+	})
 
-	it('lens none existing fields', function() {
+	it('lens none existing fields', function () {
 		const test = {
 			test: {
 				here: {
 					deep: {
-						value: 0
+						value: 0,
 					},
-					arr:[{value: 1}]
-				}
-			}
-		};
+					arr: [{ value: 1 }],
+				},
+			},
+		}
 
-		const testLensFrom = lensFrom("test.nothere.here.arr.0.value");
+		const testLensFrom = lensFrom('test.nothere.here.arr.0.value')
 
-		expect(view(testLensFrom, test)).to.eql(undefined);
-	});
-});
+		expect(view(testLensFrom, test)).to.eql(undefined)
+	})
+})
 
-describe('test lens & set', function() {
-	it('set simple case', function() {
+describe('test lens & set', function () {
+	it('set simple case', function () {
 		const test = {
 			test: {
 				here: {
 					deep: {
-						value: 0
+						value: 0,
 					},
-					arr:[{value: 0}]
-				}
-			}
-		};
+					arr: [{ value: 0 }],
+				},
+			},
+		}
 
-		const testLensFrom = lensFrom('test.here.deep.value');
+		const testLensFrom = lensFrom('test.here.deep.value')
 
-		const new_obj = set(testLensFrom, 2, test);
-		expect(view(testLensFrom, test)).to.eql(0);
-		expect(view(testLensFrom, new_obj)).to.eql(2);
-	});
+		const new_obj = set(testLensFrom, 2, test)
+		expect(view(testLensFrom, test)).to.eql(0)
+		expect(view(testLensFrom, new_obj)).to.eql(2)
+	})
 
-	it('set none existing fields', function() {
+	it('set none existing fields', function () {
 		const test = {
 			test: {
 				here: {
 					deep: {
-						value: 0
+						value: 0,
 					},
-					arr:[{value: 1}]
-				}
-			}
-		};
+					arr: [{ value: 1 }],
+				},
+			},
+		}
 
-		const testLensFrom = lensFrom("test.nothere.here.arr.0.value");
+		const testLensFrom = lensFrom('test.nothere.here.arr.0.value')
 
-		const new_obj = set(testLensFrom, 2, test);
-		expect(view(testLensFrom, new_obj)).to.eql(undefined);
-		expect(new_obj).to.eql(test);
-	});
-});
+		const new_obj = set(testLensFrom, 2, test)
+		expect(view(testLensFrom, new_obj)).to.eql(undefined)
+		expect(new_obj).to.eql(test)
+	})
+})

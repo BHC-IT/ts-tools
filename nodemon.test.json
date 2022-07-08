@@ -2,5 +2,5 @@
 	"watch": [".","src", "test"],
 	"ext": ".ts,.js",
 	"ignore": [],
-	"exec": "mocha -r ts-node/register test/**/*.ts"
+	"exec": "mocha --parallel -w -r ts-node/register test/**/*.ts"
 }

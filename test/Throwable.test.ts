@@ -1,231 +1,236 @@
-import { expect } from 'chai';
+import { expect } from 'chai'
 
-import { Throwable } from '../src/effects/Throwable';
-import { Effect } from '../src/effects/Effect';
+import { Throwable } from '../src/effects/Throwable'
+import { Effect } from '../src/effects/Effect'
 
-import { emit } from '../src/tools/emit';
+import { emit } from '../src/tools/emit'
 
-describe('test Throwable', function() {
+describe('test Throwable', function () {
+	it('check instance', function () {
+		const i: Throwable<number> = Throwable.resolved(0)
 
-	it('check instance', function() {
-		const i : Throwable<number> = Throwable.resolved(0);
+		expect(i instanceof Effect).to.equal(true)
+		expect(i instanceof Throwable).to.equal(true)
+	})
 
-		expect(i instanceof Effect).to.equal(true);
-		expect(i instanceof Throwable).to.equal(true);
-	});
+	it('isResolved of resolved', function () {
+		const i: Throwable<number> = Throwable.resolved(0)
 
-	it('isResolved of resolved', function() {
-		const i : Throwable<number> = Throwable.resolved(0);
+		expect(i.isResolved()).to.equal(true)
+	})
+	it('isResolved of thrown', function () {
+		let i: Throwable<number> = Throwable.thrown(new Error('test'))
 
-		expect(i.isResolved()).to.equal(true);
-	});
-	it('isResolved of thrown', function() {
-		let i : Throwable<number> = Throwable.thrown(new Error('test'));
+		expect(Throwable.isResolved(i)).to.equal(false)
+	})
 
-		expect(Throwable.isResolved(i)).to.equal(false);
-	});
+	it('isNothing of resolved', function () {
+		const i: Throwable<number> = Throwable.resolved(0)
 
-	it('isNothing of resolved', function() {
-		const i : Throwable<number> = Throwable.resolved(0);
+		expect(i.isThrown()).to.equal(false)
+	})
 
-		expect(i.isThrown()).to.equal(false);
-	});
+	it('isNothing of thrown', function () {
+		let i: Throwable<number> = Throwable.thrown(new Error('test'))
 
-	it('isNothing of thrown', function() {
-		let i : Throwable<number> = Throwable.thrown(new Error('test'));
+		expect(Throwable.isThrown(i)).to.equal(true)
+	})
 
-		expect(Throwable.isThrown(i)).to.equal(true);
-	});
+	it('Throwable for resolved when resolved', function () {
+		const i: Throwable<number> = Throwable.resolved(0)
 
-	it ('Throwable for resolved when resolved', function() {
-		const i : Throwable<number> = Throwable.resolved(0);
+		const res = i.fmap((e: number) => e + 1)
+		expect(res.fromResolved()).to.equal(1)
+	})
 
-		const res = i.fmap((e : number) => e + 1);
-		expect(res.fromResolved()).to.equal(1);
-	});
+	it('Throwable for resolved when thrown', function () {
+		const i: Throwable<number> = Throwable.thrown(new Error('test'))
 
-	it ('Throwable for resolved when thrown', function() {
-		const i : Throwable<number> = Throwable.thrown(new Error('test'));;
+		const res = i.fmap((e: number) => e + 1)
+		expect(res.fromThrown().message).to.eql('test')
+	})
 
-		const res = i.fmap((e : number) => e + 1);
-		expect(res.fromThrown().message).to.eql('test');
-	});
+	it('Throwable for resolved when resolved', function () {
+		const i: Throwable<number> = Throwable.resolved(0)
 
-	it ('Throwable for resolved when resolved', function() {
-		const i : Throwable<number> = Throwable.resolved(0);
+		const res = i.bind((e: number) => Throwable.resolved(e + 1))
+		expect(res.fromResolved()).to.equal(1)
+	})
 
-		const res = i.bind((e : number) => Throwable.resolved(e + 1));
-		expect(res.fromResolved()).to.equal(1);
-	});
+	it('Throwable for resolved when thrown', function () {
+		const i: Throwable<number> = Throwable.thrown(new Error('test'))
 
-	it ('Throwable for resolved when thrown', function() {
-		const i : Throwable<number> = Throwable.thrown(new Error('test'));;
+		const res = i.bind((e: number) => Throwable.resolved(e + 1))
+		expect(res.fromThrown().message).to.eql('test')
+	})
 
-		const res = i.bind((e : number) => Throwable.resolved(e + 1));
-		expect(res.fromThrown().message).to.eql('test');
-	});
+	it('Throwable lift', function () {
+		const i: Throwable<number> = Throwable.from(0)
+		const inc = (e: number) => e + 1
+		const minc = Throwable.lift(inc)
 
-	it ('Throwable lift', function() {
-		const i : Throwable<number> = Throwable.from(0);
-		const inc = (e : number) => e + 1;
-		const minc = Throwable.lift(inc);
+		const res = minc(i)
 
-		const res = minc(i);
+		Throwable.fmap((e: number) => expect(e).to.equal(1), res)
+	})
 
-		Throwable.fmap((e : number) => expect(e).to.equal(1), res);
-	});
+	it('Throwable from error', function () {
+		const i = Throwable.from(new Error('test'))
 
-	it ('Throwable from error', function() {
-		const i = Throwable.from(new Error('test'));
+		expect([(i as any).record[0], (i as any).record[1].message]).to.eql([
+			false,
+			'test',
+		])
+	})
 
-		expect([(i as any).record[0], (i as any).record[1].message]).to.eql([false, 'test']);
-	});
+	it('Throwable identity', function () {
+		const i = Throwable.from(0)
 
-	it ('Throwable identity', function() {
-		const i = Throwable.from(0);
+		expect(i.identity()).to.equal(Throwable)
+	})
 
-		expect(i.identity()).to.equal(Throwable);
-	});
+	it('Throwable isValide', function () {
+		const i = Throwable.from(0)
 
-	it ('Throwable isValide', function() {
-		const i = Throwable.from(0);
+		expect(i.isValide()).to.equal(true)
+	})
 
-		expect(i.isValide()).to.equal(true);
-	});
+	it('Throwable fromResolved of resolved', function () {
+		const i = Throwable.resolved(0)
 
-	it ('Throwable fromResolved of resolved', function() {
-		const i = Throwable.resolved(0);
+		expect(Throwable.fromResolved(i)).to.equal(0)
+	})
 
-		expect(Throwable.fromResolved(i)).to.equal(0);
-	});
+	it('Throwable fromResolved of thrown', function () {
+		const i = Throwable.thrown('test')
 
-	it ('Throwable fromResolved of thrown', function() {
-		const i = Throwable.thrown('test');
+		expect(() => Throwable.fromResolved(i)).to.throws()
+	})
 
-		expect(() => Throwable.fromResolved(i)).to.throws();
-	});
+	it('Throwable fromThrown of resolved', function () {
+		const i = Throwable.resolved(0)
 
-	it ('Throwable fromThrown of resolved', function() {
-		const i = Throwable.resolved(0);
+		expect(() => Throwable.fromThrown(i)).to.throws()
+	})
 
-		expect(() => Throwable.fromThrown(i)).to.throws();
-	});
+	it('Throwable fromThrown of thrown', function () {
+		const i = Throwable.thrown('test')
 
-	it ('Throwable fromThrown of thrown', function() {
-		const i = Throwable.thrown('test');
+		expect(Throwable.fromThrown(i).message).to.equal('test')
+	})
 
-		expect(Throwable.fromThrown(i).message).to.equal('test');
-	});
+	it('Throwable fromThrowable of resolved', function () {
+		const i = Throwable.resolved(0)
 
-	it ('Throwable fromThrowable of resolved', function() {
-		const i = Throwable.resolved(0);
+		expect(i.fromThrowable(1)).to.equal(0)
+	})
 
-		expect(i.fromThrowable(1)).to.equal(0);
-	});
+	it('Throwable fromThrowable of thrown', function () {
+		const i = Throwable.thrown('test')
 
-	it ('Throwable fromThrowable of thrown', function() {
-		const i = Throwable.thrown('test');
+		expect(Throwable.fromThrowable(1, i)).to.equal(1)
+	})
 
-		expect(Throwable.fromThrowable(1, i)).to.equal(1);
-	});
+	it('Throwable listToThrowable', function () {
+		const i = Throwable.listToThrowable([0, 1])
 
-	it ('Throwable listToThrowable', function() {
-		const i = Throwable.listToThrowable([0, 1]);
+		expect(Throwable.fromThrowable(1, i)).to.equal(0)
+	})
 
-		expect(Throwable.fromThrowable(1, i)).to.equal(0);
-	});
+	it('Throwable listToThrowable empty list', function () {
+		const i = Throwable.listToThrowable([])
 
-	it ('Throwable listToThrowable empty list', function() {
-		const i = Throwable.listToThrowable([]);
+		expect(Throwable.fromThrowable(1, i)).to.equal(1)
+	})
 
-		expect(Throwable.fromThrowable(1, i)).to.equal(1);
-	});
+	it('Throwable ThrowableToList resolved', function () {
+		const i = Throwable.resolved(1)
 
-	it ('Throwable ThrowableToList resolved', function() {
-		const i = Throwable.resolved(1);
+		expect(i.ThrowableToList()).to.eql([1])
+	})
 
-		expect(i.ThrowableToList()).to.eql([1]);
-	});
+	it('Throwable ThrowableToList thrown', function () {
+		const i = Throwable.thrown('test')
 
-	it ('Throwable ThrowableToList thrown', function() {
-		const i = Throwable.thrown('test');
+		expect(Throwable.ThrowableToList(i)).to.eql([])
+	})
 
-		expect(Throwable.ThrowableToList(i)).to.eql([]);
-	});
+	it('Throwable catThrowable', function () {
+		const i = [
+			Throwable.resolved(1),
+			Throwable.thrown('test'),
+			Throwable.resolved(2),
+		]
 
-	it ('Throwable catThrowable', function() {
-		const i = [Throwable.resolved(1), Throwable.thrown('test'), Throwable.resolved(2)];
+		expect(Throwable.catThrowables(i)).to.eql([1, 2])
+	})
 
-		expect(Throwable.catThrowables(i)).to.eql([1, 2]);
-	});
+	it('Throwable identity', function () {
+		expect(Throwable.resolved(0).identity()).to.eql(Throwable)
+	})
 
-	it ('Throwable identity', function() {
+	it('Throwable mapThrowable', function () {
+		const f = (a: number) =>
+			a % 2 === 0 ? Throwable.resolved(a) : Throwable.thrown('test')
 
-		expect(Throwable.resolved(0).identity()).to.eql(Throwable);
-	});
+		const bs = Throwable.mapThrowable(f, [0, 1, 2, 3, 4, 5])
 
-	it ('Throwable mapThrowable', function() {
-		const f = (a: number) => a % 2 === 0 ? Throwable.resolved(a) : Throwable.thrown('test');
+		expect(bs).to.eql([0, 2, 4])
+	})
 
-		const bs = Throwable.mapThrowable(f, [0, 1, 2, 3, 4, 5]);
+	it('Throwable liftFromThrowable', function () {
+		const f = (a: number) => (a % 2 === 0 ? a : emit(''))
 
-		expect(bs).to.eql([0, 2, 4]);
-	});
+		const fm = Throwable.liftFromThrowable(f)
 
-	it ('Throwable liftFromThrowable', function() {
-		const f = (a: number) => a % 2 === 0 ? a : emit('');
+		const a = fm(0)
+		const b = fm(1)
 
-		const fm = Throwable.liftFromThrowable(f);
+		expect(Throwable.fromResolved(a)).to.eql(0)
 
-		const a = fm(0);
-		const b = fm(1);
+		expect(Throwable.isThrown(b)).to.equal(true)
+	})
 
-		expect(Throwable.fromResolved(a)).to.eql(0);
+	it('Throwable liftFromThrowableAsync', async function () {
+		const f = async (a: number) => (a % 2 === 0 ? a : emit(''))
 
-		expect(Throwable.isThrown(b)).to.equal(true);
-	});
+		const fm = Throwable.liftFromThrowableAsync(f)
 
-	it ('Throwable liftFromThrowableAsync', async function() {
-		const f = async (a: number) => a % 2 === 0 ? a : emit('');
+		const a = fm(0)
+		const b = fm(1)
 
-		const fm = Throwable.liftFromThrowableAsync(f);
+		expect(Throwable.fromResolved(await a)).to.eql(0)
 
-		const a = fm(0);
-		const b = fm(1);
+		expect(Throwable.isThrown(await b)).to.equal(true)
+	})
 
-		expect(Throwable.fromResolved(await a)).to.eql(0);
+	it('Throwable case 1', async function () {
+		let i = 0
+		const f = (a: number) => (i = a)
+		const n = () => (i = -1)
 
-		expect(Throwable.isThrown(await b)).to.equal(true);
-	});
+		const m = Throwable.resolved(1)
 
-	it ('Throwable case 1', async function() {
-		let i = 0;
-		const f = (a: number) => i = a;
-		const n = () => i = -1;
+		m.case(f, n)
 
-		const m = Throwable.resolved(1);
+		expect(i).to.equal(1)
+	})
 
-		m.case(f, n);
+	it('Throwable case 2', async function () {
+		let i = 0
+		const f = (a: number) => (i = a)
+		const n = () => (i = -1)
 
-		expect(i).to.equal(1);
-	});
+		const m = Throwable.thrown('test')
 
-	it ('Throwable case 2', async function() {
-		let i = 0;
-		const f = (a: number) => i = a;
-		const n = () => i = -1;
+		m.case(f, n)
 
-		const m = Throwable.thrown('test');
+		expect(i).to.equal(-1)
+	})
 
-		m.case(f, n);
+	it('Throwable _open', function () {
+		const m = Throwable.resolved(0)
 
-		expect(i).to.equal(-1);
-	});
-
-	it ('Throwable _open', function() {
-		const m = Throwable.resolved(0);
-
-		expect(m._open()).to.eql(0);
-	});
-});
-
+		expect(m._open()).to.eql(0)
+	})
+})

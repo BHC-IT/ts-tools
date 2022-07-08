@@ -1,19 +1,17 @@
-import { expect } from 'chai';
-import { drop } from '../src/tools/drop';
+import { expect } from 'chai'
+import { drop } from '../src/tools/drop'
 
-
-describe('test drop', function() {
-	it('drop(1, [1,2,3,4]) should return [1]', function() {
-		expect(drop(1, [1,2,3,4])).to.eql([2,3,4]);
-	});
-	it('drop(3, [1,2,3,4]) should return [1,2,3]', function() {
-		expect(drop(3, [1,2,3,4])).to.eql([4]);
-	});
-	it('drop(5, [1,2,3,4]) should return [1,2,3,4]', function() {
-		expect(drop(5, [1,2,3,4])).to.eql([]);
-	});
-	it('drop(1, ["1",true,1]) should return [true,1]', function() {
-		expect(drop(1, ["1",true,1])).to.eql([true,1]);
-	});
-});
-
+describe('test drop', function () {
+	it('drop(1, [1,2,3,4]) should return [1]', function () {
+		expect(drop(1, [1, 2, 3, 4])).to.eql([2, 3, 4])
+	})
+	it('drop(3, [1,2,3,4]) should return [1,2,3]', function () {
+		expect(drop(3, [1, 2, 3, 4])).to.eql([4])
+	})
+	it('drop(5, [1,2,3,4]) should return [1,2,3,4]', function () {
+		expect(drop(5, [1, 2, 3, 4])).to.eql([])
+	})
+	it('drop(1, ["1",true,1]) should return [true,1]', function () {
+		expect(drop(1, ['1', true, 1])).to.eql([true, 1])
+	})
+})

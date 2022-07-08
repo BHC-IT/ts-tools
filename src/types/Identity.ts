@@ -1,1 +1,1 @@
-export type Identity<A> = A;
+export type Identity<A> = A
