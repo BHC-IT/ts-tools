@@ -5,7 +5,7 @@
  *
  */
 
-import { FlipT, Head, Tail, Length, Drop } from '../index'
+import { FlipT, Head, Tail, Length } from '../index'
 
 /**
  * Curry a function.
@@ -45,13 +45,6 @@ export const rcurry = <T extends unknown[], U extends unknown[], R>(
 			...(args.reverse() as T)
 		)) as unknown as (...a: FlipT<U>) => R
 
-type Optional<T extends unknown[]> = T extends []
-	? []
-	: [Head<T>?, ...Optional<Tail<T>>]
-
-export type test = Drop<[1, 2, 3], Length<Optional<[number, number]>>>
-export type Test = Length<[number?, number?]>
-
 export type Curry<T extends (...a: unknown[]) => unknown> = T extends (
 	...a: infer Args
 ) => infer Ret
@@ -60,12 +53,9 @@ export type Curry<T extends (...a: unknown[]) => unknown> = T extends (
 		: (a: Head<Args>) => Curry<(...a: Tail<Args>) => Ret>
 	: never
 
-export type TestCurry = Curry<(a: number, b: number) => string>
-
-const betterCurry =
-	<T extends unknown[], R>(
-		func: (...a: [...T]) => R
-	): Curry<(...a: [...T]) => R> =>
-	// @ts-ignore
-	(a: Head<T>) =>
-		func.length === 1 ? func(a) : betterCurry(func.bind(null, a))
+// const betterCurry =
+// 	<T extends unknown[], R>(
+// 		func: (...a: [...T]) => R
+// 	): Curry<(...a: [...T]) => R> =>
+// 	(a: Head<T>) =>
+// 		func.length === 1 ? func(a) : betterCurry(func.bind(null, a))
