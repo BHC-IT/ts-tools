@@ -47,7 +47,7 @@ jobs:
       run: pnpm i
 
     - name: Building package
-      run: pnpm run build --if-present
+      run: pnpm run build 
 
     - name: Running tests
       run: pnpm run test
