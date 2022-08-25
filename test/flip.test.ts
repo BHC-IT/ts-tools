@@ -1,4 +1,5 @@
-import { expect } from 'chai'
+import { expect, describe, it } from 'vitest'
+
 import { flipt, flip } from '../src/index'
 
 const addstr = (str1: string, str2: string) => str1 + str2

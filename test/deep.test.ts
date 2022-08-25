@@ -1,9 +1,6 @@
-import chai, { expect } from 'chai'
-import chaiAsPromised from 'chai-as-promised'
+import { expect, describe, it } from 'vitest'
 
 import { copy } from '../src/tools/deep'
-
-chai.use(chaiAsPromised)
 
 describe('test copy', function () {
 	it('copy simple case', function () {

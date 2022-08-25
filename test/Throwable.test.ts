@@ -1,4 +1,4 @@
-import { expect } from 'chai'
+import { expect, describe, it } from 'vitest'
 
 import { Throwable } from '../src/effects/Throwable'
 import { Effect } from '../src/effects/Effect'

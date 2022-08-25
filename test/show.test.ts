@@ -1,32 +1,33 @@
-import { expect } from 'chai'
-require('mocha-sinon')
+import { expect, describe, it, beforeEach, vi } from 'vitest'
 
 import { show, showf, showfAsync } from '../src/index'
 
-describe('test show', function () {
-	beforeEach(function () {
-		this.sinon.stub(console, 'log')
-	})
+const spy = vi.spyOn(console, 'log')
 
+describe('test show', function () {
+	beforeEach(() => {
+		spy.mockClear()
+		spy.mockImplementation((): undefined => undefined)
+	})
 	it('show', function () {
 		expect(show('test')).to.eql('test')
-		expect((console.log as any).calledOnce).to.be.true
-		expect((console.log as any).calledWith('test')).to.be.true
+		expect(spy).toHaveBeenCalledOnce
+		expect(spy).toHaveBeenCalledWith('test')
 	})
 
 	it('showf', function () {
 		const test = showf((t: string) => t + 'test')
 
 		expect(test('test')).to.eql('testtest')
-		expect((console.log as any).calledTwice).to.be.true
-		expect((console.log as any).calledWith('test')).to.be.true
+		expect(spy).toHaveBeenCalledTimes(2)
+		expect(spy).toHaveBeenCalledWith('test')
 	})
 
 	it('showfAsync', async function () {
 		const test = showfAsync(async (t: string) => t + 'test')
 
 		expect(await test('test')).to.eql('testtest')
-		expect((console.log as any).calledTwice).to.be.true
-		expect((console.log as any).calledWith('test')).to.be.true
+		expect(spy).toHaveBeenCalledTimes(2)
+		expect(spy).toHaveBeenCalledWith('test')
 	})
 })

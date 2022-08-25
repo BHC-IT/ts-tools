@@ -1,4 +1,5 @@
-import { expect } from 'chai'
+import { expect, describe, it } from 'vitest'
+
 import { drop } from '../src/tools/drop'
 
 describe('test drop', function () {

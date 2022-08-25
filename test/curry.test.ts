@@ -1,4 +1,5 @@
-import { expect } from 'chai'
+import { expect, describe, it } from 'vitest'
+
 import { curry, rcurry } from '../src/tools/curry'
 
 const add = (x1: number, x2: number) => x1 + x2

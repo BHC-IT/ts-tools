@@ -1,9 +1,6 @@
-import chai, { expect } from 'chai'
-import chaiAsPromised from 'chai-as-promised'
+import { expect, describe, it } from 'vitest'
 
 import { lensFrom, view, set } from '../src/tools/lens'
-
-chai.use(chaiAsPromised)
 
 describe('test lens', function () {
 	it('lens simple case', function () {

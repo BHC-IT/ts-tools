@@ -1,4 +1,5 @@
-import { expect } from 'chai'
+import { expect, describe, it } from 'vitest'
+
 import { compose, composeAsync } from '../src/tools/compose'
 
 const result = compose(

@@ -1,9 +1,5 @@
-import chai, { expect } from 'chai'
-import chaiAsPromised from 'chai-as-promised'
-
+import { expect, describe, it } from 'vitest'
 import { range } from '../src/tools/range'
-
-chai.use(chaiAsPromised)
 
 describe('test range', function () {
 	it('range simple case', function () {
