@@ -21,9 +21,5 @@
 		"esModuleInterop": true,
 		"types": ["vitest/globals", "node"]
 	},
-	"include": [
-		"./src/",
-		"./test",
-		"bindings"
-	]
+	"include": ["./src/", "./test", "bindings"]
 }
