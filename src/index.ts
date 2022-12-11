@@ -30,7 +30,7 @@ import { take } from './tools/take'
 import { tobe, lockFor } from './tools/tobe'
 
 import { Effect, recordType } from './effects/Effect'
-import { Maybe } from './effects/Maybe'
+import { Maybe } from './Monads/Maybe'
 import { Throwable } from './effects/Throwable'
 import { Either } from './effects/Either'
 

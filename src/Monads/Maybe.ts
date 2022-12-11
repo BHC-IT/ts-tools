@@ -86,12 +86,28 @@ export function isJust<A>(m: Maybe<A>) {
 	return m.isJust()
 }
 
-export function fromList<A>(a: A[]): Maybe<A> {
-	return a.length === 0 ? nothing : just(a[0])
+export function isNothing<A>(m: Maybe<A>) {
+	return m.isNothing()
 }
 
-export function toList<A>(a: Maybe<A>): A[] {
-	return isJust(a) ? [a._record] : []
+export function fromJust<A>(m: Maybe<A>) {
+	return m.fromJust()
+}
+
+export function fromMaybe<A>(m: Maybe<A>, f: () => A) {
+	return m.fromMaybe(f)
+}
+
+export function toList<A>(m: Maybe<A>) {
+	return m.toList()
+}
+
+export function fcase<A, B>(m: Maybe<A>, f: (a: A) => B, g: () => B) {
+	return m.case(f, g)
+}
+
+export function fromList<A>(a: A[]): Maybe<A> {
+	return a.length === 0 ? nothing : just(a[0])
 }
 
 export function cat<A>(a: Maybe<A>[]): A[] {
