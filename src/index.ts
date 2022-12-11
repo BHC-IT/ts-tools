@@ -21,7 +21,7 @@ import { last, Last } from './tools/last'
 import { Lens, lens, lensFrom, view, set } from './tools/lens'
 import { memoise } from './tools/memoise'
 import { Observable, observe } from './tools/observable'
-import { pipe, pipeAsync, pipeEffect, pipeEffectAsync } from './tools/pipe'
+import { pipe, pipeAsync } from './tools/pipe'
 import { range } from './tools/range'
 import { show, showf, showfAsync } from './tools/show'
 import { sleep } from './tools/sleep'
@@ -30,7 +30,7 @@ import { take } from './tools/take'
 import { tobe, lockFor } from './tools/tobe'
 
 import { Effect, recordType } from './effects/Effect'
-import { Maybe } from './Monads/Maybe'
+import * as Maybe from './Monads/Maybe'
 import { Throwable } from './effects/Throwable'
 import { Either } from './effects/Either'
 
@@ -102,8 +102,6 @@ export {
 	observe,
 	pipe,
 	pipeAsync,
-	pipeEffect,
-	pipeEffectAsync,
 	range,
 	show,
 	showf,

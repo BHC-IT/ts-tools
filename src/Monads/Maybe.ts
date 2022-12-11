@@ -1,33 +1,33 @@
 import { tail } from '../tools/tail'
-import { Monad } from './DataConstructors/Monad'
+import { Monad } from './TypeConstructors/Monad'
 
 export interface Maybe<A> extends Monad<A, 'Maybe'> {
 	_record: A
 	isJust: () => boolean
 	isNothing: () => boolean
 	fromJust: () => A
-	fromMaybe: (f: () => A) => A
+	fromMaybe: (d: A) => A
 	toList: () => A[]
 	case: <B>(f: (a: A) => B, g: () => B) => B
 }
 
 function _innerFromJust<A>(this: Maybe<A>) {
-	if (this.isJust) return this._record
+	if (this.isJust()) return this._record
 	throw new TypeError('Maybe is nothing, but fromJust was called')
 }
 
-function _innerFromMaybe<A>(this: Maybe<A>, f: () => A) {
-	if (this.isJust) return this._record
-	return f()
+function _innerFromMaybe<A>(this: Maybe<A>, d: A) {
+	if (this.isJust()) return this._record
+	return d
 }
 
 function _innerToList<A>(this: Maybe<A>) {
-	if (this.isJust) return [this._record]
+	if (this.isJust()) return [this._record]
 	return []
 }
 
 function _innerCase<A, B>(this: Maybe<A>, f: (a: A) => B, g: () => B) {
-	if (this.isJust) return f(this._record)
+	if (this.isJust()) return f(this._record)
 	return g()
 }
 
@@ -94,8 +94,8 @@ export function fromJust<A>(m: Maybe<A>) {
 	return m.fromJust()
 }
 
-export function fromMaybe<A>(m: Maybe<A>, f: () => A) {
-	return m.fromMaybe(f)
+export function fromMaybe<A>(d: A, m: Maybe<A>) {
+	return m.fromMaybe(d)
 }
 
 export function toList<A>(m: Maybe<A>) {

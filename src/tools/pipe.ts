@@ -42,29 +42,3 @@ export const pipeAsync = <A, R>(
 			async (...args: unknown[]) =>
 				g(await f(...args))
 	) as F<A, R>
-
-export const pipeEffect = <A, R>(
-	...fns: [(...a: A[]) => unknown, ...Func[], (a: unknown) => R]
-): F<A, R> =>
-	fns.reduce(
-		(f: Func, g: Func | F<unknown, Effect<unknown>>): Func =>
-			(...args: unknown[]) =>
-				forward(f(...args), e =>
-					e instanceof Effect
-						? e.bind(g as F<unknown, Effect<unknown>>)
-						: g(e)
-				)
-	) as F<A, R>
-
-export const pipeEffectAsync = <A, R>(
-	...fns: [(...a: A[]) => unknown, ...Func[], (a: unknown) => R]
-): F<A, R> =>
-	fns.reduce(
-		(f: Func, g: Func): Func =>
-			async (...args: unknown[]) =>
-				forward(await f(...args), e =>
-					e instanceof Effect
-						? e.bind(g as F<unknown, Effect<unknown>>)
-						: g(e)
-				)
-	) as F<A, R>
