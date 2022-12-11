@@ -1,7 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import type { Maybe } from '../Maybe'
+import type { Task } from '../Task'
 
 export const MaybeURI = 'Maybe'
+export const TaskURI = 'Task'
 
 export interface HKTURI<A> {
 	__URI__: A
@@ -9,6 +11,7 @@ export interface HKTURI<A> {
 
 export interface HKT<A extends unknown[]> {
 	[MaybeURI]: Maybe<A[0]>
+	[TaskURI]: Task<A[0]>
 }
 
 export type HKTFilter<A> = {
