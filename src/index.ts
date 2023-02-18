@@ -30,9 +30,13 @@ import { take } from './tools/take'
 import { tobe, lockFor } from './tools/tobe'
 
 import { Effect, recordType } from './effects/Effect'
-import * as Maybe from './Monads/Maybe'
 import { Throwable } from './effects/Throwable'
 import { Either } from './effects/Either'
+
+export { maybe, Maybe } from './Monads'
+export { task, Task } from './Monads'
+export { Monad } from './Monads'
+export { M } from './Monads'
 
 import { String } from './namespaces/String'
 import { Array } from './namespaces/Array'
@@ -113,7 +117,6 @@ export {
 	lockFor,
 	Effect,
 	recordType,
-	Maybe,
 	Throwable,
 	Either,
 	String,

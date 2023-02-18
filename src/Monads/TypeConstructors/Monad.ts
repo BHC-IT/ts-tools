@@ -1,13 +1,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Applicative } from './Applicative'
-import { HKTKeys, InferTypeParam, URIToHKT } from './HKT'
+import { HKTKeys, InferTypeParam, InferTypeParamRec, URIToHKT } from './HKT'
 
 export interface Monad<A, HKTUri extends HKTKeys>
 	extends Applicative<A, HKTUri> {
 	bind: <B>(f: (a: A) => URIToHKT<HKTUri, [B]>) => URIToHKT<HKTUri, [B]>
 	flatten: (
-		this: URIToHKT<HKTUri, [URIToHKT<HKTUri, [A]>]>
-	) => URIToHKT<HKTUri, [A]>
+		this: URIToHKT<HKTUri, [URIToHKT<HKTUri, [InferTypeParamRec<A>]>]>
+	) => URIToHKT<HKTUri, [InferTypeParamRec<A>]>
 }
 
 export function bind<A extends Monad<unknown, any>, B>(

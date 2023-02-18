@@ -1,10 +1,7 @@
 import { Monad } from './TypeConstructors/Monad'
 
 export interface Task<A> extends Promise<A>, Monad<A, 'Task'> {
-	fmap: <B>(f: (a: A) => B) => Task<B>
-	apply: <B>(f: Task<(a: A) => B>) => Task<B>
-	bind: <B>(f: (a: A) => Task<B>) => Task<B>
-	flatten: () => Task<A>
+	toPromise: () => Promise<A>
 }
 
 function __innerFmap<A, B>(this: Task<A>, f: (a: A) => B) {
@@ -30,11 +27,20 @@ export function fromPromise<A>(a: Promise<A>): Task<A> {
 	newP.apply = __innerApply
 	newP.bind = __innerBind
 	newP.flatten = __innerFlatten
+	newP.toPromise = toPromise
 
 	return newP
 }
 
-export function fromFunction<A>(f: () => A): Task<A> {
+export function resolve<A>(a: A): Task<A> {
+	return fromPromise(Promise.resolve(a))
+}
+
+export function reject<A>(a: A): Task<A> {
+	return fromPromise(Promise.reject(a))
+}
+
+export function fromFunction<A>(f: () => Promise<A>): Task<A> {
 	return fromPromise(
 		new Promise((res, rej) => {
 			try {
@@ -44,4 +50,8 @@ export function fromFunction<A>(f: () => A): Task<A> {
 			}
 		})
 	)
+}
+
+export function toPromise<A>(this: Task<A>): Promise<A> {
+	return this
 }

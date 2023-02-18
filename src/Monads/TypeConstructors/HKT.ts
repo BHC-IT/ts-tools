@@ -41,7 +41,13 @@ export type InferTypeParam<A extends HKTURI<any>> = A extends URIToHKT<
 	? T
 	: never
 
-export type TestInferTypeParam = InferTypeParam<Maybe<number>>
+export type InferTypeParamRec<A> = A extends HKTURI<any>
+	? A extends URIToHKT<A['__URI__'], [infer T]>
+		? T extends HKTURI<any>
+			? InferTypeParamRec<T>
+			: T
+		: A
+	: A
 
 export type InferFunctorTypeParam<A extends HKTURI<any>> = A extends URIToHKT<
 	A['__URI__'],
@@ -49,7 +55,3 @@ export type InferFunctorTypeParam<A extends HKTURI<any>> = A extends URIToHKT<
 >
 	? T
 	: never
-
-export type TestInferFunctorTypeParam = InferFunctorTypeParam<
-	Maybe<(a: number) => string>
->

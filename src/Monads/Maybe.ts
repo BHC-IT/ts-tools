@@ -37,8 +37,7 @@ function _innerFmap<A, B>(this: Maybe<A>, f: (a: A) => B): Maybe<B> {
 }
 
 function _innerApply<A, B>(this: Maybe<A>, f: Maybe<(a: A) => B>) {
-	if (this.isJust()) return f.fmap(just)
-	return nothing
+	return f.bind(f => this.fmap(f))
 }
 
 function _innerBind<A, B>(this: Maybe<A>, f: (a: A) => Maybe<B>) {
@@ -46,7 +45,7 @@ function _innerBind<A, B>(this: Maybe<A>, f: (a: A) => Maybe<B>) {
 	return nothing
 }
 
-function _innerFlatten<A>(this: Maybe<Maybe<A>>) {
+function _innerFlatten<A>(this: Maybe<Maybe<A>>): Maybe<A> {
 	if (this.isJust()) return this._record
 	else return nothing
 }
