@@ -1,6 +1,6 @@
 import { expect, describe, it } from 'vitest'
 
-import { pipe, pipeAsync, Maybe, Throwable } from '../src/index'
+import { pipe, pipeAsync } from '../src/index'
 
 const result = pipe(
 	(x: number) => x + 1,

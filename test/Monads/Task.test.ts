@@ -1,8 +1,6 @@
 import { expect, describe, it } from 'vitest'
 
-import { task, Task, M } from '../../src'
-
-import { emit } from '../../src/tools/emit'
+import { task, M } from '../../src'
 
 describe('test Task', function () {
 	it('fromPromise', async function () {

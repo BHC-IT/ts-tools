@@ -1,9 +1,5 @@
 import type { Func, F } from '../types/Functions'
 
-import { Effect } from '../effects/Effect'
-
-import { forward } from './forward'
-
 /**
  * This is the documentation for pipe.ts
  * @packageDocumentation

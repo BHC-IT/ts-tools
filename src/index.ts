@@ -7,7 +7,6 @@ import { Drop, drop } from './tools/drop'
 import { emit } from './tools/emit'
 import { eql } from './tools/eql'
 import { FlipT, FlipF, flipt, flip } from './tools/flip'
-import { fmap } from './tools/fmap'
 import {
 	forwardTern,
 	forwardIf,
@@ -88,7 +87,6 @@ export {
 	eql,
 	flipt,
 	flip,
-	fmap,
 	forwardTern,
 	forwardIf,
 	forwardIfAsync,
