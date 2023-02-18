@@ -1,7 +1,7 @@
 import { tail } from '../tools/tail'
 import { Monad } from './TypeConstructors/Monad'
 
-export interface Maybe<A> extends Monad<A, 'Maybe'> {
+export interface Maybe<A> extends Monad<[A], 'Maybe'> {
 	_record: A
 	isJust: () => boolean
 	isNothing: () => boolean
@@ -36,8 +36,8 @@ function _innerFmap<A, B>(this: Maybe<A>, f: (a: A) => B): Maybe<B> {
 	return nothing
 }
 
-function _innerApply<A, B>(this: Maybe<A>, f: Maybe<(a: A) => B>) {
-	return f.bind(f => this.fmap(f))
+function _innerApply<A, B>(this: Maybe<A>, f: Maybe<(a: A) => B>): Maybe<B> {
+	return f.bind(inner => this.fmap(inner))
 }
 
 function _innerBind<A, B>(this: Maybe<A>, f: (a: A) => Maybe<B>) {

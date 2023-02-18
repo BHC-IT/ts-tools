@@ -73,6 +73,12 @@ describe('test Maybe', function () {
 		const res = i.bind((e: number) => maybe.just(e + 1))
 		expect(res.fromJust()).to.equal(1)
 	})
+	it('Maybe bind when Just from monad', function () {
+		const i: Maybe<number> = maybe.just(0)
+
+		const res = M.bind((e: number) => maybe.just(e + 1), i)
+		expect(res.fromJust()).to.equal(1)
+	})
 	it('Maybe bind when Nothing', function () {
 		const i: Maybe<number> = maybe.nothing
 
@@ -180,10 +186,18 @@ describe('test Maybe', function () {
 		expect(flatMaybe.fromMaybe(0)).to.eql(5)
 	})
 
-	it('maybe.nothing flatten', function () {
+	it('maybe.nothing flatten from Monad', function () {
 		const deepMaybe = maybe.nothing
 
 		const flatMaybe = M.flatten(deepMaybe)
+
+		expect(flatMaybe.fromMaybe(0)).to.eql(0)
+	})
+
+	it('maybe.nothing flatten', function () {
+		const deepMaybe = maybe.nothing
+
+		const flatMaybe = deepMaybe.flatten()
 
 		expect(flatMaybe.fromMaybe(0)).to.eql(0)
 	})

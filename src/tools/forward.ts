@@ -1,4 +1,4 @@
-import { Last, maybe, Either } from '../index'
+import { Last, maybe, either, Either } from '../index'
 
 export const forward = <A, FS extends ((a: A) => unknown)[]>(
 	forward: A,
@@ -18,7 +18,7 @@ export const forwardTern = <A, B, C>(
 	truthy: (a: A) => B,
 	falsy: (a: A) => C
 ): Either<C, B> =>
-	pred(forward) ? Either.right(truthy(forward)) : Either.left(falsy(forward))
+	pred(forward) ? either.right(truthy(forward)) : either.left(falsy(forward))
 
 export const forwardIfAsync = async <A, B>(
 	forward: A,
@@ -34,5 +34,5 @@ export const forwardTernAsync = async <A, B, C>(
 	falsy: (a: A) => C
 ): Promise<Either<C, B>> =>
 	(await pred(forward))
-		? Either.right(truthy(forward))
-		: Either.left(falsy(forward))
+		? either.right(truthy(forward))
+		: either.left(falsy(forward))
