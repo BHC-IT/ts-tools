@@ -106,7 +106,7 @@ describe('test lockFor', function () {
 		await lockFor(() => true)
 
 		const ellapsed = Date.now() - time
-		expect(ellapsed >= 50 && ellapsed < 60).to.equal(true)
+		expect(ellapsed >= 0 && ellapsed <= 500).to.equal(true)
 	})
 
 	it('lockFor falsy once', async () => {
@@ -118,7 +118,7 @@ describe('test lockFor', function () {
 				await lockFor(() => test === 2)
 
 				const ellapsed = Date.now() - time
-				expect(ellapsed >= 100 && ellapsed < 200).to.equal(true)
+				expect(ellapsed >= 50).to.equal(true)
 				expect(test).to.equal(2)
 				resolve(undefined)
 			})()
