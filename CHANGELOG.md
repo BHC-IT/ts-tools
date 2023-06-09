@@ -1,3 +1,5 @@
+## [1.16.2](https://github.com/BHC-IT/ts-tools/compare/v1.16.1...v1.16.2) (2023-06-09)
+
 ## [1.16.1](https://github.com/BHC-IT/ts-tools/compare/v1.16.0...v1.16.1) (2022-02-27)
 
 

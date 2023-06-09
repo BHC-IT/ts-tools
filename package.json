@@ -1,6 +1,6 @@
 {
 	"name": "@bhc/ts-tools",
-	"version": "1.16.1",
+	"version": "1.16.2",
 	"description": "A collection of functionals tools",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
