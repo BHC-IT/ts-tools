@@ -1,4 +1,6 @@
-import * as ts from '../index'
+import { forward } from '../tools/forward'
+import { init as _init } from '../tools/init'
+import { last as _last } from '../tools/last'
 
 // eslint-disable-next-line @typescript-eslint/no-namespace
 export namespace Array {
@@ -23,25 +25,25 @@ export namespace Array {
 	export const keys = <A>(arr: Array<A>) => arr.keys()
 	export const lastIndexOf = <A>(arr: Array<A>, value: A, start?: number) => start !== undefined ? arr.lastIndexOf(value, start) : arr.lastIndexOf(value)
 	export const map = <A, B>(arr: Array<A>, f:Map<A, B>) => arr.map(f)
-	export const pop = <A>([...arr]: Array<A>) => ts.forward(arr.pop(), () => arr)
-	export const push = <A>([...arr]: Array<A>, ...values: A[]) => ts.forward(arr.push(...values), () => arr)
+	export const pop = <A>([...arr]: Array<A>) => forward(arr.pop(), () => arr)
+	export const push = <A>([...arr]: Array<A>, ...values: A[]) => forward(arr.push(...values), () => arr)
 	export const reduce = <A, B>(arr: Array<A>, f: Accumulator<A, B>, initialValue?: B) => arr.reduce(f, initialValue)
 	export const reduceRight = <A, B>(arr: Array<A>, f: Accumulator<A, B>, initialValue?: B) => arr.reduceRight(f, initialValue)
 	export const reverse = <A>([...arr]: Array<A>) => arr.reverse()
-	export const shift = <A>([...arr]: Array<A>) => ts.forward(arr.shift(), () => arr)
+	export const shift = <A>([...arr]: Array<A>) => forward(arr.shift(), () => arr)
 	export const slice = <A>(arr:Array<A>, start?: number, end?: number) => arr.slice(start, end)
 	export const some = <A>(arr: Array<A>, f: Predicate<A>) => arr.some(f)
 	export const sort = <A>([...arr]: Array<A>, f?: Sort<A>) => arr.sort(f)
 	export const splice = <A>([...arr]: Array<A>, start?: number, nb?: number, ...elem: A[]) => arr.splice(start ?? 0, nb ?? arr.length, ...elem)
 	export const toLocaleString = <A>(arr: Array<A>) => arr.toLocaleString()
 	export const toString = <A>(arr: Array<A>) => arr.toString()
-	export const unshift = <A>([...arr]: Array<A>, v:A, ...values: A[]) => ts.forward(arr.unshift(v, ...values), () => arr)
+	export const unshift = <A>([...arr]: Array<A>, v:A, ...values: A[]) => forward(arr.unshift(v, ...values), () => arr)
 	export const values = <A>(arr: Array<A>) => arr.values()
 
 	export const head = <A>([head,]: Array<A>) => head
 	export const tail = <A>([, ...tail]: Array<A>) => tail
-	export const init = <A>(arr: Array<A>) => ts.init(arr)
-	export const last = <A>(arr: Array<A>) => ts.last(arr)
+	export const init = <A>(arr: Array<A>) => _init(arr)
+	export const last = <A>(arr: Array<A>) => _last(arr)
 	export const repeat = <A>(value: A, nb: number): A[] => nb > 0 ? [value, ...repeat(value, nb - 1)] : []
 	export const zip = <A, B>(arr1: A[], arr2: B[]): [A, B][] => arr1.map((e, i) => [e, arr2[i]])
 }

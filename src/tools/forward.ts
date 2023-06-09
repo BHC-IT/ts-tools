@@ -1,4 +1,6 @@
-import { Last, Maybe, Either } from '../index'
+import { Either } from "../effects/Either"
+import { Maybe } from "../effects/Maybe"
+import { Last } from "./last"
 
 export const forward = <A, FS extends ((a: A) => unknown)[]>(forward: A, ...fs: FS): ReturnType<Last<FS>> =>
 	fs.reduce((a, f) => f(forward), []) as ReturnType<Last<FS>>
