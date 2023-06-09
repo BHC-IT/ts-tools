@@ -1,4 +1,4 @@
-import { eql } from '../index'
+import { eql } from "./eql"
 
 export const memoise = <A extends unknown[], B>(f:(...args: A) => B): ((...args: A) => B) => {
 
