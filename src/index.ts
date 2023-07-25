@@ -34,6 +34,7 @@ import { Throwable } from './effects/Throwable'
 export { maybe, Maybe } from './Monads'
 export { task, Task } from './Monads'
 export { either, Either } from './Monads'
+export { eitherAsync, EitherAsync } from './Monads'
 export { Monad } from './Monads'
 export { M } from './Monads'
 

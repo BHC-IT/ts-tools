@@ -2,10 +2,12 @@
 import type { Maybe } from '../Maybe'
 import type { Task } from '../Task'
 import type { Either } from '../Either'
+import type { EitherAsync } from '../EitherAsync'
 
 export const MaybeURI = 'Maybe'
 export const TaskURI = 'Task'
 export const EitherURI = 'Either'
+export const EitherAsyncURI = 'EitherAsync'
 
 export interface HKTURI<A> {
 	/**
@@ -18,6 +20,7 @@ export interface HKT<A extends unknown[]> {
 	[MaybeURI]: Maybe<A[0]>
 	[TaskURI]: Task<A[0]>
 	[EitherURI]: Either<A[0], A[1]>
+	[EitherAsyncURI]: EitherAsync<A[0], A[1]>
 }
 
 export type HKTFilter<A> = {
