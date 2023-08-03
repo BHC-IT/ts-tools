@@ -28,9 +28,6 @@ import { tail, Tail } from './tools/tail'
 import { take } from './tools/take'
 import { tobe, lockFor } from './tools/tobe'
 
-import { Effect, recordType } from './effects/Effect'
-import { Throwable } from './effects/Throwable'
-
 export { maybe, Maybe } from './Monads'
 export { task, Task } from './Monads'
 export { either, Either } from './Monads'
@@ -43,14 +40,7 @@ import { Array } from './namespaces/Array'
 import { Pipe } from './namespaces/Pipe'
 import { Numeric } from './namespaces/Numeric'
 
-import type {
-	Func,
-	F,
-	Void,
-	PureFunction,
-	Program,
-	EffectfulProgram,
-} from './types/Functions'
+import type { Func, F, Void, PureFunction, Program } from './types/Functions'
 import type { Identity } from './types/Identity'
 import type { Repeat, Length } from './types/Tuple'
 import type * as NumericTypes from './types/Numeric'
@@ -71,7 +61,6 @@ export type {
 	Void,
 	PureFunction,
 	Program,
-	EffectfulProgram,
 	Identity,
 	NumericTypes,
 }
@@ -114,9 +103,6 @@ export {
 	take,
 	tobe,
 	lockFor,
-	Effect,
-	recordType,
-	Throwable,
 	String,
 	Array,
 	Pipe,
