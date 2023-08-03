@@ -1,5 +1,6 @@
 // Copyright (c) 2023, BHC-IT. All rights reserved. Licensed under the MIT License.
 import { Either, left as ELeft, right as ERight } from './Either'
+import { cat } from './Maybe'
 import { Task, resolve, fromPromise } from './Task'
 import { Monad } from './TypeConstructors/Monad'
 
@@ -207,7 +208,11 @@ export function fromTask<E, A>(t: Task<A>): EitherAsync<E, A> {
 }
 
 export function fromFunction<E, A>(f: () => Promise<A>): EitherAsync<E, A> {
-	return fromTask(fromPromise(f()))
+	try {
+		return fromTaskEither(fromPromise(_constructSaneTask(f())))
+	} catch (e) {
+		return left(e)
+	}
 }
 
 export function toTaskEither<E, A>(ea: EitherAsync<E, A>): Task<Either<E, A>> {

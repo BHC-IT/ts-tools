@@ -2,7 +2,7 @@ import { expect, describe, it } from 'vitest'
 
 import { either, eitherAsync, task } from '../../src'
 
-describe('test Task', function () {
+describe('test EitherAsync', function () {
 	it('right', async function () {
 		const t = eitherAsync.right(0)
 
@@ -54,6 +54,24 @@ describe('test Task', function () {
 
 	it('fromFunction rejected', async function () {
 		const t = eitherAsync.fromFunction(() => Promise.reject(0))
+
+		expect((await t._record).isLeft()).toBe(true)
+		expect((await t._record)._record).toBe(0)
+	})
+
+	it('fromFunction throw', async function () {
+		const t = eitherAsync.fromFunction(() => {
+			throw 0
+		})
+
+		expect((await t._record).isLeft()).toBe(true)
+		expect((await t._record)._record).toBe(0)
+	})
+
+	it('fromFunction async throw', async function () {
+		const t = eitherAsync.fromFunction(async () => {
+			throw 0
+		})
 
 		expect((await t._record).isLeft()).toBe(true)
 		expect((await t._record)._record).toBe(0)
@@ -170,5 +188,18 @@ describe('test Task', function () {
 
 		// @ts-expect-error
 		expect(await t.toPromise().then(a => a._record + 1)).toBe(1)
+	})
+
+	it('toTask', async function () {
+		const t = eitherAsync.right(0)
+
+		// @ts-expect-error
+		expect(await t.toTask().then(a => a._record + 1)).toBe(1)
+	})
+
+	it('toTask rejected', async function () {
+		const t = eitherAsync.left(0)
+
+		expect(await t.toTask().then(a => (a._record as number) + 1)).toBe(1)
 	})
 })
