@@ -9,7 +9,7 @@
  * Send back the types of the tuple or array elements but last.
  *
  *
- * @template T		Any kind of tuple or array.
+ * @typeParam T		Any kind of tuple or array.
  *
  * @author Valentin Vivier <lanathlor>
  */

@@ -12,8 +12,8 @@ import { copy } from './deep'
  * Lens type for hard typing & "type safety".
  *
  *
- * @template T		Type of the main object.
- * @template U		Type of the field targeted by the lens.
+ * @typeParam T		Type of the main object.
+ * @typeParam U		Type of the field targeted by the lens.
  *
  * @author Valentin Vivier <lanathlor>
  */
@@ -25,8 +25,8 @@ export type Lens<T, U> = { get: (arg0: T) => U; set: (arg0: U, arg1: T) => T }
  * @param getter		Getter function.
  * @param setter		Setter function.
  * @returns 		Lens contructed with given parameters.
- * @template T		Type of the main object.
- * @template U		Type of the field targeted by the lens.
+ * @typeParam T		Type of the main object.
+ * @typeParam U		Type of the field targeted by the lens.
  *
  * @author Valentin Vivier <lanathlor>
  */
@@ -44,8 +44,8 @@ export const lens = <T, U>(
  * @param path		Path of the target. Can be a string, each subfield separated by a separator. Or a tuple of string and number representing subfield and indexes.
  * @param split		If path is a string, the separator will be call with string.split.
  * @returns 		Lens contructed with given parameters.
- * @template T		Type of the main object.
- * @template U		Type of the field targeted by the lens.
+ * @typeParam T		Type of the main object.
+ * @typeParam U		Type of the field targeted by the lens.
  *
  * @author Valentin Vivier <lanathlor>
  */
@@ -86,8 +86,8 @@ export const lensFrom = <T, U>(
  * @param _lens		Lens to use.
  * @param obj		Object to apply the lens on.
  * @returns 		The targeted value.
- * @template T		Type of the main object.
- * @template U		Type of the field targeted by the lens.
+ * @typeParam T		Type of the main object.
+ * @typeParam U		Type of the field targeted by the lens.
  *
  * @author Valentin Vivier <lanathlor>
  */
@@ -100,8 +100,8 @@ export const view = <T, U>(_lens: Lens<T, U>, obj: T): U => _lens.get(obj)
  * @param value		Value to set the target to.
  * @param obj		Object to apply the lens on.
  * @returns 		The new object created with its targeted field value changed.
- * @template T		Type of the main object.
- * @template U		Type of the field targeted by the lens.
+ * @typeParam T		Type of the main object.
+ * @typeParam U		Type of the field targeted by the lens.
  *
  * @author Valentin Vivier <lanathlor>
  */

@@ -33,7 +33,7 @@ export const deepCopyArray = <T extends unknown[]>(arr: [...T]): [...T] => {
  *
  * @param obs		Object to copy.
  * @returns 		Copied object.
- * @template T		Object type to copy.
+ * @typeParam T		Object type to copy.
  *
  * @author Valentin Vivier <lanathlor>
  * @internal

@@ -11,9 +11,9 @@ import { Tail, Head } from '../index'
  * Send back the type of the tuple with Count element taken from the front.
  *
  *
- * @template T		Any kind of tuple or array.
- * @template Count	Number of element to take from the front.
- * @template Taken	Internal use only. Should be left by default.
+ * @typeParam T		Any kind of tuple or array.
+ * @typeParam Count	Number of element to take from the front.
+ * @typeParam Taken	Internal use only. Should be left by default.
  *
  * @author Valentin Vivier <lanathlor>
  */

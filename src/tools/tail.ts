@@ -9,7 +9,7 @@
  * Send back the types of the tuple or array without his first element.
  *
  *
- * @template T		Any kind of tuple or array.
+ * @typeParam T		Any kind of tuple or array.
  *
  * @author Valentin Vivier <lanathlor>
  */
@@ -25,7 +25,7 @@ export type Tail<T extends unknown[]> = T extends [
  *
  *
  * @param tuple		Tuple or array to cut.
- * @template T		Any kind of tuple or array.
+ * @typeParam T		Any kind of tuple or array.
  * @return Copy of the original tuple or array minus his first element.
  *
  * @author Valentin Vivier <lanathlor>

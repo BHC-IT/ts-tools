@@ -5,13 +5,14 @@ import { Monad } from './TypeConstructors/Monad'
  * Either is a monad that can be either a left or a right
  *
  *
- * @template E the left type
- * @template A the right type
+ * @typeParam E the left type
+ * @typeParam A the right type
  *
  *
  * @example
  * ```typescript
  * // Usage of Either with a right value
+ * import { either, Either } from '@bhc/ts-tools'
  * const i: Either<string, number> = either.right(0)
  * i.fmap(x => x + 1).fromRight(0) // 1
  * i.bind(x => either.right(x + 1)).fromRight(0) // 1
@@ -19,6 +20,7 @@ import { Monad } from './TypeConstructors/Monad'
  * @example
  * ```typescript
  * // Usage of Either with a left value
+ * import { either, Either } from '@bhc/ts-tools'
  * const j: Either<string, number> = either.left('test')
  * j.fmap(x => x + 1).fromRight(0) // 0
  * j.bind(x => either.right(x + 1)).fromRight(0) // 0
@@ -102,8 +104,8 @@ function _innerFlatten<E, A>(
 
 /**
  * construct a left Either
- * @template E the left type
- * @template A the right type
+ * @typeParam E the left type
+ * @typeParam A the right type
  * @param e - value of the Either
  * @returns
  */
@@ -125,8 +127,8 @@ export const left = <E, A>(e: E): Either<E, A> => ({
 
 /**
  * construct a right Either
- * @template E the left type
- * @template A the right type
+ * @typeParam E the left type
+ * @typeParam A the right type
  * @param a - value of the Either
  * @returns
  */
@@ -148,9 +150,9 @@ export const right = <E, A>(a: A): Either<E, A> => ({
 
 /**
  * lift a function to the Either monad
- * @template E the left type
- * @template A the right type
- * @template B the return type
+ * @typeParam E the left type
+ * @typeParam A the right type
+ * @typeParam B the return type
  * @param f - the function to lift
  * @returns - the lifted function
  */

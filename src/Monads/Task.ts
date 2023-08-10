@@ -1,5 +1,27 @@
 import { Monad } from './TypeConstructors/Monad'
 
+/**
+ * Task Monad
+ *
+ * @typeParam A the type of the value
+ *
+ * @example
+ * ```typescript
+ * // Usage of Task with a value
+ * import { task, Task } from '@bhc/ts-tools'
+ * const i: Task<number> = task.resolve(0)
+ * i.fmap(x => x + 1).toPromise() // Promise(1)
+ * i.bind(x => task.resolve(x + 1)).toPromise() // Promise(1)
+ * ```
+ * @example
+ * ```typescript
+ * // Usage of Task with a value
+ * import { task, Task } from '@bhc/ts-tools'
+ * const j: Task<number> = task.reject('test')
+ * j.fmap(x => x + 1).toPromise() // Promise('test')
+ * j.bind(x => task.resolve(x + 1)).toPromise() // Promise('test')
+ * ```
+ */
 export interface Task<A> extends Promise<A>, Monad<[A], 'Task'> {
 	toPromise: () => Promise<A>
 }

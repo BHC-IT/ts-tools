@@ -11,7 +11,7 @@ import type { Tail, Head } from '../index'
  * Send back the type of the fliped tuple or array.
  *
  *
- * @template T		Any kind of tuple or array.
+ * @typeParam T		Any kind of tuple or array.
  *
  * @author Valentin Vivier <lanathlor>
  */
@@ -23,7 +23,7 @@ export type FlipT<T extends unknown[]> = T extends []
  * Send back a function type with fliped params.
  *
  *
- * @template T		Any kind of function.
+ * @typeParam T		Any kind of function.
  *
  * @author Valentin Vivier <lanathlor>
  */

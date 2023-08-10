@@ -33,7 +33,7 @@ import { sleep } from './sleep'
  * @param obs		Either an {@link Observable} or an AsyncIterableIterator mainly created from with {@link observe}.
  * @param cond		Conditinal function.
  * @returns 		A void promise to release the await.
- * @template T		Type holded by the observer.
+ * @typeParam T		Type holded by the observer.
  *
  * @author Valentin Vivier <lanathlor>
  */

@@ -1,6 +1,5 @@
 // Copyright (c) 2023, BHC-IT. All rights reserved. Licensed under the MIT License.
 import { Either, left as ELeft, right as ERight } from './Either'
-import { cat } from './Maybe'
 import { Task, resolve, fromPromise } from './Task'
 import { Monad } from './TypeConstructors/Monad'
 
@@ -8,27 +7,30 @@ import { Monad } from './TypeConstructors/Monad'
  * EitherAsync is a monad that can be either a left or a right
  *
  *
- * @template E the left type
- * @template A the right type
+ * @typeParam E the left type
+ * @typeParam A the right type
  *
  *
  * @example
  * ```typescript
  * // Usage of EitherAsync with a right value
- * const i: EitherAsync<string, number> = either.right(0)
+ * import { eitherAsync, EitherAsync } from '@bhc/ts-tools'
+ * const i: EitherAsync<string, number> = eitherAsync.right(0)
  * i.fmap(x => x + 1).fromRight(0) // 1
- * i.bind(x => either.right(x + 1)).fromRight(0) // 1
+ * i.bind(x => eitherAsync.right(x + 1)).fromRight(0) // 1
  * ```
  * @example
  * ```typescript
  * // Usage of EitherAsync with a left value
- * const j: EitherAsync<string, number> = either.left('test')
+ * import { eitherAsync, EitherAsync } from '@bhc/ts-tools'
+ * const j: EitherAsync<string, number> = eitherAsync.left('test')
  * j.fmap(x => x + 1).fromRight(0) // 0
- * j.bind(x => either.right(x + 1)).fromRight(0) // 0
+ * j.bind(x => eitherAsync.right(x + 1)).fromRight(0) // 0
  * ```
  */
 export interface EitherAsync<E, A> extends Monad<[E, A], 'EitherAsync'> {
 	/**
+	 * @deprecated to hide the implementation details
 	 * @internal
 	 */
 	_record: Task<Either<E, A>>
@@ -56,6 +58,7 @@ export interface EitherAsync<E, A> extends Monad<[E, A], 'EitherAsync'> {
 	fromEitherAsync: <B>(f: (e: E) => B, g: (a: A) => B) => Task<B>
 
 	toPromise: () => Promise<Either<E, A>>
+
 	toTask: () => Task<Either<E, A>>
 }
 
@@ -133,8 +136,8 @@ function _innerToTask<E, A>(this: EitherAsync<E, A>): Task<Either<E, A>> {
 
 /**
  * construct a left EitherAsync
- * @template E the left type
- * @template A the right type
+ * @typeParam E the left type
+ * @typeParam A the right type
  * @param e - value of the EitherAsync
  * @returns
  */
@@ -154,8 +157,8 @@ export const left = <E, A>(e: E): EitherAsync<E, A> => ({
 
 /**
  * construct a right EitherAsync
- * @template E the left type
- * @template A the right type
+ * @typeParam E the left type
+ * @typeParam A the right type
  * @param a - value of the EitherAsync
  * @returns
  */
@@ -221,9 +224,9 @@ export function toTaskEither<E, A>(ea: EitherAsync<E, A>): Task<Either<E, A>> {
 
 /**
  * lift a function to the EitherAsync monad
- * @template E the left type
- * @template A the right type
- * @template B the return type
+ * @typeParam E the left type
+ * @typeParam A the right type
+ * @typeParam B the return type
  * @param f - the function to lift
  * @returns - the lifted function
  */

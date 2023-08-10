@@ -9,7 +9,7 @@
  * Send back the type of the last element of the tuple or array.
  *
  *
- * @template T		Any kind of tuple or array.
+ * @typeParam T		Any kind of tuple or array.
  *
  * @author Valentin Vivier <lanathlor>
  */
@@ -22,7 +22,7 @@ export type Last<T extends unknown[]> = T extends [...unknown[], infer L]
  *
  *
  * @param tuple		Tuple or array to get last item.
- * @template T		Any kind of tuple or array.
+ * @typeParam T		Any kind of tuple or array.
  * @return Last element.
  *
  * @author Valentin Vivier <lanathlor>

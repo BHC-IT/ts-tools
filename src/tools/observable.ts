@@ -47,7 +47,7 @@
  *	unsub(); // unsubscribe the function. The listener wont be called anymore
  * ```
  *
- * @template T		Type holded by the observer.
+ * @typeParam T		Type holded by the observer.
  *
  * @author Valentin Vivier <lanathlor>
  */
@@ -59,7 +59,7 @@ export class Observable<T> {
 	 * Constructor for observable.
 	 *
 	 * @param value		Initial value to observe.
-	 * @template T		Type holded by the observer.
+	 * @typeParam T		Type holded by the observer.
 	 *
 	 * @public
 	 */
@@ -70,7 +70,7 @@ export class Observable<T> {
 	/**
 	 * Return currently hold value.
 	 *
-	 * @template T	Type holded by the observer.
+	 * @typeParam T	Type holded by the observer.
 	 * @return 	Currently hold value.
 	 *
 	 * @public
@@ -81,7 +81,7 @@ export class Observable<T> {
 	 * Change currently hold value.
 	 *
 	 * @param newValue		Value to set in the observer.
-	 * @template T			Type holded by the observer.
+	 * @typeParam T			Type holded by the observer.
 	 *
 	 * @public
 	 */
@@ -164,7 +164,7 @@ export class Observable<T> {
 	 *
 	 * @param value		Current value hold by the observer.
 	 * @param newValue	Value to set in the observer.
-	 * @template T		Type holded by the observer.
+	 * @typeParam T		Type holded by the observer.
 	 * @return 		If false is returned, change is cancel and listeners wont be called.
 	 *
 	 * @protected
@@ -176,7 +176,7 @@ export class Observable<T> {
 	 *
 	 * @param oldValue	Old value the observer holded.
 	 * @param newValue	Current value hold by the observer.
-	 * @template T		Type holded by the observer.
+	 * @typeParam T		Type holded by the observer.
 	 * @return 		If false is returned, listeners will not be called.
 	 *
 	 * @protected
@@ -188,7 +188,7 @@ export class Observable<T> {
 	 *
 	 * @param oldValue	Old value the observer holded.
 	 * @param newValue	Current value hold by the observer.
-	 * @template T		Type holded by the observer.
+	 * @typeParam T		Type holded by the observer.
 	 *
 	 * @protected
 	 */
@@ -201,7 +201,7 @@ export class Observable<T> {
  * @param obs		Observer to await change on.
  * @param timeout	Time before timeout is triggered. If 0, the function will not timeout. Default to 0.
  * @param enforce	If true, timeout will throw with Error("Observable: Timeout on change"). If false, timeout will resolve with null. Default to false.
- * @template T		Type holded by the observer.
+ * @typeParam T		Type holded by the observer.
  *
  * @author Valentin Vivier <lanathlor>
  */

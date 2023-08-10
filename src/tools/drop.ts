@@ -21,9 +21,9 @@ type _Drop<
  * Send back the type of the tuple with Count element droped from the front.
  *
  *
- * @template T		Any kind of tuple or array.
- * @template Count	Number of element to drop from the front.
- * @template Droped	Internal use only. Should be left by default.
+ * @typeParam T		Any kind of tuple or array.
+ * @typeParam Count	Number of element to drop from the front.
+ * @typeParam Droped	Internal use only. Should be left by default.
  *
  * @author Valentin Vivier <lanathlor>
  */

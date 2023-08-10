@@ -9,7 +9,7 @@
  * Send back the type of the first element of the tuple or array.
  *
  *
- * @template T		Any kind of tuple or array.
+ * @typeParam T		Any kind of tuple or array.
  *
  * @author Valentin Vivier <lanathlor>
  */
@@ -25,7 +25,7 @@ export type Head<T extends unknown[]> = T extends [
  *
  *
  * @param tuple		Tuple or array to get head from.
- * @template T		Any kind of tuple or array.
+ * @typeParam T		Any kind of tuple or array.
  * @return First element of the tuple or array.
  *
  * @author Valentin Vivier <lanathlor>
