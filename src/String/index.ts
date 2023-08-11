@@ -29,5 +29,5 @@ export {
 	trim,
 	trimEnd,
 	trimStart,
-	valueOf,
+	valueOf
 } from './string'

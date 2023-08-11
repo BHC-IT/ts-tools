@@ -152,7 +152,7 @@ export const left = <E, A>(e: E): EitherAsync<E, A> => ({
 	bind: _innerBind,
 	flatten: _innerFlatten,
 	toPromise: _innerToPromise,
-	toTask: _innerToTask,
+	toTask: _innerToTask
 })
 
 /**
@@ -173,7 +173,7 @@ export const right = <E, A>(a: A): EitherAsync<E, A> => ({
 	bind: _innerBind,
 	flatten: _innerFlatten,
 	toPromise: _innerToPromise,
-	toTask: _innerToTask,
+	toTask: _innerToTask
 })
 
 export function fromTaskEither<E, A>(
@@ -190,7 +190,7 @@ export function fromTaskEither<E, A>(
 		bind: _innerBind,
 		flatten: _innerFlatten,
 		toPromise: _innerToPromise,
-		toTask: _innerToTask,
+		toTask: _innerToTask
 	}
 }
 

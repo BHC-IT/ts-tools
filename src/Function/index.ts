@@ -8,7 +8,7 @@ export {
 	forwardIf,
 	forwardIfAsync,
 	forwardTern,
-	forwardTernAsync,
+	forwardTernAsync
 } from './forward'
 export { memoise } from './memoise'
 export { pipe, pipeAsync } from './pipe'

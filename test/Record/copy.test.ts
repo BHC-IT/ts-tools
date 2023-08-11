@@ -6,8 +6,8 @@ describe('test copy', function () {
 	it('copy simple case', function () {
 		const test = {
 			deep: {
-				value: 1,
-			},
+				value: 1
+			}
 		}
 
 		const testCopy = copy(test)
@@ -18,8 +18,8 @@ describe('test copy', function () {
 	it('copy no deep reference', function () {
 		const test = {
 			deep: {
-				value: 1,
-			},
+				value: 1
+			}
 		}
 
 		const testCopy = copy(test)
@@ -35,9 +35,9 @@ describe('test copy', function () {
 				value: 1,
 				array: [
 					{ obj: [{ bottom: 1 }, { bottom: 2 }] },
-					{ something: [0, 1, 2] },
-				],
-			},
+					{ something: [0, 1, 2] }
+				]
+			}
 		}
 
 		const testCopy = copy(test)
@@ -51,10 +51,10 @@ describe('test copy', function () {
 				value: 1,
 				array: [
 					{ obj: [{ bottom: 1 }, { bottom: 2 }] },
-					{ something: [0, 1, 2] },
-				],
+					{ something: [0, 1, 2] }
+				]
 			},
-			someDate: new Date(),
+			someDate: new Date()
 		}
 
 		const testCopy = copy(test)
@@ -78,10 +78,10 @@ describe('test copy', function () {
 				value: 1,
 				array: [
 					{ obj: [{ bottom: 1 }, { bottom: 2 }] },
-					{ something: [0, 1, 2] },
-				],
+					{ something: [0, 1, 2] }
+				]
 			},
-			someDate: new classTest(1, 2),
+			someDate: new classTest(1, 2)
 		}
 
 		const testCopy = copy(test)

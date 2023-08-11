@@ -12,7 +12,7 @@ import { Functor, Applicative, Monad as TmpM } from './TypeConstructors'
 const flat = {
 	...Functor,
 	...Applicative,
-	...TmpM,
+	...TmpM
 }
 
 export const M = flat

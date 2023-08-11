@@ -39,7 +39,7 @@ export {
 	init,
 	last,
 	repeat,
-	zip,
+	zip
 } from './array'
 
 /**

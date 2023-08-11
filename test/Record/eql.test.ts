@@ -107,12 +107,12 @@ describe('test eql', function () {
 
 		const test1: ITest = {
 			fieldOne: 0,
-			fieldTwo: 'ok',
+			fieldTwo: 'ok'
 		}
 
 		const test2: ITest = {
 			fieldOne: 0,
-			fieldTwo: 'ok',
+			fieldTwo: 'ok'
 		}
 
 		const res = eql(test1, test2)
@@ -128,12 +128,12 @@ describe('test eql', function () {
 
 		const test1: ITest = {
 			fieldOne: 0,
-			fieldTwo: 'ok',
+			fieldTwo: 'ok'
 		}
 
 		const test2: ITest = {
 			fieldOne: 1,
-			fieldTwo: 'ok',
+			fieldTwo: 'ok'
 		}
 
 		const res = eql(test1, test2)
@@ -154,12 +154,12 @@ describe('test eql', function () {
 
 		const test1: ITest = {
 			fieldOne: 0,
-			fieldTwo: 'ok',
+			fieldTwo: 'ok'
 		}
 
 		const test2: ITest2 = {
 			field3: 0,
-			field4: 'ok',
+			field4: 'ok'
 		}
 
 		const res = eql(test1, test2)

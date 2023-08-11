@@ -112,7 +112,7 @@ export const nothing: Maybe<any> = {
 	fmap: _innerFmap,
 	apply: _innerApply,
 	bind: _innerBind,
-	flatten: _innerFlatten,
+	flatten: _innerFlatten
 }
 
 export const just = <A>(a: A): Maybe<A> => ({
@@ -127,7 +127,7 @@ export const just = <A>(a: A): Maybe<A> => ({
 	fmap: _innerFmap,
 	apply: _innerApply,
 	bind: _innerBind,
-	flatten: _innerFlatten,
+	flatten: _innerFlatten
 })
 
 /**
@@ -215,7 +215,7 @@ export function fromList<A>(a: A[]): Maybe<A> {
 export function cat<A>(a: Maybe<A>[]): A[] {
 	return [
 		...(a.length && isJust(a[0]) ? [a[0]._record] : []),
-		...(a.length ? (cat(tail(a as [Maybe<A>])) as A[]) : []),
+		...(a.length ? (cat(tail(a as [Maybe<A>])) as A[]) : [])
 	]
 }
 

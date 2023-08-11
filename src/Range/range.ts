@@ -71,7 +71,7 @@ export const range = (start = 0, end = Infinity, increment = 1): number[] => {
 				arr.push(ranger())
 			}
 			return arr[nprop]
-		},
+		}
 	}
 	const p = new Proxy([] as number[], generationHandler)
 

@@ -122,7 +122,7 @@ export const left = <E, A>(e: E): Either<E, A> => ({
 	fmap: _innerFmap,
 	apply: _innerApply,
 	bind: _innerBind,
-	flatten: _innerFlatten,
+	flatten: _innerFlatten
 })
 
 /**
@@ -145,7 +145,7 @@ export const right = <E, A>(a: A): Either<E, A> => ({
 	fmap: _innerFmap,
 	apply: _innerApply,
 	bind: _innerBind,
-	flatten: _innerFlatten,
+	flatten: _innerFlatten
 })
 
 /**

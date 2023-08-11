@@ -8,11 +8,11 @@ describe('test lens', function () {
 			test: {
 				here: {
 					deep: {
-						value: 0,
+						value: 0
 					},
-					arr: [{ value: 0 }],
-				},
-			},
+					arr: [{ value: 0 }]
+				}
+			}
 		}
 
 		const testLensFrom = lensFrom('test.here.deep.value')
@@ -25,11 +25,11 @@ describe('test lens', function () {
 			test: {
 				here: {
 					deep: {
-						value: 0,
+						value: 0
 					},
-					arr: [{ value: 1 }],
-				},
-			},
+					arr: [{ value: 1 }]
+				}
+			}
 		}
 
 		const testLensFrom = lensFrom(['test', 'here', 'arr', 0, 'value'])
@@ -42,11 +42,11 @@ describe('test lens', function () {
 			test: {
 				here: {
 					deep: {
-						value: 0,
+						value: 0
 					},
-					arr: [{ value: 1 }],
-				},
-			},
+					arr: [{ value: 1 }]
+				}
+			}
 		}
 
 		const testLensFrom = lensFrom('test.here.arr.0.value')
@@ -59,11 +59,11 @@ describe('test lens', function () {
 			test: {
 				here: {
 					deep: {
-						value: 0,
+						value: 0
 					},
-					arr: [{ value: 1 }],
-				},
-			},
+					arr: [{ value: 1 }]
+				}
+			}
 		}
 
 		const testLensFrom = lensFrom('test/here/arr/0/value', '/')
@@ -76,11 +76,11 @@ describe('test lens', function () {
 			test: {
 				here: {
 					deep: {
-						value: 0,
+						value: 0
 					},
-					arr: [{ value: 1 }],
-				},
-			},
+					arr: [{ value: 1 }]
+				}
+			}
 		}
 
 		const testLensFrom = lensFrom('test.nothere.here.arr.0.value')
@@ -95,11 +95,11 @@ describe('test lens & set', function () {
 			test: {
 				here: {
 					deep: {
-						value: 0,
+						value: 0
 					},
-					arr: [{ value: 0 }],
-				},
-			},
+					arr: [{ value: 0 }]
+				}
+			}
 		}
 
 		const testLensFrom = lensFrom('test.here.deep.value')
@@ -114,11 +114,11 @@ describe('test lens & set', function () {
 			test: {
 				here: {
 					deep: {
-						value: 0,
+						value: 0
 					},
-					arr: [{ value: 1 }],
-				},
-			},
+					arr: [{ value: 1 }]
+				}
+			}
 		}
 
 		const testLensFrom = lensFrom('test.nothere.here.arr.0.value')

@@ -35,7 +35,7 @@ export const lens = <T, U>(
 	setter: (_1: U, _2: T) => T
 ): Lens<T, U> => ({
 	get: (obj: T): U => getter(obj),
-	set: (val: U, obj: T): T => setter(val, copy(obj)),
+	set: (val: U, obj: T): T => setter(val, copy(obj))
 })
 
 /**

@@ -86,7 +86,7 @@ describe('test Task', function () {
 
 		expect(await t).toStrictEqual([
 			{ status: 'fulfilled', value: 1 },
-			{ status: 'rejected', reason: 'a' },
+			{ status: 'rejected', reason: 'a' }
 		])
 	})
 

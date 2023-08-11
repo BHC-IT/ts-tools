@@ -10,5 +10,5 @@ export {
 	identity,
 	psi,
 	substitution,
-	thrust,
+	thrust
 } from './combinators'

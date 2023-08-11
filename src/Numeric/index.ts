@@ -10,5 +10,5 @@ export {
 	Mult,
 	Next,
 	Prev,
-	ProduceTo,
+	ProduceTo
 } from './types'

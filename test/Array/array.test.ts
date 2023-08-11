@@ -28,7 +28,7 @@ describe('test Array', function () {
 			[0, 2],
 			[1, 1],
 			[2, 2],
-			[3, 5],
+			[3, 5]
 		])
 		expect(arr).to.eql([2, 1, 2, 5])
 	})
@@ -72,14 +72,14 @@ describe('test Array', function () {
 			[2, 0],
 			[1, 1],
 			[2, 2],
-			[5, 3],
+			[5, 3]
 		]
 		expect(Array.flat(arr)).to.eql([2, 0, 1, 1, 2, 2, 5, 3])
 		expect(arr).to.eql([
 			[2, 0],
 			[1, 1],
 			[2, 2],
-			[5, 3],
+			[5, 3]
 		])
 	})
 
@@ -88,16 +88,16 @@ describe('test Array', function () {
 			[2, 0],
 			[1, 1],
 			[2, 2],
-			[5, 3],
+			[5, 3]
 		]
 		expect(Array.flatMap(arr, e => [e[0] + 1, e[1] + 2])).to.eql([
-			3, 2, 2, 3, 3, 4, 6, 5,
+			3, 2, 2, 3, 3, 4, 6, 5
 		])
 		expect(arr).to.eql([
 			[2, 0],
 			[1, 1],
 			[2, 2],
-			[5, 3],
+			[5, 3]
 		])
 	})
 
@@ -273,7 +273,7 @@ describe('test Array', function () {
 		expect(Array.zip([0, 1, 2], ['0', '1', '2'])).to.eql([
 			[0, '0'],
 			[1, '1'],
-			[2, '2'],
+			[2, '2']
 		])
 	})
 })
