@@ -2,7 +2,7 @@ import { expect, describe, it } from 'vitest'
 
 import { maybe, Maybe, M } from '../../src'
 
-import { emit } from '../../src/tools/emit'
+import { emit } from '../../src/Function/emit'
 
 describe('test Maybe', function () {
 	it('isJust of Just', function () {

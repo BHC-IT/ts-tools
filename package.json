@@ -17,7 +17,7 @@
 		"test:ci": "vitest run",
 		"cov": "vitest --coverage",
 		"build": "tsc",
-		"doc": "typedoc --excludePrivate --excludeInternal ./src/* --out doc",
+		"doc": "typedoc",
 		"doc:internal": "typedoc --excludeInternal false ./src/* --out internal",
 		"lint": "eslint . --ext .ts",
 		"lint:fix": "eslint . --fix --ext .ts",

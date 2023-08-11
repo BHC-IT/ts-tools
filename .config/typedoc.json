@@ -1,0 +1,36 @@
+{
+	"$schema": "https://typedoc.org/schema.json",
+	"excludeInternal": true,
+	"navigation": {
+		"includeCategories": true,
+		"fullTree": true,
+		"includeGroups": true
+	},
+	"visibilityFilters": {
+		"protected": false,
+		"private": false,
+		"inherited": true,
+		"external": false,
+		"@alpha": false,
+		"@beta": false
+	},
+	"sort": ["alphabetical"],
+	"includeVersion": true,
+	"entryPoints": [
+		"../src/index.ts",
+		"../src/Array/index.ts",
+		"../src/Combinators/index.ts",
+		"../src/Function/index.ts",
+		"../src/Lens/index.ts",
+		"../src/Monad/index.ts",
+		"../src/Numeric/index.ts",
+		"../src/Observable/index.ts",
+		"../src/Pipe/index.ts",
+		"../src/Range/index.ts",
+		"../src/Record/index.ts",
+		"../src/String/index.ts",
+		"../src/Tuple/index.ts",
+		"../src/Utils/index.ts"
+	],
+	"out": "../doc"
+}
