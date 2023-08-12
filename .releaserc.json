@@ -10,6 +10,13 @@
 			"message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
 		}]
 	],
-	"branches": ["master"],
+	"branches": [
+		"master",
+		{
+			"name": "dev",
+			"channel": "beta",
+			"prerelease": true
+		}
+	],
 	"preset": "angular"
 }
