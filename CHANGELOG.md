@@ -1,3 +1,43 @@
+# [1.17.0-dev.1](https://github.com/BHC-IT/ts-tools/compare/v1.16.0...v1.17.0-dev.1) (2023-08-12)
+
+
+### Bug Fixes
+
+* **build:** lint ([bde80ad](https://github.com/BHC-IT/ts-tools/commit/bde80ad111c61655bea3c42682ede23a201c1055))
+* coverage ([8e62191](https://github.com/BHC-IT/ts-tools/commit/8e62191eb33d64be48442789a9af14110bb0c5aa))
+* dependecies vulns ([60c2412](https://github.com/BHC-IT/ts-tools/commit/60c2412d3bdcb586c4288c5c6f6ab73429a94b78))
+* **fmap:** better typing and tooling ([c305f4d](https://github.com/BHC-IT/ts-tools/commit/c305f4d845b2bd536046c7e6c4ee0f363167f7a1))
+* minor rework of eitherAsync ([bcec7fc](https://github.com/BHC-IT/ts-tools/commit/bcec7fc1dca77261eb9c8f08581efa2bb0256e19))
+* removed old effects ([56fbbc4](https://github.com/BHC-IT/ts-tools/commit/56fbbc49923648287248ab30bec890cef48ee562))
+* renamed folder ([008f9b9](https://github.com/BHC-IT/ts-tools/commit/008f9b9cb6d9d90002ee3dd0d09c57c445c1ef6c))
+* **types:** better num alg typing ([5e9e7b0](https://github.com/BHC-IT/ts-tools/commit/5e9e7b058dbc2175ceb95f995fc6f369b2709196))
+* **v2:** less flacky ([ed4866d](https://github.com/BHC-IT/ts-tools/commit/ed4866d784ff36ecba15ee434672f9c6e205a541))
+* **v2:** using latest checkout action ([b114034](https://github.com/BHC-IT/ts-tools/commit/b11403428bc491461f56f5b672c9dea8ee0e52ad))
+
+
+### Features
+
+* added EitherAsync ([3a5b4e4](https://github.com/BHC-IT/ts-tools/commit/3a5b4e4fe7b82c262fb6acb12a171b236f2397e6))
+* added Maybe ([9d8a065](https://github.com/BHC-IT/ts-tools/commit/9d8a0656c42ffb7b218e3855e9367be9b9e63684))
+* Added Numeric namespace ([ca313a6](https://github.com/BHC-IT/ts-tools/commit/ca313a6a071beab7a4ab6079c4aa608ba090415c))
+* beta release ([01ba9bc](https://github.com/BHC-IT/ts-tools/commit/01ba9bcf93169a50542d5c738a388f24f8c9f62f))
+* beta release ([e82f79a](https://github.com/BHC-IT/ts-tools/commit/e82f79a3339e99692eb4ebcc195a964f5ffb5ed5))
+* beta release ([7bfb3d0](https://github.com/BHC-IT/ts-tools/commit/7bfb3d082b9165fd20ae2bd94ca964eb65058aa9))
+* beta release ([d01b4a2](https://github.com/BHC-IT/ts-tools/commit/d01b4a28b9e69f75e65fa7fcda0c8d4815d0fd4b))
+* beta release ([a8e7d66](https://github.com/BHC-IT/ts-tools/commit/a8e7d660d5757d0e11d2fb18c3a2c76609c92d3d))
+* Created Task wrapper to monadify Promise ([5b8f67b](https://github.com/BHC-IT/ts-tools/commit/5b8f67bd604bea75fea53ae06030a530e9817c18))
+* exporting Task ([d785037](https://github.com/BHC-IT/ts-tools/commit/d785037b0d365d147acdf5346208cabfb136628a))
+* new monadics typing ([c1a2d27](https://github.com/BHC-IT/ts-tools/commit/c1a2d27db51245b3666650869e345a11da6806f0))
+* rework files and exporting strategies ([557327d](https://github.com/BHC-IT/ts-tools/commit/557327d811dd5eaf426de7761c4c5ce4ac826ba8))
+* **v2:** better monads ([8985f61](https://github.com/BHC-IT/ts-tools/commit/8985f611c63dca6fa4f6e22fbf781fcc50605ffe))
+* **v2:** recreated Either monad ([cf2f7a5](https://github.com/BHC-IT/ts-tools/commit/cf2f7a562a022b46927eefef5002bccaa9dccfe0))
+* **v2:** using vitest ([e01c2dc](https://github.com/BHC-IT/ts-tools/commit/e01c2dc66603ed1f4f51b8dc112846d3dda5ff81))
+
+
+### Performance Improvements
+
+* complete rework. prefing for update ([7073495](https://github.com/BHC-IT/ts-tools/commit/7073495b1275e6958b24cfd6bff3d742a9b2b1cf))
+
 # [1.16.0](https://github.com/BHC-IT/ts-tools/compare/v1.15.0...v1.16.0) (2022-02-27)
 
 ### Bug Fixes
