@@ -1,3 +1,15 @@
+# [2.0.0-dev.1](https://github.com/BHC-IT/ts-tools/compare/v1.17.0-dev.1...v2.0.0-dev.1) (2023-08-12)
+
+
+### pref
+
+* 2.0 ([36af666](https://github.com/BHC-IT/ts-tools/commit/36af6663ad3e4e181faa47944ed5ca398ff30d26))
+
+
+### BREAKING CHANGES
+
+* exporting, naming, namespaces, monads
+
 # [1.17.0-dev.1](https://github.com/BHC-IT/ts-tools/compare/v1.16.0...v1.17.0-dev.1) (2023-08-12)
 
 
