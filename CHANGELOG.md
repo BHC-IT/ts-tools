@@ -1,3 +1,10 @@
+# [2.0.0-dev.2](https://github.com/BHC-IT/ts-tools/compare/v2.0.0-dev.1...v2.0.0-dev.2) (2023-09-15)
+
+
+### Bug Fixes
+
+* patched build ([aa2f203](https://github.com/BHC-IT/ts-tools/commit/aa2f2036b03082572abe4af6eb6ddf95f9edf254))
+
 # [2.0.0-dev.1](https://github.com/BHC-IT/ts-tools/compare/v1.17.0-dev.1...v2.0.0-dev.1) (2023-08-12)
 
 
